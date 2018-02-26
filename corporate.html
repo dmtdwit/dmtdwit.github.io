@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDS</title>
+    <link rel="stylesheet" href=css/bootstrap.min.css/>
+    <link rel="stylesheet" href=css/style.css/>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1 class="text-center text-bold"> Annex </h1>
+        <div class="col-md-12">
+            <h3 class="text-center text-success text-bold">Format of Account Opening Form for Corporate Beneficial Owner </h3>
+            <br>
+            <div class="col-md-3">
+                <h4 class="text-primary text-bold"> Types of Account: </h4>
+            </div>
+            <div class="col-md-3">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" id="individual" name="individual"> <span class="label-text">Clearing</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" id="nonResidence" name="nonResidence"> <span class="label-text">Beneficial Owner</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" id="foreigner" name="foreigner"> <span class="label-text">Others</span>
+                        <input type="text" id="" class="form-control" name="foreigner"/>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--For Individual/Resident -->
+<div class="container">
+    <div class="board">
+        <ul class="nav nav-seq">
+            <div class="liner"></div>
+            <li rel-index="0" class="active">
+                <a href="#step1" class="btn" aria-controls="step1" role="tab" data-toggle="tab">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </li>
+            <li rel-index="1">
+                <a href="#step2" class="btn disabled" aria-controls="step2" role="tab" data-toggle="tab">
+                    <span class="glyphicon glyphicon-phone"></span>
+                </a>
+            </li>
+            <li rel-index="2">
+                <a href="#step3" class="btn disabled" aria-controls="step3" role="tab" data-toggle="tab">
+                    <span class="glyphicon glyphicon-tags"></span>
+                </a>
+            </li>
+            <li rel-index="3">
+                <a href="#step4" class="btn disabled" aria-controls="step4" role="tab" data-toggle="tab">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="step1">
+            <div class="default-panel">
+                <div class="row">
+                    <h1 class="text-center text-success text-bold"> Corporate Information </h1>
+                    <form>
+                        <div class="form-group col-md-12">
+                            <label>Name of Beneficial Owner Company*</label>
+                            <input type="text" class="form-control"placeholder="">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>Name of First Authorized Person *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>Name of Second Authorized Person *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>Name of Third Authorized Person *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>Chief Operating Officer's Name *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>Company Secretary's Name *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class="">Date of Incorporation (B.S.)</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="">Date of Incorporation (A.D.)</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>Types of Company *</label>
+                            <div class="input-group input-group-multiple-selectp col-md-12">
+                                <select class="form-control" id="occupationSelector" name="occupationSelector">
+                                    <option value="">Select one</option>
+                                    <option value="1">Pvt Ltd.</option>
+                                    <option value="2">Ltd.</option>
+                                    <option value="3">Public Ltd.</option>
+                                    <option value="4">Govt. Owned</option>
+                                    <option value="Others" id="occupationOthers">Others</option>
+                                </select>
+
+                                <div class="form-group" class="occupationOthersForm" id="occupationOthersForm">
+                                    <br>
+                                    <input type="text" class="form-control" name="occupationOthersForm" placeholder="Company Type"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h1 class="text-center text-success text-bold"> Registration </h1>
+
+                        <div class="form-group col-md-6">
+                            <label>Registration No * </label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Registration Date *</label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>PAN No. *</label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>VAT Registration No. </label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>Name and Address of Main Company in case of Subsidiary Company </label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Type of Business of the Company *</label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label> Area of Work *</label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label> SEBON Registration No. </label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label> SEBON Registration Date </label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label> NRB Registration No. </label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label> NRB Approval Date </label>
+                            <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                    <div class="col-md-12">
+                        <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="step2">
+            <div class="default-panel">
+                <div class="row">
+                    <h1 class="text-center text-success text-bold"> Address </h1>
+                    <form>
+                        <div class="form-group col-md-12">
+                            <label class="text-primary text-bold">Current Address of Company </label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Country *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Zone</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>District *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>VDC / Municipality / Metropolitan *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Tole</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Ward No. *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Block No.</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Telephone No. *</label>
+                            <input type="number" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Fax No.</label>
+                            <input type="number" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Email ID. *</label>
+                            <input type="email" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label class="text-primary text-bold">Company Registered Address</label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Zone</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>District *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>VDC / Municipality / Metropolitan *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Tole</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Ward No. *</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Block No.</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Telephone No. *</label>
+                            <input type="number" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Mobile No. *</label>
+                            <input type="number" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Fax No.</label>
+                            <input type="number" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Email ID. *</label>
+                            <input type="email" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Nearest Landmark *</label>
+                            <input type="text" class="form-control"placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Website</label>
+                            <input type="text" class="form-control"placeholder="">
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </form>
+                    <div class="col-md-12">
+                        <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="step3">
+            <div class="default-panel">
+                <div class="row">
+                    <h1 class="text-center text-success text-bold"> Details of Clearing Members </h1>
+                    <br>
+                    <form>
+                        <div class="form-group col-md-4">
+                            <label>Name of Securities Market *</label>
+                            <input type="text" class="form-control"placeholder="">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>Broker No. </label>
+                            <input type="text" class="form-control"placeholder="">
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </form>
+                    <div>
+                        <h1 class="text-center text-success text-bold"> Branch / Number of Office and Main Branches / Office Location </h1>
+                        <button id="add" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Another Branch</button>
+                        <button id="remove" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span> Remove a Branch</button>
+                        <div class="branches" id="branches">
+                            <form>
+                                <div id="branchesForm">
+                                    <br>
+                                    <br>
+                                    <div class="form-group col-md-4">
+                                        <label>Area *</label>
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Main Branch / Office *</label>
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Address *</label>
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Telephone No. *</label>
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Mobile No. *</label>
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Contact Person *</label>
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </form>
+                            <h1 class="text-center text-success text-bold"> Executives  </h1>
+                            <button id="addExecutive" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Another Executive</button>
+                            <button id="removeExecutive" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span> Remove a Executive</button>
+                            <div class="executives" id="executives">
+                                <form>
+                                    <div id="executivesForm">
+                                        <br>
+                                        <br>
+                                        <div class="form-group col-md-4">
+                                            <label>Name / Surname *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Designation *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Spouse's Name </label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Father's Name *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Grand Father's Name *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Permanent Address *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Current Address *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Telephone No. *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Mobile No. *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Email ID. *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="step4">
+            <div class="default-panel">
+                <div class="row">
+                    <div class="row">
+                        <h1 class="text-center text-success text-bold"> Authorized Personnel</h1>
+                        <h3 class="text-bold text-primary"> First Authorized Person</h3>
+                        <form>
+                            <div class="form-group col-md-12">
+                                <label>Name *</label> <br>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Designation *</label> <br>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <br>
+                                <br>
+                                <label>Signature * __________________________________ </label>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <label>
+                                        <img src="https://www.limestone.edu/sites/default/files/user.png" alt="User Image" class="img-thumbnail imageStyle pull-right">
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <h3 class="text-bold text-primary"> Second Authorized Person</h3>
+
+                        <form>
+
+                            <div class="form-group col-md-12">
+                                <label>Name *</label> <br>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Designation *</label> <br>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <br>
+                                <br>
+                                <label>Signature * __________________________________ </label>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <label>
+                                        <img src="https://www.limestone.edu/sites/default/files/user.png" alt="User Image" class="img-thumbnail imageStyle pull-right">
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <h3 class="text-bold text-primary"> Third Authorized Person</h3>
+
+                        <form>
+
+                            <div class="form-group col-md-12">
+                                <label>Name *</label> <br>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Designation *</label> <br>
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <br>
+                                <br>
+                                <label>Signature * __________________________________ </label>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <label>
+                                        <img src="https://www.limestone.edu/sites/default/files/user.png" alt="User Image" class="img-thumbnail imageStyle pull-right">
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <div class="form-group col-md-12">
+                            <label class="text-center" style="display: block"> <span class="text-center"> Location Map</span> </label>
+                            <br>
+                            <div class="col-md-12 locationMap text-center">
+                                <p class="bottomText"> From main Road Street ....... the distance of the Residence is ........ meters (approximately).</p>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-7"></div>
+                        <div class="form-group col-md-3">
+                            <br> <label>Name of Authorized Person </label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <br> <label> </label>
+                        </div>
+                        <div class="form-group col-md-7"></div>
+                        <div class="form-group col-md-3">
+                            <br> <label>Signature </label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <br> <label> </label>
+                        </div>
+
+                        <div class="form-group col-md-7"></div>
+                        <div class="form-group col-md-3">
+                            <br> <label>Company's Stamp </label>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <br> <label> </label>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label>Types of Bank Account *</label> <br>
+                        </div>
+                        <div class="form-group col-md-4">
+
+                            <input type="checkbox" name=""/> <span class="label-text">Saving Account</span>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="checkbox" name=""/> <span class="label-text">Current Account</span>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group col-md-12">
+                            <label>Back Account Number *</label> <br>
+                            <input type="text" class="form-control" name=""/>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label>Name and Address of Bank *</label> <br>
+                            <input type="text" class="form-control" name=""/>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-12">
+                            <button class="btn btn-success pull-right next-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
