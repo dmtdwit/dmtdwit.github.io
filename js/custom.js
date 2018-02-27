@@ -9,6 +9,16 @@ $(document).ready(function () {
         $('.nonResidence').toggle();
     });
 
+    $(function() {
+        $("input[name='chkPinNo']").click(function() {
+            if ($("#chkYes").is(":checked")) {
+                $("#dvPinNo").show();
+            } else {
+                $("#dvPinNo").hide();
+            }
+        });
+    });
+
     $("#remove").click(function(){
         $("#branchesForm").remove();
     });
@@ -72,21 +82,21 @@ $(document).ready(function () {
      });
 
     // Main page
-    $('.nav-seq > li > a').click(function() {
+    $('.list-group > a').click(function() {
         if($(this).hasClass('disabled')) {
             return false;
         } else {
             var linkIndex = $(this).parent().index() - 1;
-            $('.nav-seq > li').each(function(index, item) {
+            $('.list-group > a').each(function(index, item) {
                 $(item).attr('rel-index', index - linkIndex);
             });
         }
     });
     $('#step1 .next-btn').click(function() {
-        $('.nav-seq a[href="#step2"]').removeClass('disabled').click();
+        $('.list-group a[href="#step2"]').removeClass('disabled').click();
     });
     $('#step2 .next-btn').click(function() {
-        $('.nav-seq a[href="#step3"]').removeClass('disabled').click();
+        $('.list-group a[href="#step3"]').removeClass('disabled').click();
     });
     $('#step3 .next-btn').click(function() {
         $('.nav-seq a[href="#step4"]').removeClass('disabled').click();
