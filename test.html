@@ -1,133 +1,383 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>CDS</title>
-    <link rel="stylesheet" href=css/bootstrap.min.css/>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href=css/style.css/>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="js/custom.js"></script>
-</head>
-<body>
+<div class="bhoechie-tab-content">
+    <div class="col-md-12">
+        <h3 class="text-center text-success text-bold">Format of Account Opening Form for Individual Beneficial Owner </h3>
+        <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
+        <br>
 
-<div id="wrapper" class="active">
-    <!-- Sidebar -->
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul id="sidebar_menu" class="sidebar-nav">
-            <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
-        </ul>
-        <ul class="sidebar-nav" id="sidebar">
-            <li><a>Cadastro<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-            <ul class="sidebar-nav" id="sidebar">
-                <li><a>link1<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-                <li><a>link2<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-            </ul>
-            <li><a>Consulta<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-            <li><a>Relatorio<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-        </ul>
+        <div class="row no-pad">
+            <div class="form-group col-md-11">
+                <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Occupation Detail</label>
+            </div>
+            <table>
+                <tbody>
+                <tr>
+                    <td class="text-right width22 pad5">
+                        <label> Occupation * </label>
+                    </td>
+                    <td colspan="4">
+                        <div class="form-group">
+                            <select class="form-control" id="occupationSelector" name="occupationSelector">
+                                <option value="">Select one</option>
+                                <option value="1">Service</option>
+                                <option value="2">Government</option>
+                                <option value="3">Public/Private Sector</option>
+                                <option value="4">O/INGO</option>
+                                <option value="5">Legal Expert</option>
+                                <option value="6">Expert</option>
+                                <option value="7">Inessperson</option>
+                                <option value="8">Student</option>
+                                <option value="9">Retired</option>
+                                <option value="10">House Wife</option>
+                                <option value="Others" id="occupationOthers">Others</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right width22 pad5">
+                        <label> Type of Business </label>
+                    </td>
+                    <td colspan="4">
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option value="">Select one</option>
+                                <option value="1">Manufacturing</option>
+                                <option value="2">Service Oriented</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right width22 pad5">
+                        <label> Organization Name</label>
+                    </td>
+                    <td colspan="4">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name=""/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right width22 pad5">
+                        <label> Address</label>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name=""/>
+                        </div>
+                    </td>
+                    <td class="text-right pad5">
+                        <label> Designation</label>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name=""/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right width22 pad5">
+                        <label> Financial Details (Income Limit - Annual Details) *</label>
+                    </td>
+                    <td colspan="6">
+                        <div class="form-group">
+                            <input type="radio" name="money"> <span class="label-text">Upto Rs. 1,00,000</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="money"> <span class="label-text">From Rs. 1,00,001 to Rs. 2,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="money"> <span class="label-text">From Rs. 2,00,001 to Rs. 5,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="money"> <span class="label-text">Above Rs. 5,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right width22 pad5">
+                        <label>  Standing Instructions for the automatic transactions *</label>
+                    </td>
+                    <td colspan="6">
+                        <div class="form-group">
+                            <input type="radio" name="automaticTransaction"> <span class="label-text">Yes</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="automaticTransaction"> <span class="label-text">No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right width22 pad5">
+                        <label>  Account Statement *</label>
+                    </td>
+                    <td colspan="6">
+                        <div class="form-group">
+                            <input type="radio" name="accountStatement"> <span class="label-text">As Per Request</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="accountStatement"> <span class="label-text">Daily</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="accountStatement"> <span class="label-text">Weekly</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="accountStatement"> <span class="label-text">15 Days</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="accountStatement"> <span class="label-text">Monthly</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right width22 pad5">
+                        <br>
+                        <br>
+                        <label>  Signature </label>
+                    </td>
+                    <td colspan="6">
+                        <div class="form-group"> <br>
+                            <br>
+                            __________________________________________________
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right width22 pad5">
+                        <br>
+                        <br>
+                        <label>  Thumb Print </label>
+                    </td>
+                    <td colspan="6">
+                        <div class="form-group"> <br>
+                            <br>
+                            <div class="col-md-3 rightThumb text-center">
+                                Right
+                            </div>
+                            <div class="col-md-3 leftThumb text-center">
+                                Left
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+</div>
+<div class="bhoechie-tab-content">
+    <div class="col-md-12">
+        <h3 class="text-center text-success text-bold">Format of Account Opening Form for Individual Beneficial Owner </h3>
+        <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
+        <br>
 
-    <!-- Page content -->
-    <div id="page-content-wrapper">
-        <!-- Keep all page content within the page-content inset div! -->
-        <div class="page-content inset">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="well lead">Cadastro de Cliente</p>
-                    <div class="container">
-                        <div class="row"> <!-- div da esquerda -->
-                            <!-- Text input CNPJ e Razao Social-->
-                            <div class="col-sm-8 contact-form"> <!-- div da direita -->
-                                <form id="contact" method="post" class="form" role="form">
-                                    <div class="row">
-                                        <div class="col-xs-6 col-md-3 form-group">
-                                            <input class="form-control" id="inputCNPJ" name="CNPJ" placeholder="CNPJ" type="text" required autofocus />
-                                        </div>
-                                        <div class="col-xs-4 col-md-9 form-group">
-                                            <input class="form-control" id="inputrazaosocial" name="razaocosial" placeholder="Razão Social" type="text" />
-                                        </div>
-                                    </div> <!-- fim row -->
-                                    <!-- Text input endereco-->
-                                    <div class="col-xs-4 col-md-12 form-group">
-                                        <div class="controls">
-                                            <input class="form-control" id="inputendereco" name="endereco" placeholder="Endereço"  type="text">
-                                        </div>
-                                    </div><!--fim control-group-->
-                                    <br> <!--pulando uma linha -->
-                                    <!-- Text input cidade e estado-->
-                                    <div class="row">
-                                        <div class="col-xs-6 col-md-9 form-group">
-                                            <input class="form-control" id="inputcidade" name="cidade" placeholder="Cidade" type="text" />
-                                        </div>
-                                        <div class="col-xs-4 col-md-3 form-group">
-                                            <select class="form-control"id="selectbasic" name="selectestado" >
-                                                <option>Selecione</option>
-                                                <option>AC</option>
-                                                <option>AL</option>
-                                                <option>AP</option>
-                                                <option>AM</option>
-                                                <option>BA</option>
-                                                <option>CE</option>
-                                                <option>DF</option>
-                                                <option>ES</option>
-                                                <option>GO</option>
-                                                <option>MA</option>
-                                                <option>MT</option>
-                                                <option>MS</option>
-                                                <option>MG</option>
-                                                <option>PA</option>
-                                                <option>PB</option>
-                                                <option>PR</option>
-                                                <option>PE</option>
-                                                <option>PI</option>
-                                                <option>RJ</option>
-                                                <option>RN</option>
-                                                <option>RS</option>
-                                                <option>RO</option>
-                                                <option>RR</option>
-                                                <option>SC</option>
-                                                <option>SP</option>
-                                                <option>SE</option>
-                                                <option>TO</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-6 col-md-3 form-group">
-                                            <input class="form-control" id="inputtelefone" name="telefone" placeholder="Telefone" type="text" />
-                                        </div>
-                                        <div class="col-xs-4 col-md-3 form-group">
-                                            <input class="form-control" id="inputcontato" name="contato" placeholder="Contato" type="text" />
-                                        </div>
-                                        <div class="col-xs-4 col-md-6 form-group">
-                                            <input class="form-control" id="inputemail" name="email" placeholder="E-mail" type="text" />
-                                        </div>
-                                    </div><!--fim Text input cidade e estado-->
-                                    <div class="col-xs-4 col-md-12 form-group">
-                                        <div class="controls">
-                                            <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
-                                        </div>
-                                    </div>
-                                    <br />
+        <div class="row no-pad">
+            <div class="form-group col-md-11">
+                <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Bank Account Detail</label>
+            </div>
+            <table>
+                <tbody>
+                <tr>
+                    <td class="width22 text-right pad5">
+                        <label class="text-right">Types of Bank Account *</label>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            &nbsp;&nbsp;&nbsp; <input type="radio" name="account"/> Saving Account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="account"/> Current Account &nbsp;&nbsp;&nbsp;
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width22 text-right pad5">
+                        <label class="text-right">Bank Account Number *</label>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="bankAccount"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width22 text-right pad5">
+                        <label class="text-right">Name and Address of Bank *</label>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="bankAccount"/>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
 
-                                    <div class="row">
-                                        <div class="col-xs-12 col-md-12 form-group">
-                                            <button class="btn btn-primary pull-right" type="submit">Salvar</button>
-                                            <button class="btn btn-primary pull-right" type="submit">Limpar</button>
-                                            <!--<button class="btn btn-primary pull-right" type="submit">Enviar</button>-->
-                                        </div>
-                                    </div>
-                                </form>
-                            </div> <!-- fim div da direita -->
-                        </div> <!-- fim div da esquerda -->
-                    </div>
-                    <p class="well lead">An Experiment using the sidebar (<a href="http://animeshmanglik.name">animeshmanglik.name</a>)</p>
+            <div class="form-group col-md-12">
+                <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Nominee's Detail</label>
+                <p> &nbsp;&nbsp;&nbsp; In the event of my death or incapacity, the following named nominee shall be entitled to the balance of my demat account: </p>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="width22 text-right pad5">
+                            <label class="text-right">Name of Nominee * </label>
+                        </td>
+                        <td colspan="6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name=""/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="width22 text-right pad5">
+                            <label class="text-right">Relationship * </label>
+                        </td>
+                        <td colspan="6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="bankAccount"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="width22 text-right pad5">
+                            <label class="text-right">Citizenship / Passport No. * </label>
+                        </td>
+                        <td colspan="">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="bankAccount"/>
+                            </div>
+                        </td>
+                        <td class="width22 text-right pad5">
+                            <label class="text-right">Place of Issue * </label>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="bankAccount"/>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <!--Heree-->
+                <div class="form-group col-md-11">
+                    <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Correspondence Address</label>
                 </div>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="text-right width22 pad5">
+                            <label class="text-right">Country </label>
+                        </td>
+                        <td colspan="6">
+                            <div class="form-group">
+                                <select class="form-control" id="con">
+                                    <option>Nepal</option>
+                                    <option>US</option>
+                                    <option>India</option>
+                                    <option>Japan</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right width22 pad5">
+                            <label class="text-right">Zone </label>
+                        </td>
+                        <td colspan="3">
+                            <div class="form-group">
+                                <select class="form-control" id="district">
+                                    <option>Bagmati</option>
+                                    <option>Gandaki</option>
+                                    <option>Mahakali</option>
+                                    <option>Mechi</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="text-right width22 pad5">
+                            <label class="text-right">District * </label>
+                        </td>
+                        <td colspan="3">
+                            <div class="form-group">
+                                <select class="form-control" id="country">
+                                    <option>Lamjung</option>
+                                    <option>Gorkha</option>
+                                    <option>Kathmandu</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right width22 pad5">
+                            <label class="text-right">Telephone No. </label>
+                        </td>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder=""/>
+                            </div>
+                        </td>
+                        <td class="text-right pad5">
+                            <label class="text-right">Mobile No. * </label>
+                        </td>
+                        <td colspan="4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder=""/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right width22 pad5">
+                            <label class="text-right">Fax No. </label>
+                        </td>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder=""/>
+                            </div>
+                        </td>
+                        <td class="text-right width22 pad5">
+                            <label class="text-right">PAN No. </label>
+                        </td>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder=""/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right pad5">
+                            <label class="text-right">Email Id * </label>
+                        </td>
+                        <td colspan="6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder=""/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right width22 pad5">
+                            <br>
+                            <br>
+                            <label>  Signature </label>
+                        </td>
+                        <td colspan="6">
+                            <div class="form-group"> <br>
+                                <br>
+                                __________________________________________________
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right width22 pad5">
+                            <br>
+                            <br>
+                            <label>  Thumb Print </label>
+                        </td>
+                        <td colspan="6">
+                            <div class="form-group"> <br>
+                                <br>
+                                <div class="col-md-3 rightThumb text-center">
+                                    Right
+                                </div>
+                                <div class="col-md-3 leftThumb text-center">
+                                    Left
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="form-group col-md-12">
+                    <label class="text-center" style="display: block"> <span class="text-center"> Location Map</span> </label>
+                    <br>
+                    <div class="col-md-12 locationMap text-center">
+                        <p class="bottomText"> From main Road Street ....... the distance of the Residence is ........ meters (approximately).</p>
+                    </div>
+                </div>
+                <button class="btn btn-success pull-right next-btn">Save</button>
             </div>
         </div>
     </div>
-
 </div>
-</body>
-</html>

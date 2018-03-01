@@ -5,17 +5,17 @@ $(document).ready(function () {
     $('#individual').change(function () {
         $('.individualTabs').toggle();
     });
+  /*  $('#minorDetail').change(function () {
+        $('#minorGuardianDetail').select();
+    });*/
     $('#nonResidence').change(function () {
         $('.nonResidence').toggle();
     });
-
     $(function() {
-        $("input[name='chkPinNo']").click(function() {
-            if ($("#chkYes").is(":checked")) {
-                $("#dvPinNo").show();
-            } else {
-                $("#dvPinNo").hide();
-            }
+        $('input[type="radio"]').change(function() {
+            var rad = $(this).attr('id');
+            $('#' + rad + 'Div').show();
+            $('#' + rad + 'Div').siblings('div').hide();
         });
     });
 
@@ -38,11 +38,23 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('#otherNationalityForm').hide('fast');
+    $('#otherOccupationForm').hide('fast');
     $('#nepaliNationality').click(function () {
         $('#otherNationalityForm').hide('fast');
     });
     $('#otherNationality').click(function () {
         $('#otherNationalityForm').show('fast');
+    });
+
+    $('#occupationSelector').on('change', function() {
+        if ( this.value == '0')
+        {
+            $("#otherOccupationForm").show();
+        }
+        else
+        {
+            $("#otherOccupationForm").hide();
+        }
     });
 
     $('#personalDetailSubmit').on('click', function(e) {
@@ -157,3 +169,13 @@ $(document).ready(function() {
         $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
     });
 });
+
+function hideMinorGuardian(){
+    document.getElementById('minorGuardianDetail').style.display ='none';
+}
+function showMinorGuardian(){
+    document.getElementById('minorGuardianDetail').style.display = 'block';
+}
+function changeNRNLabel(){
+    document.getElementById('passportName').innerHTML = "Passport No. *";
+}

@@ -19,14 +19,8 @@ body{
 	margin: 30px 0;
 	border-bottom: 1px solid #046031;
 }
-#personalAccountTabs,#businessAccountTabs{
+.none{
 	display: none;
-}
-input[value="personalAccount"]:checked ~ #personalAccountTabs {
-	display: inline-flex;
-}
-input[value="businessAccount"]:checked ~ #businessAccountTabs {
-	display: block;
 }
 
 /*.individualTabs, .nonResidence{
@@ -350,7 +344,7 @@ label{
 }
 .div-top{
 	position: relative;
-	top: -20px;
+	top: 20px;
 }
 .form-group{
 	margin-bottom: 5px !important;
@@ -360,4 +354,7 @@ table{
 }
 .wrapper{
 	padding-top:80px;
+}
+.sweet-alert button.cancel {
+    background-color: #a20000d9 !important;
 }
