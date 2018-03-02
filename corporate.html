@@ -1,330 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>CDS</title>
-    <link rel="stylesheet" href=css/bootstrap.min.css/>
-    <link rel="stylesheet" href=css/style.css/>
+    <link rel="stylesheet" href= "css/bootstrap.min.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="js/jquery-2.1.1.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.js"></script>
     <script src="js/custom.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <h1 class="text-center text-bold"> Annex </h1>
-        <div class="col-md-12">
-            <h3 class="text-center text-success text-bold">Format of Account Opening Form for Corporate Beneficial Owner </h3>
-            <br>
-            <div class="col-md-3">
-                <h4 class="text-primary text-bold"> Types of Account: </h4>
-            </div>
-            <div class="col-md-3">
-                <div class="form-check">
-                    <label>
-                        <input type="checkbox" id="individual" name="individual"> <span class="label-text">Clearing</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="form-check">
-                    <label>
-                        <input type="checkbox" id="nonResidence" name="nonResidence"> <span class="label-text">Beneficial Owner</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="form-check">
-                    <label>
-                        <input type="checkbox" id="foreigner" name="foreigner"> <span class="label-text">Others</span>
-                        <input type="text" id="" class="form-control" name="foreigner"/>
-                    </label>
-                </div>
-            </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand text-bold text-white" href="#">CDS and Clearing Limited</a>
         </div>
-    </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="text-white"><a href="dashboard.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li class="text-white"><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->
+<div class="wrapper">
 </div>
 
-<!--For Individual/Resident -->
-<div class="container">
-    <div class="board">
-        <ul class="nav nav-seq">
-            <div class="liner"></div>
-            <li rel-index="0" class="active">
-                <a href="#step1" class="btn" aria-controls="step1" role="tab" data-toggle="tab">
-                    <span class="glyphicon glyphicon-user"></span>
-                </a>
-            </li>
-            <li rel-index="1">
-                <a href="#step2" class="btn disabled" aria-controls="step2" role="tab" data-toggle="tab">
-                    <span class="glyphicon glyphicon-phone"></span>
-                </a>
-            </li>
-            <li rel-index="2">
-                <a href="#step3" class="btn disabled" aria-controls="step3" role="tab" data-toggle="tab">
-                    <span class="glyphicon glyphicon-tags"></span>
-                </a>
-            </li>
-            <li rel-index="3">
-                <a href="#step4" class="btn disabled" aria-controls="step4" role="tab" data-toggle="tab">
-                    <span class="glyphicon glyphicon-ok"></span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="step1">
-            <div class="default-panel">
-                <div class="row">
-                    <h1 class="text-center text-success text-bold"> Corporate Information </h1>
-                    <form>
-                        <div class="form-group col-md-12">
-                            <label>Name of Beneficial Owner Company*</label>
-                            <input type="text" class="form-control"placeholder="">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Name of First Authorized Person *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Name of Second Authorized Person *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Name of Third Authorized Person *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Chief Operating Officer's Name *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Company Secretary's Name *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="">Date of Incorporation (B.S.)</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label class="">Date of Incorporation (A.D.)</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Types of Company *</label>
-                            <div class="input-group input-group-multiple-selectp col-md-12">
-                                <select class="form-control" id="occupationSelector" name="occupationSelector">
-                                    <option value="">Select one</option>
-                                    <option value="1">Pvt Ltd.</option>
-                                    <option value="2">Ltd.</option>
-                                    <option value="3">Public Ltd.</option>
-                                    <option value="4">Govt. Owned</option>
-                                    <option value="Others" id="occupationOthers">Others</option>
-                                </select>
-
-                                <div class="form-group" class="occupationOthersForm" id="occupationOthersForm">
-                                    <br>
-                                    <input type="text" class="form-control" name="occupationOthersForm" placeholder="Company Type"/>
+<div class="div-top">
+    <div class="" id="">
+        <div class="row">
+            <div class="col-md-1 bhoechie-tab-menu">
+                <div class="list-group" style="position: fixed;top:50px;">
+                    <a href="#step1" class="list-group-item active text-bold btn text-center" aria-controls="step1" role="tab" data-toggle="tab">
+                        <!-- <h4 class="glyphicon glyphicon-user"></h4>--><br/>Corporate Information
+                    </a>
+                    <a href="#step2" class="list-group-item text-center text-bold btn disabled" aria-controls="step2" role="tab" data-toggle="tab">
+                        <!--<h4 class="glyphicon glyphicon-phone"></h4>--><br/>Address
+                    </a>
+                    <a href="#step3" class="list-group-item text-center btn disabled text-bold" aria-controls="step3" role="tab" data-toggle="tab">
+                        <!--<h4 class="glyphicon glyphicon-tags"></h4>--><br/>Clearing Member
+                    </a>
+                    <a href="#step4" class="list-group-item text-center btn disabled text-bold" aria-controls="step4" role="tab" data-toggle="tab">
+                        <!--<h4 class="glyphicon glyphicon-tags"></h4>--><br/>Branch Office
+                    </a>
+                    <a href="#step5" class="list-group-item text-center btn disabled text-bold" aria-controls="step5" role="tab" data-toggle="tab">
+                        <!--<h4 class="glyphicon glyphicon-ok"></h4>--><br/>Authorized Personnel
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-11 bhoechie-tab">
+                <div class="bhoechie-tab-content active" role="tabpanel" id="step1">
+                    <div class="col-md-12">
+                        <h3 class="text-center text-success text-bold">Form for Corporate Beneficial Owner </h3>
+                        <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-11">
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <label>
+                                            Types of Account:
+                                        </label>
+                                    </div>
                                 </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="radio" id="clearing" name="typesOfAccount"> <span class="label-text">Clearing</span></input>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="radio" id="beneficialOwner" name="typesOfAccount"> <span class="label-text">Beneficial Owner</span></input>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="radio" id="typesOfAccountOthers" name="typesOfAccount"> <span class="label-text">Others</span></input>
+                                            <input type="text" id="typesOfAccountCorporateForm" class="form-control" placeholder="Other Account Type" name=""/>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>Name of Beneficial Owner Company*</label>
+                                    <input type="text" class="form-control"placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>Name of First Authorized Person *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>Name of Second Authorized Person *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>Name of Third Authorized Person </label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>Chief Operating Officer's Name *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>Company Secretary's Name *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="">Date of Incorporation (B.S.) *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="">Date of Incorporation (A.D.) *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>Types of Company *</label>
+                                    <div class="input-group input-group-multiple-selectp col-md-12">
+                                        <select class="form-control" id="occupationSelector" name="occupationSelector">
+                                            <option value="">Select one</option>
+                                            <option value="1">Pvt Ltd.</option>
+                                            <option value="2">Ltd.</option>
+                                            <option value="3">Public Ltd.</option>
+                                            <option value="4">Govt. Owned</option>
+                                            <option value="Others" id="occupationOthers">Others</option>
+                                        </select>
+
+                                        <div class="form-group" class="occupationOthersForm" id="occupationOthersForm">
+                                            <br>
+                                            <input type="text" class="form-control" name="occupationOthersForm" placeholder="Company Type"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <h3 class="text-primary text-bold">
+                                        <label> <br> <br> Registration </label>
+                                    </h3>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>Registration Office * </label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Registration No * </label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Registration Date (in A.D.)*</label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>PAN No. *</label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>VAT Registration No. </label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label>Name and Address of Main Company in case of Subsidiary Company </label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Type of Business of the Company *</label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label> Area of Work *</label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label> SEBON Registration No. </label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label> SEBON Registration Date </label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label> NRB Registration No. </label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label> NRB Approval Date </label>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <div class="form-group">
+                                    <br>
+                                    <br>
+                                    <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                                    <br>
+                                    <br>
+                                </div>
+                                <div class="clearfix"></div>
+                                <br>
                             </div>
                         </div>
 
-                        <h1 class="text-center text-success text-bold"> Registration </h1>
-
-                        <div class="form-group col-md-6">
-                            <label>Registration No * </label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Registration Date *</label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>PAN No. *</label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>VAT Registration No. </label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Name and Address of Main Company in case of Subsidiary Company </label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Type of Business of the Company *</label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label> Area of Work *</label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label> SEBON Registration No. </label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label> SEBON Registration Date </label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label> NRB Registration No. </label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label> NRB Approval Date </label>
-                            <input type="text" class="form-control" placeholder=""/>
-                        </div>
-                        <div class="clearfix"></div>
-                    </form>
-                    <div class="col-md-12">
-                        <button class="btn btn-success pull-right next-btn">Save and Continue</button>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="step2">
-            <div class="default-panel">
-                <div class="row">
-                    <h1 class="text-center text-success text-bold"> Address </h1>
-                    <form>
-                        <div class="form-group col-md-12">
-                            <label class="text-primary text-bold">Current Address of Company </label>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Country *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Zone</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>District *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>VDC / Municipality / Metropolitan *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Tole</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Ward No. *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Block No.</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Telephone No. *</label>
-                            <input type="number" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Fax No.</label>
-                            <input type="number" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Email ID. *</label>
-                            <input type="email" class="form-control" placeholder="">
-                        </div>
-
-                        <div class="form-group col-md-12">
-                            <label class="text-primary text-bold">Company Registered Address</label>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Zone</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>District *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>VDC / Municipality / Metropolitan *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Tole</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Ward No. *</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Block No.</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Telephone No. *</label>
-                            <input type="number" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Mobile No. *</label>
-                            <input type="number" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Fax No.</label>
-                            <input type="number" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Email ID. *</label>
-                            <input type="email" class="form-control" placeholder="">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label>Nearest Landmark *</label>
-                            <input type="text" class="form-control"placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Website</label>
-                            <input type="text" class="form-control"placeholder="">
-                        </div>
-
-                        <div class="clearfix"></div>
-                    </form>
+                <div class="bhoechie-tab-content" role="tabpanel" id="step2">
                     <div class="col-md-12">
-                        <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                        <h3 class="text-center text-success text-bold">Form for Corporate Beneficial Owner </h3>
+                        <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
+                        <br>
+
+                        <!--Here-->
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-11">
+                                <div class="form-group col-md-12">
+                                    <label class="text-primary text-bold">Current Address of Company </label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Country *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Zone</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>District *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>VDC / Municipality / Metropolitan *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Tole</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Ward No. *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Block No.</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Telephone No. *</label>
+                                    <input type="number" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Fax No.</label>
+                                    <input type="number" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Email ID. *</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label class="text-primary text-bold">Company Registered Address</label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Zone</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>District *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>VDC / Municipality / Metropolitan *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Tole</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Ward No. *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Block No.</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Telephone No. *</label>
+                                    <input type="number" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Mobile No. *</label>
+                                    <input type="number" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Fax No.</label>
+                                    <input type="number" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Email ID. *</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Nearest Landmark *</label>
+                                    <input type="text" class="form-control"placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Website</label>
+                                    <input type="text" class="form-control"placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <br>
+                        <!--Here-->
                     </div>
                 </div>
-            </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="step3">
-            <div class="default-panel">
-                <div class="row">
-                    <h1 class="text-center text-success text-bold"> Details of Clearing Members </h1>
+                <div class="bhoechie-tab-content" role="tabpanel" id="step3">
+                    <h3 class="text-center text-success text-bold">Form for Corporate Beneficial Owner </h3>
+                    <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
                     <br>
-                    <form>
-                        <div class="form-group col-md-4">
-                            <label>Name of Securities Market *</label>
-                            <input type="text" class="form-control"placeholder="">
-                        </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <label class="text-bold text-primary">Details of Clearing Member</label>
+                        <br>
 
-                        <div class="form-group col-md-4">
-                            <label>Broker No. </label>
-                            <input type="text" class="form-control"placeholder="">
-                        </div>
+                        <input type="checkbox" name="clearingMember" id="clearingMember" onclick="showClearingMember();"/> Is Clearing Member ?
 
-                        <div class="clearfix"></div>
-                    </form>
-                    <div>
-                        <h1 class="text-center text-success text-bold"> Branch / Number of Office and Main Branches / Office Location </h1>
-                        <button id="add" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Another Branch</button>
-                        <button id="remove" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span> Remove a Branch</button>
-                        <div class="branches" id="branches">
-                            <form>
+                        <div id="clearingMemberDiv">
+                            <div class="form-group">
+                                <br>
+                                <label> Name of Securities Marker: </label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                <label> Broker Number </label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                    </div>
+                </div>
+                <div class="bhoechie-tab-content" role="tabpanel" id="step4">
+                    <h3 class="text-center text-success text-bold">Form for Corporate Beneficial Owner </h3>
+                    <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
+                    <br>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <div>
+                            <h4 class="text-primary text-bold"> Branch / Number of Office and Main Branches / Office Location </h4>
+                            <div class="branches" id="branches">
                                 <div id="branchesForm">
-                                    <br>
                                     <br>
                                     <div class="form-group col-md-4">
                                         <label>Area *</label>
@@ -352,10 +396,12 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                            </form>
+                            </div>
+                            <button id="remove" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-minus"></span> </button>
+                            <button id="add" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> </button>
+
                             <h1 class="text-center text-success text-bold"> Executives  </h1>
-                            <button id="addExecutive" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Another Executive</button>
-                            <button id="removeExecutive" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span> Remove a Executive</button>
+
                             <div class="executives" id="executives">
                                 <form>
                                     <div id="executivesForm">
@@ -404,23 +450,24 @@
                                     </div>
                                     <div class="clearfix"></div>
                                 </form>
-
                             </div>
-                            <div class="col-md-12">
-                                <button class="btn btn-success pull-right next-btn">Save and Continue</button>
-                            </div>
+                            <button id="addExecutive" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+                            <button id="removeExecutive" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-minus"></span></button>
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <br>
+                        <br>
+                        <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div role="tabpanel" class="tab-pane" id="step4">
-            <div class="default-panel">
-                <div class="row">
-                    <div class="row">
-                        <h1 class="text-center text-success text-bold"> Authorized Personnel</h1>
-                        <h3 class="text-bold text-primary"> First Authorized Person</h3>
+                <div class="bhoechie-tab-content" role="tabpanel" id="step5">
+                    <h3 class="text-center text-success text-bold">Form for Corporate Beneficial Owner </h3>
+                    <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
+                    <br>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <h4 class="text-bold text-primary"> First Authorized Person</h4>
                         <form>
                             <div class="form-group col-md-12">
                                 <label>Name *</label> <br>
@@ -433,18 +480,28 @@
                             <div class="form-group col-md-4">
                                 <br>
                                 <br>
-                                <label>Signature * __________________________________ </label>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-check">
-                                    <label>
-                                        <img src="https://www.limestone.edu/sites/default/files/user.png" alt="User Image" class="img-thumbnail imageStyle pull-right">
-                                    </label>
+                                <div class="col-md-4">
+                                    <label>Signature * </label>
                                 </div>
+                                <div class="col-md-8">
+                                    __________________________________
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="form-group col-md-3">
+                                    <label>Upload Image</label>
+                                    <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <span class="btn btn-default btn-file">
+                                                    Browse… <input type="file" id="imgInp">
+                                                </span>
+                                            </span>
+                                        <input type="text" class="form-control" readonly>
+                                    </div>
+                                    <img id='img-upload'/>
                             </div>
                         </form>
-                        <h3 class="text-bold text-primary"> Second Authorized Person</h3>
+                        <h4 class="text-bold text-primary"> Second Authorized Person</h4>
 
                         <form>
 
@@ -459,20 +516,30 @@
                             <div class="form-group col-md-4">
                                 <br>
                                 <br>
-                                <label>Signature * __________________________________ </label>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-check">
-                                    <label>
-                                        <img src="https://www.limestone.edu/sites/default/files/user.png" alt="User Image" class="img-thumbnail imageStyle pull-right">
-                                    </label>
+                                <div class="col-md-4">
+                                    <label>Signature * </label>
                                 </div>
+                                <div class="col-md-8">
+                                    __________________________________
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="form-group col-md-3">
+                                <label>Upload Image</label>
+                                <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <span class="btn btn-default btn-file">
+                                                    Browse… <input type="file" id="imgInp">
+                                                </span>
+                                            </span>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                <img id='img-upload'/>
                             </div>
                         </form>
 
 
-                        <h3 class="text-bold text-primary"> Third Authorized Person</h3>
+                        <h4 class="text-bold text-primary"> Third Authorized Person</h4>
 
                         <form>
 
@@ -487,15 +554,25 @@
                             <div class="form-group col-md-4">
                                 <br>
                                 <br>
-                                <label>Signature * __________________________________ </label>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-check">
-                                    <label>
-                                        <img src="https://www.limestone.edu/sites/default/files/user.png" alt="User Image" class="img-thumbnail imageStyle pull-right">
-                                    </label>
+                                <div class="col-md-4">
+                                    <label>Signature * </label>
                                 </div>
+                                <div class="col-md-8">
+                                    __________________________________
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="form-group col-md-3">
+                                <label>Upload Image</label>
+                                <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <span class="btn btn-default btn-file">
+                                                    Browse… <input type="file" id="imgInp">
+                                                </span>
+                                            </span>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                <img id='img-upload'/>
                             </div>
                         </form>
 
@@ -516,7 +593,7 @@
                         </div>
                         <div class="form-group col-md-7"></div>
                         <div class="form-group col-md-3">
-                            <br> <label>Signature </label>
+                            <label>Signature </label>
                         </div>
                         <div class="form-group col-md-2">
                             <br> <label> </label>
@@ -550,19 +627,51 @@
                             <label>Name and Address of Bank *</label> <br>
                             <input type="text" class="form-control" name=""/>
                         </div>
-                        <div class="clearfix"></div>
-                        <div class="col-md-12">
-                            <button class="btn btn-success pull-right next-btn">Save</button>
-                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <form id="from1">
+                            <button class="btn btn-success pull-right"> Submit Form </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
+    <script>
+        document.querySelector('#from1').addEventListener('submit', function(e) {
+            var form = this;
+            e.preventDefault();
+            swal({
+                    title: "Are you sure?",
+                    text: "Do you want to submit the Form?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: '#046031',
+                    cancelButtonTextColor: '#FF0000',
+                    confirmButtonText: 'Yes, I am sure!',
+                    cancelButtonText: "No, cancel it!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
+                        swal({
+                            title: 'Submitted!',
+                            text: 'Form has been submitted.',
+                            type: 'success'
+                        }, function() {
+                            window.location.href = 'dashboard.html';
+                        });
 
+                    } else {
+                        swal("Cancelled", "", "error");
+                    }
+                });
+        });
 
+    </script>
+    <br>
 </body>
 </html>

@@ -2,12 +2,68 @@
  * Created by Sumit Shrestha on 2/14/2018.
  */
 $(document).ready(function () {
-    $('#individual').change(function () {
+   /* $('#individual').change(function () {
         $('.individualTabs').toggle();
-    });
-  /*  $('#minorDetail').change(function () {
-        $('#minorGuardianDetail').select();
     });*/
+    $(document).on('click', '#close-preview', function(){
+        $('.image-preview').popover('hide');
+        // Hover befor close the preview
+        $('.image-preview').hover(
+            function () {
+                $('.image-preview').popover('show');
+            },
+            function () {
+                $('.image-preview').popover('hide');
+            }
+        );
+    });
+
+    $(function() {
+        // Create the close button
+        var closebtn = $('<button/>', {
+            type:"button",
+            text: 'x',
+            id: 'close-preview',
+            style: 'font-size: initial;',
+        });
+        closebtn.attr("class","close pull-right");
+        // Set the popover default content
+        $('.image-preview').popover({
+            trigger:'manual',
+            html:true,
+            title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
+            content: "There's no image",
+            placement:'bottom'
+        });
+        // Clear event
+        $('.image-preview-clear').click(function(){
+            $('.image-preview').attr("data-content","").popover('hide');
+            $('.image-preview-filename').val("");
+            $('.image-preview-clear').hide();
+            $('.image-preview-input input:file').val("");
+            $(".image-preview-input-title").text("Browse");
+        });
+        // Create the preview image
+        $(".image-preview-input input:file").change(function (){
+            var img = $('<img/>', {
+                id: 'dynamic',
+                width:250,
+                height:200
+            });
+            var file = this.files[0];
+            var reader = new FileReader();
+            // Set preview image into the popover data-content
+            reader.onload = function (e) {
+                $(".image-preview-input-title").text("Change");
+                $(".image-preview-clear").show();
+                $(".image-preview-filename").val(file.name);
+                img.attr('src', e.target.result);
+                $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
+            }
+            reader.readAsDataURL(file);
+        });
+    });
+
     $('#nonResidence').change(function () {
         $('.nonResidence').toggle();
     });
@@ -39,13 +95,23 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#otherNationalityForm').hide('fast');
     $('#otherOccupationForm').hide('fast');
+    $('#typesOfAccountCorporateForm').hide('fast');
     $('#nepaliNationality').click(function () {
         $('#otherNationalityForm').hide('fast');
+    });
+    $('#clearing').click(function () {
+        $('#typesOfAccountCorporateForm').hide('fast');
+    });
+    $('#beneficialOwner').click(function () {
+        $('#typesOfAccountCorporateForm').hide('fast');
     });
     $('#otherNationality').click(function () {
         $('#otherNationalityForm').show('fast');
     });
 
+    $('#typesOfAccountOthers').click(function () {
+        $('#typesOfAccountCorporateForm').show('fast');
+    });
     $('#occupationSelector').on('change', function() {
         if ( this.value == '0')
         {
@@ -111,16 +177,22 @@ $(document).ready(function () {
         $('.list-group a[href="#step3"]').removeClass('disabled').click();
     });
     $('#step3 .next-btn').click(function() {
-        $('.nav-seq a[href="#step4"]').removeClass('disabled').click();
+        $('.list-group a[href="#step4"]').removeClass('disabled').click();
+    });
+    $('#step4 .next-btn').click(function() {
+        $('.list-group a[href="#step5"]').removeClass('disabled').click();
     });
     $('#nstep1 .next-btn').click(function() {
-        $('.nav-seq a[href="#nstep2"]').removeClass('disabled').click();
+        $('.list-group a[href="#nstep2"]').removeClass('disabled').click();
     });
     $('#nstep2 .next-btn').click(function() {
-        $('.nav-seq a[href="#nstep3"]').removeClass('disabled').click();
+        $('.list-group a[href="#nstep3"]').removeClass('disabled').click();
     });
     $('#nstep3 .next-btn').click(function() {
-        $('.nav-seq a[href="#nstep4"]').removeClass('disabled').click();
+        $('.list-group a[href="#nstep4"]').removeClass('disabled').click();
+    });
+    $('#nstep4 .next-btn').click(function() {
+        $('.list-group a[href="#nstep4"]').removeClass('disabled').click();
     });
     // step 2
     $(".listrap").listrap().on("selection-changed", function (event, selection) {
@@ -168,14 +240,47 @@ $(document).ready(function() {
         $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
         $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
     });
+
+
 });
 
 function hideMinorGuardian(){
     document.getElementById('minorGuardianDetail').style.display ='none';
+
 }
 function showMinorGuardian(){
     document.getElementById('minorGuardianDetail').style.display = 'block';
+    document.getElementById('typesOfIDCard').innerHTML = "Types of Identity Card *";
+    document.getElementById('citizenshipNumber').innerHTML = "Citizenship Number";
 }
 function changeNRNLabel(){
     document.getElementById('passportName').innerHTML = "Passport No. *";
+    document.getElementById('typesOfIDCard').innerHTML = "Types of Identity Card *";
+    document.getElementById('citizenshipNumber').innerHTML = "Citizenship Number";
+}
+function changeIndividualLabel(){
+    document.getElementById('passportName').innerHTML = "Passport No.";
+    document.getElementById('typesOfIDCard').innerHTML = "Types of Identity Card";
+    document.getElementById('citizenshipNumber').innerHTML = "Citizenship Number *";
+}
+function changeForeignLabel(){
+    document.getElementById('passportName').innerHTML = "Passport No. *";
+    document.getElementById('typesOfIDCard').innerHTML = "Types of Identity Card";
+    document.getElementById('citizenshipNumber').innerHTML = "Citizenship Number";
+}
+
+function showHideBoid(value){
+    if(value === '')
+        document.getElementById('boidDiv').style.display = 'none';
+    else
+        document.getElementById('boidDiv').style.display = 'block';
+}
+function showClearingMember(){
+    var checkBox = document.getElementById("clearingMember");
+    var text = document.getElementById("clearingMemberDiv");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+        text.style.display = "none";
+    }
 }

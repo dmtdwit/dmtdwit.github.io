@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDS</title>
+    <link rel="stylesheet" href= "css/bootstrap.min.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.js"></script>
+    <script src="js/custom.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand text-bold text-white" href="#">CDS and Clearing Limited</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="text-white"><a href="dashboard.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li class="text-white"><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->
+<div class="wrapper">
+</div>
+
+
+<div class="div-top">
+    <div id="bankAccountDiv">
+        <div class="row">
+            <div class="col-md-1 bhoechie-tab-menu">
+                <div class="list-group" style="position: fixed;top:50px;">
+                    <a href="#" class="list-group-item active text-bold text-center btn" aria-controls="step1" role="tab" data-toggle="tab">
+                        <!--<h4 class="glyphicon glyphicon-user"></h4>--><br/>Bank Account Details
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-11 bhoechie-tab">
+                <div class="col-md-1"></div>
+                <div class="col-md-1 no-pad">
+                    Select DP *
+                </div>
+                <div class="col-md-9 no-pad">
+                    <div class="form-group">
+                        <select class="form-control" id="boidDropdown" onchange="showHideBoid(this.value);">
+                            <option value="">Select DP</option>
+                            <option value="1">DP1</option>
+                            <option value="2">DP2</option>
+                            <option value="3">DP3</option>
+                            <option value="4">DP4</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="boidDiv">
+                    <!--Here-->
+
+                    <div class="row no-pad">
+                        <div class="form-group col-md-11">
+                            <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Bank Account Detail</label>
+                        </div>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td class="width22 text-right pad5">
+                                    <label class="text-right">Types of Bank Account *</label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        &nbsp;&nbsp;&nbsp; <input type="radio" name="account"/> Saving Account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="account"/> Current Account &nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="width22 text-right pad5">
+                                    <label class="text-right">Bank Account Number *</label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="bankAccount"/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="width22 text-right pad5">
+                                    <label class="text-right">Name and Address of Bank *</label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="bankAccount"/>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="form-group col-md-12">
+                            <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Nominee's Detail</label>
+                            <p> &nbsp;&nbsp;&nbsp; In the event of my death or incapacity, the following named nominee shall be entitled to the balance of my demat account: </p>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="width22 text-right pad5">
+                                        <label class="text-right">Name of Nominee * </label>
+                                    </td>
+                                    <td colspan="6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name=""/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="width22 text-right pad5">
+                                        <label class="text-right">Relationship * </label>
+                                    </td>
+                                    <td colspan="6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="bankAccount"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="width22 text-right pad5">
+                                        <label class="text-right">Citizenship / Passport No. * </label>
+                                    </td>
+                                    <td colspan="">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="bankAccount"/>
+                                        </div>
+                                    </td>
+                                    <td class="width22 text-right pad5">
+                                        <label class="text-right">Place of Issue * </label>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="bankAccount"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                            <!--Heree-->
+                            <div class="form-group col-md-11">
+                                <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Correspondence Address</label>
+                            </div>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right width22 pad5">
+                                        <label class="text-right">Country </label>
+                                    </td>
+                                    <td colspan="6">
+                                        <div class="form-group">
+                                            <select class="form-control" id="con">
+                                                <option>Nepal</option>
+                                                <option>US</option>
+                                                <option>India</option>
+                                                <option>Japan</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right width22 pad5">
+                                        <label class="text-right">Zone </label>
+                                    </td>
+                                    <td colspan="3">
+                                        <div class="form-group">
+                                            <select class="form-control" id="district">
+                                                <option>Bagmati</option>
+                                                <option>Gandaki</option>
+                                                <option>Mahakali</option>
+                                                <option>Mechi</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td class="text-right width22 pad5">
+                                        <label class="text-right">District * </label>
+                                    </td>
+                                    <td colspan="3">
+                                        <div class="form-group">
+                                            <select class="form-control" id="country">
+                                                <option>Lamjung</option>
+                                                <option>Gorkha</option>
+                                                <option>Kathmandu</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right width22 pad5">
+                                        <label class="text-right">Telephone No. </label>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder=""/>
+                                        </div>
+                                    </td>
+                                    <td class="text-right pad5">
+                                        <label class="text-right">Mobile No. * </label>
+                                    </td>
+                                    <td colspan="4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder=""/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right width22 pad5">
+                                        <label class="text-right">Fax No. </label>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder=""/>
+                                        </div>
+                                    </td>
+                                    <td class="text-right width22 pad5">
+                                        <label class="text-right">PAN No. </label>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder=""/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right pad5">
+                                        <label class="text-right">Email Id * </label>
+                                    </td>
+                                    <td colspan="6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder=""/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right width22 pad5">
+                                        <br>
+                                        <br>
+                                        <label>  Signature </label>
+                                    </td>
+                                    <td colspan="6">
+                                        <div class="form-group"> <br>
+                                            <br>
+                                            __________________________________________________
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right width22 pad5">
+                                        <br>
+                                        <br>
+                                        <label>  Thumb Print </label>
+                                    </td>
+                                    <td colspan="6">
+                                        <div class="form-group"> <br>
+                                            <br>
+                                            <div class="col-md-3 rightThumb text-center">
+                                                Right
+                                            </div>
+                                            <div class="col-md-3 leftThumb text-center">
+                                                Left
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="form-group col-md-12">
+                                <label class="text-center" style="display: block"> <span class="text-center"> Location Map</span> </label>
+                                <br>
+                                <div class="col-md-12 locationMap text-center">
+                                    <p class="bottomText"> From main Road Street ....... the distance of the Residence is ........ meters (approximately).</p>
+                                </div>
+                            </div>
+                            <form id="from1">
+                                <button class="btn btn-success pull-right"> Submit Form </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--Here-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.querySelector('#from1').addEventListener('submit', function(e) {
+        var form = this;
+        e.preventDefault();
+        swal({
+                title: "Are you sure?",
+                text: "Do you want to submit BOID Account?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: '#046031',
+                cancelButtonTextColor: '#FF0000',
+                confirmButtonText: 'Yes, I am sure!',
+                cancelButtonText: "No, cancel it!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'Submitted!',
+                        text: 'BOID Account has been submitted.',
+                        type: 'success'
+                    }, function() {
+                        window.location.href = 'dashboard.html';
+                    });
+
+                } else {
+                    swal("Cancelled", "", "error");
+                }
+            });
+    });
+
+</script>
+<br>
+</body>
+</html>
