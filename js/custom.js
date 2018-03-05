@@ -69,11 +69,13 @@ $(document).ready(function () {
     });
 
     $('#personalAccount').change(function () {
+        $('#personalAccountContent').hide()
         $('#personalAccountDiv').show()
         $('#personalAccountButton').show()
         $('#businessAccountDiv').hide()
     })
     $('#businessAccount').change(function () {
+        $('#businessAccountContent').hide()
         $('#businessAccountDiv').show()
         $('#businessAccountButton').show()
         $('#personalAccountDiv').hide()
