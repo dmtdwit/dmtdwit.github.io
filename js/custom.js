@@ -67,13 +67,36 @@ $(document).ready(function () {
     $('#nonResidence').change(function () {
         $('.nonResidence').toggle();
     });
-    $(function() {
+
+    $('#personalAccount').change(function () {
+        $('#personalAccountDiv').show()
+        $('#personalAccountButton').show()
+        $('#businessAccountDiv').hide()
+    })
+    $('#businessAccount').change(function () {
+        $('#businessAccountDiv').show()
+        $('#businessAccountButton').show()
+        $('#personalAccountDiv').hide()
+
+    })
+    $('#personalAccountButton').click(function () {
+
+        $('#personalAccountContent').show()
+        $('#personalAccountButton').hide()
+    })
+    $('#businessAccountButton').click(function () {
+
+        $('#businessAccountContent').show()
+        $('#businessAccountButton').hide()
+    })
+
+   /* $(function() {
         $('input[type="radio"]').change(function() {
             var rad = $(this).attr('id');
-            $('#' + rad + 'Div').show();
-            $('#' + rad + 'Div').siblings('div').hide();
+            $('#' + rad + 'Button').show();
+            $('#' + rad + 'Button').siblings('div').hide();
         });
-    });
+    });*/
 
     $("#remove").click(function(){
         $("#branchesForm").remove();

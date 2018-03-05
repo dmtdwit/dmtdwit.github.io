@@ -7,44 +7,6 @@ body{
 	margin: 0 auto;
 }
 
-.padding-top{
-	padding-top: 130px;
-}
-.padding-top2{
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
-.login-background-color{
-	background-color: #0f5288;
-}
-h4{
-	font-size: 1.2rem;
-}
-
-.text-bold{
-	font-weight:bold ;
-}
-.text-blue{
-	color: white;
-}
-.no-margin{
-	margin-left: 0px;
-	margin-right: 0px;
-}
-.no-pad{
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-@media screen and (max-width: 420px){
-	.admin_logo{
-		width: 80px;
-	}
-	.form-login{
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-}
 .text-bold{
 	font-weight: bold;
 }
@@ -94,6 +56,14 @@ h4{
 	border-radius: 5px;
 	background-color: #ff0800;
 
+}
+.bg-green{
+	background-color: green;
+	color: white;
+}
+.bg-green:hover{
+	background-color: #4cae4c;
+	color: white;
 }
 .row{
 	margin-left:0px;
