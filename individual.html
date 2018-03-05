@@ -857,11 +857,11 @@
             <div class="col-md-1 bhoechie-tab-menu">
                 <div class="list-group" style="position: fixed;top:50px;">
                     <a href="#step1" class="list-group-item active text-bold text-center btn" aria-controls="step1" role="tab" data-toggle="tab">
-                        <!--<h4 class="glyphicon glyphicon-user"></h4>--><br/>Personal Information
-                    </a>
+                        <!--<h4 class="glyphicon glyphicon-user"></h4>--><br/>Business Type
+                    </a><!--
                     <a href="#step2" class="list-group-item text-center text-bold btn disabled" aria-controls="step2" role="tab" data-toggle="tab">
-                        <!--<h4 class="glyphicon glyphicon-phone"></h4>--><br/>Address
-                    </a>
+                        &lt;!&ndash;<h4 class="glyphicon glyphicon-phone"></h4>&ndash;&gt;<br/>Address
+                    </a>-->
                     <!-- <a href="#" class="list-group-item text-center text-bold">
                          &lt;!&ndash; <h4 class="glyphicon glyphicon-tags"></h4>&ndash;&gt;<br/>Occupation
                      </a>
@@ -871,6 +871,142 @@
                 </div>
             </div>
             <div class="col-md-11 bhoechie-tab">
+            <!--Here-->
+                <h3 class="text-center text-success text-bold">Form for Individual Beneficial Owner </h3>
+                <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
+                <br>
+                <div class="row">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="text-right width22 pad5">
+                                <label> Type of Business </label>
+                            </td>
+                            <td colspan="4">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option value="">Select one</option>
+                                        <option value="1">Manufacturing</option>
+                                        <option value="2">Service Oriented</option>
+                                        <option value="3">Trading</option>
+                                        <option value="4">Industry</option>
+                                        <option value="5">Others</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right width22 pad5">
+                                <label> Organization Name</label>
+                            </td>
+                            <td colspan="4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name=""/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right width22 pad5">
+                                <label> Address</label>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name=""/>
+                                </div>
+                            </td>
+                            <td class="text-right pad5">
+                                <label> Designation</label>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name=""/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right width22 pad5">
+                                <label> Financial Details (Income Limit - Annual Details) *</label>
+                            </td>
+                            <td colspan="6">
+                                <div class="form-group">
+                                    <input type="radio" name="money"> <span class="label-text">Upto Rs. 1,00,000</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="money"> <span class="label-text">From Rs. 1,00,001 to Rs. 2,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="money"> <span class="label-text">From Rs. 2,00,001 to Rs. 5,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="money"> <span class="label-text">Above Rs. 5,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right width22 pad5">
+                                <label>  Standing Instructions for the automatic transactions *</label>
+                            </td>
+                            <td colspan="6">
+                                <div class="form-group">
+                                    <input type="radio" name="automaticTransaction"> <span class="label-text">Yes</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="automaticTransaction"> <span class="label-text">No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right width22 pad5">
+                                <label>  Account Statement *</label>
+                            </td>
+                            <td colspan="6">
+                                <div class="form-group">
+                                    <input type="radio" name="accountStatement"> <span class="label-text">As Per Request</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="accountStatement"> <span class="label-text">Daily</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="accountStatement"> <span class="label-text">Weekly</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="accountStatement"> <span class="label-text">15 Days</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="accountStatement"> <span class="label-text">Monthly</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right width22 pad5">
+                                <br>
+                                <br>
+                                <label>  Signature </label>
+                            </td>
+                            <td colspan="6">
+                                <div class="form-group"> <br>
+                                    <br>
+                                    __________________________________________________
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right width22 pad5">
+                                <br>
+                                <br>
+                                <label>  Thumb Print </label>
+                            </td>
+                            <td colspan="6">
+                                <div class="form-group"> <br>
+                                    <br>
+                                    <div class="col-md-3 rightThumb text-center">
+                                        Right
+                                    </div>
+                                    <div class="col-md-3 leftThumb text-center">
+                                        Left
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <div class="form-group">
+                                    <form id="from2">
+                                        <button class="btn btn-success pull-right"> Submit KYC Form </button>
+                                    </form>
+                                </div>
+                                <br>
+                                <br>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            <!--Here-->
             </div>
         </div>
     </div>
@@ -932,9 +1068,41 @@
         </div>
     </div>
 </div>-->
-
 <script>
     document.querySelector('#from1').addEventListener('submit', function(e) {
+        var form = this;
+        e.preventDefault();
+        swal({
+                    title: "Are you sure?",
+                    text: "KYC Form has been submitted. Do you want to proceed to open BOID Account?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: '#046031',
+                    cancelButtonTextColor: '#FF0000',
+                    confirmButtonText: 'Yes, I am sure!',
+                    cancelButtonText: "No, cancel it!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
+                        swal({
+                            title: 'Submitted!',
+                            text: 'KYC Form has been submitted. Click OK to open BOID Account.',
+                            type: 'success'
+                        }, function() {
+                            window.location.href = 'boid.html';
+                        });
+
+                    } else {
+                        swal("Cancelled", "", "error");
+                    }
+                });
+    });
+
+</script>
+<script>
+    document.querySelector('#from2').addEventListener('submit', function(e) {
         var form = this;
         e.preventDefault();
         swal({
