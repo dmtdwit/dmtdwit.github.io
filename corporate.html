@@ -341,9 +341,10 @@
                     <div class="col-md-11">
                         <label class="text-bold text-primary">Details of Clearing Member</label>
                         <br>
-
-                        <input type="checkbox" name="clearingMember" id="clearingMember" onclick="showClearingMember();"/> Is Clearing Member ?
-
+                        Are you a clearing member:  <input type="radio" name="clearingMember" id="clearingMember" onclick="showClearingMember()"> Yes
+                        <input type="radio" name="clearingMember" id="hidingMember" onclick="hideClearingMember()"> No
+                        <!--<input type="checkbox" name="clearingMember" id="clearingMember" onclick="showClearingMember();"/> Is Clearing Member ?
+-->
                         <div id="clearingMemberDiv">
                             <div class="form-group">
                                 <br>
@@ -368,71 +369,19 @@
                         <div>
                             <h4 class="text-primary text-bold"> Branch / Number of Office and Main Branches / Office Location </h4>
                             <div class="branches" id="branches">
-                                <div id="branchesForm">
-                                    <br>
-                                    <div class="form-group col-md-4">
-                                        <label>Area *</label>
-                                        <input type="text" class="form-control"placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label>Main Branch / Office *</label>
-                                        <input type="text" class="form-control"placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label>Address *</label>
-                                        <input type="text" class="form-control"placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label>Telephone No. *</label>
-                                        <input type="text" class="form-control"placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label>Mobile No. *</label>
-                                        <input type="text" class="form-control"placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label>Contact Person *</label>
-                                        <input type="text" class="form-control"placeholder="">
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <button id="remove" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-minus"></span> </button>
-                            <button id="add" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> </button>
-
-                            <h1 class="text-center text-success text-bold"> Executives  </h1>
-
-                            <div class="executives" id="executives">
-                                <form>
-                                    <div id="executivesForm">
-                                        <br>
+                                <div id="branchesForm" class="none">
+                                    <div class="row">
                                         <br>
                                         <div class="form-group col-md-4">
-                                            <label>Name / Surname *</label>
+                                            <label>Area *</label>
                                             <input type="text" class="form-control"placeholder="">
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label>Designation *</label>
+                                            <label>Main Branch / Office *</label>
                                             <input type="text" class="form-control"placeholder="">
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label>Spouse's Name </label>
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Father's Name *</label>
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Grand Father's Name *</label>
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Permanent Address *</label>
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Current Address *</label>
+                                            <label>Address *</label>
                                             <input type="text" class="form-control"placeholder="">
                                         </div>
                                         <div class="form-group col-md-4">
@@ -444,21 +393,172 @@
                                             <input type="text" class="form-control"placeholder="">
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label>Email ID. *</label>
+                                            <label>Contact Person *</label>
                                             <input type="text" class="form-control"placeholder="">
                                         </div>
+                                        <button class="btn btn-danger pull-right remove" onclick="removeBranches(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span> </button>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div id="branchesForm-0">
+                                    <div class="row">
+                                        <br>
+                                        <div class="form-group col-md-4">
+                                            <label>Area *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Main Branch / Office *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Address *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Telephone No. *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Mobile No. *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Contact Person *</label>
+                                            <input type="text" class="form-control"placeholder="">
+                                        </div>
+                                        <button class="btn btn-danger pull-right remove" onclick="removeBranches(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span> </button>
+                                    </div>
+                                    <hr>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--<button id="remove" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-minus"></span> </button>
+                            --><button id="add" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> </button>
+                            <br>
+                            <h1 class="text-center text-success text-bold"> Executives  </h1>
+
+                            <div class="executives" id="executives">
+
+
+                                <div id="executivesForm" class="none" style="border-bottom: 1px solid #eeeeee;padding-bottom: 10px">
+                                    <div class="row">
+                                        <form>
+                                            <br>
+                                            <br>
+                                            <div class="form-group col-md-4">
+                                                <label>Name / Surname *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Designation *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Spouse's Name </label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Father's Name *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Grand Father's Name *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Permanent Address *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Current Address *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Telephone No. *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Mobile No. *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Email ID. *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+
+                                        </form>
+                                        <button id="removeExecutive" class="btn btn-danger pull-right removeExecutive" onclick="removeExecutive(this.value)"><span class="glyphicon glyphicon-minus"></span></button>
+
+                                        <hr>
                                     </div>
                                     <div class="clearfix"></div>
-                                </form>
+                                </div>
+                                <div id="executivesForm-0" style="border-bottom: 1px solid #eeeeee;padding-bottom: 10px">
+                                    <div class="row">
+                                        <form>
+                                            <br>
+                                            <br>
+                                            <div class="form-group col-md-4">
+                                                <label>Name / Surname *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Designation *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Spouse's Name </label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Father's Name *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Grand Father's Name *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Permanent Address *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Current Address *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Telephone No. *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Mobile No. *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Email ID. *</label>
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+
+                                        </form>
+                                        <button id="removeExecutive" class="btn btn-danger pull-right removeExecutive" onclick="removeExecutive(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span></button>
+
+                                        <hr>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
                             </div>
+                            <div style="padding-top:10px " ></div>
                             <button id="addExecutive" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span></button>
-                            <button id="removeExecutive" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-minus"></span></button>
+
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <br>
-                        <br>
-                        <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                        <div class="col-md-12">
+                            <br>
+                            <br>
+                            <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                        </div>
                     </div>
                 </div>
                 <div class="bhoechie-tab-content" role="tabpanel" id="step5">
@@ -651,42 +751,42 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <script>
-        document.querySelector('#from1').addEventListener('submit', function(e) {
-            var form = this;
-            e.preventDefault();
-            swal({
-                    title: "Are you sure?",
-                    text: "Do you want to submit the Form?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: '#046031',
-                    cancelButtonTextColor: '#FF0000',
-                    confirmButtonText: 'Yes, I am sure!',
-                    cancelButtonText: "No, cancel it!",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
-                        swal({
-                            title: 'Submitted!',
-                            text: 'Form has been submitted.',
-                            type: 'success'
-                        }, function() {
-                            window.location.href = 'dashboard.html';
-                        });
 
-                    } else {
-                        swal("Cancelled", "", "error");
-                    }
-                });
-        });
+        <script>
+            document.querySelector('#from1').addEventListener('submit', function(e) {
+                var form = this;
+                e.preventDefault();
+                swal({
+                        title: "Are you sure?",
+                        text: "Do you want to submit the Form?",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: '#046031',
+                        cancelButtonTextColor: '#FF0000',
+                        confirmButtonText: 'Yes, I am sure!',
+                        cancelButtonText: "No, cancel it!",
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    },
+                    function(isConfirm) {
+                        if (isConfirm) {
+                            swal({
+                                title: 'Submitted!',
+                                text: 'Form has been submitted.',
+                                type: 'success'
+                            }, function() {
+                                window.location.href = 'dashboard.html';
+                            });
 
-    </script>
-    <br>
+                        } else {
+                            swal("Cancelled", "", "error");
+                        }
+                    });
+            });
+
+        </script>
+        <br>
 </body>
 </html>

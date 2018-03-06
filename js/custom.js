@@ -100,23 +100,42 @@ $(document).ready(function () {
         });
     });*/
 
-    $("#remove").click(function(){
-        $("#branchesForm").remove();
-    });
 
+    /*$(".remove").click(function(){
+        var value=$('.remove').val()
+        alert(value)
+        $("#branchesForm-"+value).remove();
+    });*/
+    var cloneCount = 1;
     $("#add").click(function(){
-        $("#branchesForm").clone().appendTo("#branches");
+        var clone = $("#branchesForm").clone().show();
+        clone.attr("id", "branchesForm-"+cloneCount);
+
+        clone.find(".remove").val(cloneCount++)
+
+        $("#branches").append(clone);
+
     });
 
-    $("#removeExecutive").click(function(){
-        $("#executivesForm").remove();
-    });
 
+    var cloneCounts=1
     $("#addExecutive").click(function(){
-        $("#executivesForm").clone().appendTo("#executives");
+        var clone = $("#executivesForm").clone().show();
+        clone.attr("id", "executivesForm-"+cloneCounts);
+
+        clone.find(".removeExecutive").val(cloneCounts)
+        cloneCounts++;
+        $("#executives").append(clone);
+
+
     });
 });
-
+function removeExecutive(id) {
+    $("#executivesForm-"+id).remove()
+}
+function removeBranches(id) {
+        $("#branchesForm-"+id).remove()
+}
 $(document).ready(function () {
     $('#otherNationalityForm').hide('fast');
     $('#otherOccupationForm').hide('fast');
@@ -308,4 +327,8 @@ function showClearingMember(){
     } else {
         text.style.display = "none";
     }
+}
+function hideClearingMember() {
+    $("#clearingMemberDiv").hide()
+
 }
