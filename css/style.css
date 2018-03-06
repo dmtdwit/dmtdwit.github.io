@@ -51,10 +51,15 @@ body{
 	border-radius: 5px;
 	background-color: #046031;
 }
-
-#remove,#removeExecutive{
+.pad-top14{
+	padding-top: 14px;
+}
+.logo-size{
+	width: 50px;
+}
+.remove,.removeExecutive{
 	border-radius: 5px;
-	background-color: #ff0800;
+	background-color: #d2322d;
 
 }
 .bg-green{
