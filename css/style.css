@@ -57,6 +57,9 @@ body{
 .logo-size{
 	width: 50px;
 }
+.text-black{
+	color: black !important;
+}
 .remove,.removeExecutive{
 	border-radius: 5px;
 	background-color: #d2322d;
