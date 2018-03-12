@@ -222,18 +222,48 @@ body{
 .pad-top{
 	padding-top: 150px;
 }
+.pad-top-50{
+	padding-top: 50px;
+}
 .box{
 	width: 100%;
 	height: 300px;
+}
+.box1{
+	width: 100%;
+	height: 200px;
+}
+.box1 span{
+	padding-top: 10px;
+	font-size: 100px;
+}
+.box1 h1{
+	padding-top: 0px;
+	font-size: 40px;
+	font-weight: bold;
 }
 .box-blue{
 	background-color: #0f5288;
 	color: white;
 
 }
-.box-orange{
+.box-green{
 	color: white;
 	background-color: darkgreen;
+}
+.box-red{
+	color: white;
+	background-color:#56c4c5;
+}
+.heading-size{
+	font-size: 40px;
+}
+.darkgreen{
+	color: darkgreen;
+}
+.box-orange{
+	color: white;
+	background-color: #994f06;
 
 }
 .box span{
@@ -349,7 +379,13 @@ label{
 .width22{
 	width: 22% !important;
 }
-
+.width15{
+	width: 17% !important;
+}
+.pad15{
+	padding-left: 15px;
+	padding-right: 15px;
+}
 .text-right{
 	text-align: right !important;
 }
@@ -367,6 +403,14 @@ label{
 .form-group{
 	margin-bottom: 5px !important;
 }
+.add{
+	background-color: #5cb85c ;
+	color: white;
+}
+.add:hover{
+	background-color: darkgreen;
+	color: white;
+}
 table{
 	width: 100%;
 }
@@ -375,6 +419,10 @@ table{
 }
 .sweet-alert button.cancel {
     background-color: #a20000d9 !important;
+}
+#branches_forms{
+	border-bottom: 1px solid #eeeeee;
+	padding-bottom: 10px;
 }
 .btn-file {
 	position: relative;

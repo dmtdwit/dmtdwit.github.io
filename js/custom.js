@@ -17,7 +17,7 @@ $(document).ready(function () {
             }
         );
     });
-
+    
     $(function() {
         // Create the close button
         var closebtn = $('<button/>', {
@@ -129,7 +129,30 @@ $(document).ready(function () {
 
 
     });
+    branchesCount=1
+    $("#addBranches").click(function () {
+        var clone=$("#branches_forms").clone().show();
+        clone.attr("id","branches_forms-"+branchesCount)
+        clone.find(".removeOrgBranches").val(branchesCount)
+        branchesCount++
+        $("#branches_content").append(clone)
+    })
+    
 });
+function callOrganization() {
+    value=$("#organization").val()
+    if(value == "Agent/DP"){
+
+        $("#select_agent").show()
+    }else{
+        $("#select_agent").hide()
+    }
+
+    
+}
+function removeOrgBranches(id) {
+    $("#branches_forms-"+id).remove()
+}
 function removeExecutive(id) {
     $("#executivesForm-"+id).remove()
 }
