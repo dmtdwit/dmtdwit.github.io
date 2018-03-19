@@ -88,8 +88,10 @@
                         <td>130-10100</td>
                         <td>Depository Participants</td>
                         <td>
-                            <button class="btn btn-primary"><i class="fa fa-edit"></i> </button>
-                            <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
+                            <form class="form">
+                                <a href="edit_organization.html" class="btn btn-primary"><i class="fa fa-edit"></i> </a>
+                                <button  class="btn btn-danger"><i class="fa fa-trash"></i> </button>
+                            </form>
                         </td>
                     </tr>
                     <tr>
@@ -98,8 +100,10 @@
                         <td>130-10100</td>
                         <td>Government Agencies</td>
                         <td>
-                            <button class="btn btn-primary"><i class="fa fa-edit"></i> </button>
-                            <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
+                            <form class="form">
+                                <a href="edit_organization.html" class="btn btn-primary"><i class="fa fa-edit"></i> </a>
+                                <button  class="btn btn-danger"><i class="fa fa-trash"></i> </button>
+                            </form>
                         </td>
                     </tr>
                     <tr>
@@ -108,8 +112,10 @@
                         <td>130-10100</td>
                         <td>Broker/Broker DP</td>
                         <td>
-                            <button class="btn btn-primary"><i class="fa fa-edit"></i> </button>
-                            <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
+                            <form class="form">
+                                <a href="edit_organization.html" class="btn btn-primary"><i class="fa fa-edit"></i> </a>
+                                <button  class="btn btn-danger"><i class="fa fa-trash"></i> </button>
+                            </form>
                         </td>
                     </tr>
                     <tr>
@@ -118,8 +124,10 @@
                         <td>130-10100</td>
                         <td>BFI</td>
                         <td>
-                            <button class="btn btn-primary"><i class="fa fa-edit"></i> </button>
-                            <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
+                            <form class="form">
+                                <a href="edit_organization.html" class="btn btn-primary"><i class="fa fa-edit"></i> </a>
+                                <button  class="btn btn-danger"><i class="fa fa-trash"></i> </button>
+                            </form>
                         </td>
                     </tr>
                     </tbody>
@@ -128,5 +136,38 @@
         </div>
     </div>
 </div>
+<script>
+    $('.form').submit(function(e) {
+        var form = this;
+        e.preventDefault();
+        swal({
+                title: "Are you sure?",
+                text: "Do you want to delete the organization?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: '#046031',
+                cancelButtonTextColor: '#FF0000',
+                confirmButtonText: 'Yes, I am sure!',
+                cancelButtonText: "No, cancel it!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'Deleted!',
+                        text: 'Organization has been deleted.',
+                        type: 'success'
+                    }, function() {
+                        window.location.href = 'organization.html';
+                    });
+
+                } else {
+                    swal("Cancelled", "", "error");
+                }
+            });
+    });
+
+</script>
 </body>
 </html>

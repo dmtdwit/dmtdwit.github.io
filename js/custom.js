@@ -141,7 +141,7 @@ $(document).ready(function () {
 });
 function callOrganization() {
     value=$("#organization").val()
-    if(value == "Agent/DP"){
+    if(value == "DP"){
 
         $("#select_agent").show()
     }else{
