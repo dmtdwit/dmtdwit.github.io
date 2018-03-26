@@ -421,9 +421,9 @@ table{
     background-color: #a20000d9 !important;
 }
 .branches_forms{
-	border-bottom: 1px solid #d0cfcf;
+	border-bottom: 1px solid #0f5288;
 	padding-bottom: 10px;
-	padding-top: 10px;
+	padding-top: 30px;
 }
 .btn-file {
 	position: relative;

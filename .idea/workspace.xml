@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7e45b8f-a902-41ab-b18c-d55e155becc3" name="Default" comment="changes made">
+    <list default="true" id="e7e45b8f-a902-41ab-b18c-d55e155becc3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/add_branch.html" afterPath="$PROJECT_DIR$/add_branch.html" />
-      <change beforePath="$PROJECT_DIR$/add_organization.html" afterPath="$PROJECT_DIR$/add_organization.html" />
-      <change beforePath="$PROJECT_DIR$/add_user.html" afterPath="$PROJECT_DIR$/add_user.html" />
-      <change beforePath="$PROJECT_DIR$/admin_dashboard.html" afterPath="$PROJECT_DIR$/admin_dashboard.html" />
-      <change beforePath="$PROJECT_DIR$/boid.html" afterPath="$PROJECT_DIR$/boid.html" />
-      <change beforePath="$PROJECT_DIR$/corporate.html" afterPath="$PROJECT_DIR$/corporate.html" />
-      <change beforePath="$PROJECT_DIR$/dashboard.html" afterPath="$PROJECT_DIR$/dashboard.html" />
-      <change beforePath="$PROJECT_DIR$/edit_organization.html" afterPath="$PROJECT_DIR$/edit_organization.html" />
-      <change beforePath="$PROJECT_DIR$/edit_user.html" afterPath="$PROJECT_DIR$/edit_user.html" />
-      <change beforePath="$PROJECT_DIR$/individual.html" afterPath="$PROJECT_DIR$/individual.html" />
-      <change beforePath="$PROJECT_DIR$/organization.html" afterPath="$PROJECT_DIR$/organization.html" />
-      <change beforePath="$PROJECT_DIR$/organization_info.html" afterPath="$PROJECT_DIR$/organization_info.html" />
-      <change beforePath="$PROJECT_DIR$/userlist.html" afterPath="$PROJECT_DIR$/userlist.html" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="userlist.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userlist.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userlist.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="46" column="6" lean-forward="true" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+            <state relative-caret-position="447">
+              <caret line="321" column="66" lean-forward="false" selection-start-line="321" selection-start-column="66" selection-end-line="321" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -46,7 +34,7 @@
       <file leaf-file-name="edit_user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/edit_user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
+            <state relative-caret-position="975">
               <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
               <folding />
             </state>
@@ -56,7 +44,7 @@
       <file leaf-file-name="organization.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/organization.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
+            <state relative-caret-position="975">
               <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
               <folding />
             </state>
@@ -66,7 +54,7 @@
       <file leaf-file-name="organization_info.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/organization_info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
+            <state relative-caret-position="975">
               <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
               <folding />
             </state>
@@ -76,8 +64,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="714">
+              <caret line="72" column="48" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -86,18 +74,21 @@
       <file leaf-file-name="add_branch.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_branch.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="39" column="68" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="68" />
-              <folding />
+            <state relative-caret-position="372">
+              <caret line="179" column="68" lean-forward="false" selection-start-line="179" selection-start-column="68" selection-end-line="179" selection-end-column="68" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_dashboard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_dashboard.html">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="33" column="63" lean-forward="false" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+            <state relative-caret-position="330">
+              <caret line="424" column="25" lean-forward="true" selection-start-line="424" selection-start-column="25" selection-end-line="424" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -106,20 +97,8 @@
       <file leaf-file-name="edit_organization.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/edit_organization.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
+            <state relative-caret-position="975">
               <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_organization.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/add_organization.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="63" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -130,7 +109,7 @@
       <file leaf-file-name="add_user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
+            <state relative-caret-position="975">
               <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
               <folding />
             </state>
@@ -149,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#sidebar-wrapper</find>
       <find>20015</find>
       <find>5A55A3</find>
       <find>div.bhoechie-tab-menu div.list-group&gt;a .glyphicon, div.bhoechie-tab-menu div.list-group&gt;a .fa</find>
@@ -179,6 +157,7 @@
       <find>step5</find>
       <find>step4</find>
       <find>.php</find>
+      <find>bran</find>
     </findStrings>
     <replaceStrings>
       <replace>0f5288</replace>
@@ -205,14 +184,10 @@
         <option value="$PROJECT_DIR$/admin_dashboard.php" />
         <option value="$PROJECT_DIR$/css/datatable.min.css" />
         <option value="$PROJECT_DIR$/js/datatable.min.js" />
-        <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/custom.js" />
         <option value="$PROJECT_DIR$/boid.html" />
-        <option value="$PROJECT_DIR$/corporate.html" />
         <option value="$PROJECT_DIR$/dashboard.html" />
         <option value="$PROJECT_DIR$/individual.html" />
-        <option value="$PROJECT_DIR$/add_branch.html" />
         <option value="$PROJECT_DIR$/add_organization.html" />
         <option value="$PROJECT_DIR$/add_user.html" />
         <option value="$PROJECT_DIR$/admin_dashboard.html" />
@@ -221,6 +196,10 @@
         <option value="$PROJECT_DIR$/organization.html" />
         <option value="$PROJECT_DIR$/organization_info.html" />
         <option value="$PROJECT_DIR$/userlist.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/corporate.html" />
+        <option value="$PROJECT_DIR$/add_branch.html" />
+        <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
   </component>
@@ -253,6 +232,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -265,7 +245,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -346,7 +325,9 @@
       <workItem from="1520742872446" duration="525000" />
       <workItem from="1520825492468" duration="12307000" />
       <workItem from="1521435348718" duration="6854000" />
-      <workItem from="1521460118156" duration="363000" />
+      <workItem from="1521460118156" duration="1059000" />
+      <workItem from="1521517900700" duration="23000" />
+      <workItem from="1522047642687" duration="3105000" />
     </task>
     <task id="LOCAL-00001" summary="asd">
       <created>1519669512412</created>
@@ -467,11 +448,32 @@
       <option name="project" value="LOCAL" />
       <updated>1521447754998</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="nav bar changes">
+      <created>1521460512611</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1521460512611</updated>
+    </task>
+    <task id="LOCAL-00019" summary="login changes made">
+      <created>1522051545466</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1522051545466</updated>
+    </task>
+    <task id="LOCAL-00020" summary="change">
+      <created>1522052242892</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1522052242892</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134336000" />
+    <option name="totallyTimeSpent" value="138160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -523,7 +525,10 @@
     <MESSAGE value="changes made done" />
     <MESSAGE value="logo kept" />
     <MESSAGE value="changes made" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes made" />
+    <MESSAGE value="nav bar changes" />
+    <MESSAGE value="login changes made" />
+    <MESSAGE value="change" />
+    <option name="LAST_COMMIT_MESSAGE" value="change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -756,26 +761,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="424" column="24" lean-forward="false" selection-start-line="424" selection-start-column="24" selection-end-line="424" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="3660" column="4" lean-forward="false" selection-start-line="3660" selection-start-column="4" selection-end-line="3660" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15342">
           <caret line="655" column="113" lean-forward="false" selection-start-line="655" selection-start-column="113" selection-end-line="655" selection-end-column="113" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,7 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
           <caret line="25" column="144" lean-forward="false" selection-start-line="25" selection-start-column="144" selection-end-line="25" selection-end-column="144" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,15 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="556">
           <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corporate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,7 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,51 +797,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/add_branch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="39" column="68" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/add_organization.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
+        <state relative-caret-position="975">
           <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="63" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/add_user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
+        <state relative-caret-position="975">
           <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="33" column="63" lean-forward="false" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/edit_organization.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
+        <state relative-caret-position="975">
           <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -873,7 +827,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/edit_user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
+        <state relative-caret-position="975">
           <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
           <folding />
         </state>
@@ -881,7 +835,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/organization.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
+        <state relative-caret-position="975">
           <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
           <folding />
         </state>
@@ -889,16 +843,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/organization_info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
+        <state relative-caret-position="975">
           <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="33" column="63" lean-forward="false" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/userlist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="46" column="6" lean-forward="true" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+        <state relative-caret-position="447">
+          <caret line="321" column="66" lean-forward="false" selection-start-line="321" selection-start-column="66" selection-end-line="321" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="15045" column="12" lean-forward="false" selection-start-line="15045" selection-start-column="12" selection-end-line="15045" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corporate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="372" column="66" lean-forward="false" selection-start-line="372" selection-start-column="66" selection-end-line="372" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="72" column="48" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_branch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="179" column="68" lean-forward="false" selection-start-line="179" selection-start-column="68" selection-end-line="179" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="424" column="25" lean-forward="true" selection-start-line="424" selection-start-column="25" selection-end-line="424" selection-end-column="25" />
           <folding />
         </state>
       </provider>
