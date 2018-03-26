@@ -370,7 +370,7 @@
                         <div>
                             <h4 class="text-primary text-bold"> Branch details </h4>
                             <div class="branches" id="branches">
-                                <div id="branchesForm" class="none">
+                                <div id="branchesForm" class="branchesForm none">
                                     <div class="row">
                                         <br>
                                         <div class="form-group col-md-4">
@@ -399,9 +399,9 @@
                                         </div>
                                         <button class="btn btn-danger pull-right remove" onclick="removeBranches(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span> </button>
                                     </div>
-                                    <hr>
+
                                 </div>
-                                <div id="branchesForm-0">
+                                <div id="branchesForm-0" class="branchesForm">
                                     <div class="row">
                                         <br>
                                         <div class="form-group col-md-4">
@@ -430,11 +430,13 @@
                                         </div>
                                         <button class="btn btn-danger pull-right remove" onclick="removeBranches(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span> </button>
                                     </div>
-                                    <hr>
+
                                 </div>
 
                                 <div class="clearfix"></div>
                             </div>
+                            <div style="padding-bottom: 20px"></div>
+
                             <!--<button id="remove" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-minus"></span> </button>
                             --><button id="add" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> </button>
                             <br>
@@ -443,7 +445,7 @@
                             <div class="executives" id="executives">
 
 
-                                <div id="executivesForm" class="none" style="border-bottom: 1px solid #eeeeee;padding-bottom: 10px">
+                                <div id="executivesForm" class="none branchesForm" style="border-bottom: 1px solid #eeeeee;padding-bottom: 10px">
                                     <div class="row">
                                         <form>
                                             <br>
@@ -496,7 +498,7 @@
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-                                <div id="executivesForm-0" style="border-bottom: 1px solid #eeeeee;padding-bottom: 10px">
+                                <div id="executivesForm-0" class="branchesForm" style="border-bottom: 1px solid #eeeeee;padding-bottom: 10px">
                                     <div class="row">
                                         <form>
                                             <br>
@@ -551,7 +553,7 @@
                                 </div>
 
                             </div>
-                            <div style="padding-top:10px " ></div>
+                            <div style="padding-top:20px " ></div>
                             <button id="addExecutive" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span></button>
 
                         </div>
