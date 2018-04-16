@@ -389,6 +389,10 @@ label{
 .text-right{
 	text-align: right !important;
 }
+.list-group{
+	position: fixed;
+	top:78px;
+}
 .pad5{
 	padding-left: 5px;
 	padding-right: 5px;
@@ -429,6 +433,9 @@ table{
 	box-shadow: 6px 6px 5px 5px #e1dede;
 	padding: 15px;
 	margin-top: 51px;
+}
+.error_validation{
+	color: red;
 }
 .branchesForm{
 	box-shadow: 6px 6px 5px 5px #e1dede;
@@ -523,4 +530,9 @@ table{
 	margin-top: 0;
 	text-align: right;
 	border-top: 1px solid #e5e5e5;
+}
+@media screen and (max-width: 620px) {
+	.list-group{
+		position: initial;
+	}
 }
