@@ -1,10 +1,27 @@
 /**
  * Created by Sumit Shrestha on 2/14/2018.
  */
+
 $(document).ready(function () {
-   /* $('#individual').change(function () {
-        $('.individualTabs').toggle();
-    });*/
+    $("#individualForm").validate({
+            rules:{
+                beneficialOwnerName: {
+                    required: true
+                }
+            },
+            messages:{
+                beneficialOwnerName:{
+                    required: "Please enter Beneficial Owner Name"
+                }
+            }
+        }
+    );
+});
+
+$(document).ready(function () {
+    /* $('#individual').change(function () {
+     $('.individualTabs').toggle();
+     });*/
     $(document).on('click', '#close-preview', function(){
         $('.image-preview').popover('hide');
         // Hover befor close the preview
@@ -17,7 +34,7 @@ $(document).ready(function () {
             }
         );
     });
-    
+
     $(function() {
         // Create the close button
         var closebtn = $('<button/>', {
@@ -92,20 +109,20 @@ $(document).ready(function () {
         $('#businessAccountButton').hide()
     })
 
-   /* $(function() {
-        $('input[type="radio"]').change(function() {
-            var rad = $(this).attr('id');
-            $('#' + rad + 'Button').show();
-            $('#' + rad + 'Button').siblings('div').hide();
-        });
-    });*/
+    /* $(function() {
+     $('input[type="radio"]').change(function() {
+     var rad = $(this).attr('id');
+     $('#' + rad + 'Button').show();
+     $('#' + rad + 'Button').siblings('div').hide();
+     });
+     });*/
 
 
     /*$(".remove").click(function(){
-        var value=$('.remove').val()
-        alert(value)
-        $("#branchesForm-"+value).remove();
-    });*/
+     var value=$('.remove').val()
+     alert(value)
+     $("#branchesForm-"+value).remove();
+     });*/
     var cloneCount = 1;
     $("#add").click(function(){
         var clone = $("#branchesForm").clone().show();
@@ -137,7 +154,7 @@ $(document).ready(function () {
         branchesCount++
         $("#branches_content").append(clone)
     })
-    
+
 });
 function callOrganization() {
     value=$("#organization").val()
@@ -148,7 +165,7 @@ function callOrganization() {
         $("#select_agent").hide()
     }
 
-    
+
 }
 function removeOrgBranches(id) {
     $("#branches_forms-"+id).remove()
@@ -157,7 +174,7 @@ function removeExecutive(id) {
     $("#executivesForm-"+id).remove()
 }
 function removeBranches(id) {
-        $("#branchesForm-"+id).remove()
+    $("#branchesForm-"+id).remove()
 }
 $(document).ready(function () {
     $('#otherNationalityForm').hide('fast');
@@ -206,25 +223,25 @@ $(document).ready(function () {
     });
 
     jQuery.fn.extend({
-     listrap: function () {
-     var listrap = this;
-     listrap.getSelection = function () {
-     var selection = new Array();
-     listrap.children("li.active").each(function (ix, el) {
-     selection.push($(el)[0]);
-     });
-     return selection;
-     }
-     var toggle = "li .listrap-toggle ";
-     var selectionChanged = function() {
-     $(this).parent().parent().toggleClass("active");
-     listrap.trigger("selection-changed", [listrap.getSelection()]);
-     }
-     $(listrap).find(toggle + "img").on("click", selectionChanged);
-     $(listrap).find(toggle + "span").on("click", selectionChanged);
-     return listrap;
-     }
-     });
+        listrap: function () {
+            var listrap = this;
+            listrap.getSelection = function () {
+                var selection = new Array();
+                listrap.children("li.active").each(function (ix, el) {
+                    selection.push($(el)[0]);
+                });
+                return selection;
+            }
+            var toggle = "li .listrap-toggle ";
+            var selectionChanged = function() {
+                $(this).parent().parent().toggleClass("active");
+                listrap.trigger("selection-changed", [listrap.getSelection()]);
+            }
+            $(listrap).find(toggle + "img").on("click", selectionChanged);
+            $(listrap).find(toggle + "span").on("click", selectionChanged);
+            return listrap;
+        }
+    });
 
     // Main page
     $('.list-group > a').click(function() {
@@ -292,10 +309,10 @@ function prevTab(elem) {
 
 
 $(document).ready(function(){
-   $("#menu-toggle").click(function (e) {
+    $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
-   })
+    })
 });
 
 $(document).ready(function() {
