@@ -1,27 +1,11 @@
 /**
  * Created by Sumit Shrestha on 2/14/2018.
  */
-
-$(document).ready(function () {
-    $("#individualForm").validate({
-            rules:{
-                beneficialOwnerName: {
-                    required: true
-                }
-            },
-            messages:{
-                beneficialOwnerName:{
-                    required: "Please enter Beneficial Owner Name"
-                }
-            }
-        }
-    );
-});
-
 $(document).ready(function () {
     /* $('#individual').change(function () {
      $('.individualTabs').toggle();
      });*/
+
     $(document).on('click', '#close-preview', function(){
         $('.image-preview').popover('hide');
         // Hover befor close the preview
@@ -34,7 +18,6 @@ $(document).ready(function () {
             }
         );
     });
-
     $(function() {
         // Create the close button
         var closebtn = $('<button/>', {

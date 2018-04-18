@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
     <title>CDS</title>
     <link rel="stylesheet" href= "css/bootstrap.min.css"/>
     <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' />
@@ -10,11 +9,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js" rel="stylesheet"/>
     <script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
     <script src="js/custom.js"></script>
-
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -84,521 +81,517 @@
                     </a>
                 </div>
             </div>
-            <form id="individualForm" method="POST" action="" class="form-inline">
+            <div class="col-md-11">
+                <div class=" bhoechie-tab">
+                    <div class="bhoechie-tab-content active" role="tabpanel" id="step1">
+                        <div class="col-md-12">
+                            <h3 class="text-center text-success text-bold">Form for Individual Beneficial Owner </h3>
+                            <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
+                            <br>
 
-                <div class="col-md-10">
-                    <div class=" bhoechie-tab">
-                        <div class="bhoechie-tab-content active" role="tabpanel" id="step1">
-                            <div class="col-md-12 no-pad no-margin">
-                                <h3 class="text-center text-success text-bold">Form for Individual Beneficial Owner </h3>
-                                <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
-                                <br>
-                                <div class="row no-pad no-margin">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <label class="">Title * &nbsp;&nbsp;&nbsp; </label>
-                                        <div class="form-group">
+                            <div class="row">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td class="width22 text-right pad5">
+                                            <label class="text-right">Title *</label>
+                                        </td>
+                                        <td>
                                             <input type="radio" name="title" onclick="hideMinorGuardian();"/> Mr &nbsp;&nbsp;&nbsp;
                                             <input type="radio" name="title" onclick="hideMinorGuardian();"/> Mrs &nbsp;&nbsp;&nbsp;
                                             <input type="radio" name="title" onclick="hideMinorGuardian();"/> Miss &nbsp;&nbsp;&nbsp;
                                             <input type="radio" name="title" onclick="showMinorGuardian();" id="minorDetail"/> Minor &nbsp;&nbsp;&nbsp;
                                             <input type="radio" name="title" onclick="hideMinorGuardian();"/> Others &nbsp;&nbsp;&nbsp;
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="input-group image-preview">
-                                                <input type="text" class="form-control image-preview-filename" disabled="disabled" />
-                                                <span class="input-group-btn">
+                                        </td>
+                                        <td colspan="4">
+                                            <div class="row">
+                                                <!-- image-preview-filename input [CUT FROM HERE]-->
+                                                <div class="input-group image-preview">
+                                                    <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                                    <span class="input-group-btn">
                                                                 <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
                                                                     <span class="glyphicon glyphicon-remove"></span> Clear
                                                                 </button>
                                                         <div class="btn btn-default image-preview-input">
                                                             <span class="glyphicon glyphicon-folder-open"></span>
                                                         <span class="image-preview-input-title">Browse</span>
-                                                            <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
-                                                        </div>
-                                                </span>
+                                                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                                     </div>
+                                                            </span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row no-pad no-margin">
-                                    <div class="col-md-12 no-pad no-margin">
-                                        <div class="col-md-2 no-margin no-pad">
-                                            <label class="">Name of Beneficial Owner * </label>
-                                        </div>
-                                        <div class="col-md-10 no-pad no-margin">
-                                            <input type="text" name="beneficialOwnerName" class="form-control" required="" placeholder="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <td class="width22 text-right pad5">
 
+                            </div>
+                            </td>
+                            </tr>
+
+                            <tr>
+                                <td class="width22 text-right pad5">
+                                    <label class="text-right">Name of Beneficial Owner *</label>
                                 </td>
                                 <td colspan="4">
                                     <div class="form-group">
                                         <input type="text" name="name" class="form-control" placeholder=""/>
                                     </div>
                                 </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Date of Birth (in B.S.)*</label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" name="dob" class="form-control"/>
-                                        </div>
-                                    </td>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Date of Birth (in A.D.)*</label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" name="dob" class="form-control"/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Gender *</label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="radio" name="gender"> Male </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="gender"> Female </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="gender"> Other </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Grand Father's Name *</label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Father's Name *</label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Mother's Name *</label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Spouse's Name</label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Son's Name </label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Daughter in Law's Name</label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Father in Law's Name </label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Types of Account *</label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <input type="radio" id="individual" onclick="changeIndividualLabel();" name="accountType"> <span class="label-text">Individual / Resident</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" id="nonResident" onclick="changeNRNLabel();" name="accountType"> <span class="label-text">Non Resident Nepalese (NRN)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" id="foreigner" onclick="changeForeignLabel();" name="accountType"> <span class="label-text">Foreigner</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                                <tbody class="individualTabs">
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Nationality *</label>
-                                    </td>
-                                    <td>
-                                        <input type="radio" name="nationality" id="nepaliNationality"> Nepali </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="radio" name="nationality" id="otherNationality"> Other </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control" id="otherNationalityForm" name="otherNationality" placeholder="Other Nationality"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <label> Occupation * </label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <select class="form-control" id="occupationSelector" name="occupationSelector">
-                                                <option value="">Select one</option>
-                                                <option value="1">Service</option>
-                                                <option value="2">Government</option>
-                                                <option value="3">Public/Private Sector</option>
-                                                <option value="4">O/INGO</option>
-                                                <option value="5">Legal Expert</option>
-                                                <option value="6">Expert</option>
-                                                <option value="7">Inessperson</option>
-                                                <option value="8">Student</option>
-                                                <option value="9">Retired</option>
-                                                <option value="10">House Wife</option>
-                                                <option value="0" id="occupationOthers">Others</option><br>
-                                                <input type="text" class="form-control" id="otherOccupationForm" name="otherOccupation" placeholder="Other Occupation"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Date of Birth (in B.S.)*</label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" name="dob" class="form-control"/>
+                                    </div>
+                                </td>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Date of Birth (in A.D.)*</label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" name="dob" class="form-control"/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Gender *</label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="radio" name="gender"> Male </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="gender"> Female </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="gender"> Other </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Grand Father's Name *</label>
+                                </td>
+                                <td colspan="4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Father's Name *</label>
+                                </td>
+                                <td colspan="4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Mother's Name *</label>
+                                </td>
+                                <td colspan="4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Spouse's Name</label>
+                                </td>
+                                <td colspan="4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Son's Name </label>
+                                </td>
+                                <td colspan="4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Daughter in Law's Name</label>
+                                </td>
+                                <td colspan="4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Father in Law's Name </label>
+                                </td>
+                                <td colspan="4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"placeholder="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Types of Account *</label>
+                                </td>
+                                <td colspan="4">
+                                    <div class="form-group">
+                                        <input type="radio" id="individual" onclick="changeIndividualLabel();" name="accountType"> <span class="label-text">Individual / Resident</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" id="nonResident" onclick="changeNRNLabel();" name="accountType"> <span class="label-text">Non Resident Nepalese (NRN)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" id="foreigner" onclick="changeForeignLabel();" name="accountType"> <span class="label-text">Foreigner</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody class="individualTabs">
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Nationality *</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="nationality" id="nepaliNationality"> Nepali </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="nationality" id="otherNationality"> Other </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="text" class="form-control" id="otherNationalityForm" name="otherNationality" placeholder="Other Nationality"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right width22 pad5">
+                                    <label> Occupation * </label>
+                                </td>
+                                <td colspan="4">
+                                    <div class="form-group">
+                                        <select class="form-control" id="occupationSelector" name="occupationSelector">
+                                            <option value="">Select one</option>
+                                            <option value="1">Service</option>
+                                            <option value="2">Government</option>
+                                            <option value="3">Public/Private Sector</option>
+                                            <option value="4">O/INGO</option>
+                                            <option value="5">Legal Expert</option>
+                                            <option value="6">Expert</option>
+                                            <option value="7">Inessperson</option>
+                                            <option value="8">Student</option>
+                                            <option value="9">Retired</option>
+                                            <option value="10">House Wife</option>
+                                            <option value="0" id="occupationOthers">Others</option><br>
+                                            <input type="text" class="form-control" id="otherOccupationForm" name="otherOccupation" placeholder="Other Occupation"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                            </select>
-                                        </div>
-                                        <div id="occupationSelector_error"></div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right" id="citizenshipNumber">Citizenship Number *</label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <input type="text" id="citizen_number" name="dob" class="form-control"/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Issue District </label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <select class="form-control" id="district">
-                                                <option>Kathmandu</option>
-                                                <option>Lamjung</option>
-                                                <option>Bhaktapur</option>
-                                                <option>Lalitpur</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Issue Date </label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="date" id="issue_date" class="form-control" placeholder=""/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right" id="passportName">Passport No. </label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder=""/>
-                                        </div>
-                                    </td>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Place of Issue </label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <select class="form-control" id="issue_district">
-                                                <option>Kathmandu</option>
-                                                <option>Lamjung</option>
-                                                <option>Bhaktapur</option>
-                                                <option>Lalitpur</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Issue Date </label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="date" id="issue_date1" class="form-control" placeholder=""/>
-                                        </div>
-                                    </td>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Expiry Date </label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="date" id="expiry_date" class="form-control" placeholder=""/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right" id="typesOfIDCard">Types of Identity Card </label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <select class="form-control" id="identity_card" name="occupationSelector">
-                                                <option value="">Select one</option>
-                                                <option value="1">NRN ID</option>
-                                                <option value="1">Birth Certificate</option>
-                                                <option value="1">Voter ID</option>
-                                                <option value="1">Driving License</option>
-                                                <option value="1">PAN Card</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right" id="citizenshipNumber">Citizenship Number *</label>
+                                </td>
+                                <td colspan="4">
+                                    <div class="form-group">
+                                        <input type="text" name="dob" class="form-control"/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Issue District </label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <select class="form-control" id="district">
+                                            <option>Kathmandu</option>
+                                            <option>Lamjung</option>
+                                            <option>Bhaktapur</option>
+                                            <option>Lalitpur</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Issue Date </label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" placeholder=""/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right" id="passportName">Passport No. </label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder=""/>
+                                    </div>
+                                </td>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Place of Issue </label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <select class="form-control" id="district">
+                                            <option>Kathmandu</option>
+                                            <option>Lamjung</option>
+                                            <option>Bhaktapur</option>
+                                            <option>Lalitpur</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Issue Date </label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" placeholder=""/>
+                                    </div>
+                                </td>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Expiry Date </label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" placeholder=""/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right" id="typesOfIDCard">Types of Identity Card </label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <select class="form-control" id="occupationSelector" name="occupationSelector">
+                                            <option value="">Select one</option>
+                                            <option value="1">NRN ID</option>
+                                            <option value="1">Birth Certificate</option>
+                                            <option value="1">Voter ID</option>
+                                            <option value="1">Driving License</option>
+                                            <option value="1">PAN Card</option>
 
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Identification No. </label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" id="identification_no" class="form-control" placeholder=""/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Issuance Authority </label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" id="issuance_authority" class="form-control" placeholder=""/>
-                                        </div>
-                                    </td>
-                                    <td class="text-right pad5">
-                                        <label class="text-right">Issue Date </label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="date" id="issue_date2" class="form-control" placeholder=""/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                                </table>
-                                <table>
-                                    <tbody class="none" id="minorGuardianDetail">
-                                    <div class="row">
-                                        <div class="col-md-1"> </div>
-                                        <div class="col-md-11">
-                                            <!--  Guardian's Detail-->
-                                            <tr>
-                                                <td>
-                                                    <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Guardian's Detail (In case of Minor Only)</label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-right pad5 width22">
-                                                    <label> Name / Surname * </label>
-                                                </td>
-                                                <td colspan="6">
-                                                    <div class="form-group">
-                                                        <input type="text" id="name_surname" class="form-control" name=""/>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-right pad5 width22">
-                                                    <label> Relationship with applicant * </label>
-                                                </td>
-                                                <td colspan="6">
-                                                    <div class="form-group">
-                                                        <input type="text" id="relationship" class="form-control" name=""/>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp;  Correspondence Address</label>
-                                                </td>
-                                            </tr>
-                                            <!--Here-->
-                                            <tr>
-                                                <td class="text-right width22 pad5">
-                                                    <label class="text-right">Country * </label>
-                                                </td>
-                                                <td colspan="4">
-                                                    <div class="form-group">
-                                                        <select class="form-control" id="country">
-                                                            <option>Nepal</option>
-                                                            <option>India</option>
-                                                            <option>US</option>
-                                                            <option>Japan</option>
-                                                        </select>
-                                                    </div>
-                                                </td>
-                                                <td class="text-right pad5">
-                                                    <label class="text-right">Zone </label>
-                                                </td>
-                                                <td colspan="4">
-                                                    <div class="form-group">
-                                                        <select class="form-control" id="district">
-                                                            <option>Bagmati</option>
-                                                            <option>Gandaki</option>
-                                                            <option>Mahakali</option>
-                                                            <option>Mechi</option>
-                                                        </select>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-right width22 pad5">
-                                                    <label class="text-right">District * </label>
-                                                </td>
-                                                <td colspan="4">
-                                                    <div class="form-group">
-                                                        <select class="form-control" id="country">
-                                                            <option>Lamjung</option>
-                                                            <option>Gorkha</option>
-                                                            <option>Kathmandu</option>
-                                                        </select>
-                                                    </div>
-                                                </td>
-                                                <td class="text-right width22 pad5">
-                                                    <label class="text-right">Fax No. </label>
-                                                </td>
-                                                <td colspan="4">
-                                                    <div class="form-group">
-                                                        <input type="text" id="fax_number" name="" class="form-control"/>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-right width22 pad5">
-                                                    <label class="text-right">Telephone No. </label>
-                                                </td>
-                                                <td colspan="2">
-                                                    <div class="form-group">
-                                                        <input type="text" id="telephone_no" class="form-control" placeholder=""/>
-                                                    </div>
-                                                </td>
-                                                <td class="text-right pad5">
-                                                    <label class="text-right">Mobile No. * </label>
-                                                </td>
-                                                <td colspan="4">
-                                                    <div class="form-group">
-                                                        <input type="text" id="mobile_number" class="form-control" placeholder=""/>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-right width22 pad5">
-                                                    <label class="text-right">PAN No. </label>
-                                                </td>
-                                                <td colspan="2">
-                                                    <div class="form-group">
-                                                        <input type="text" id="pan_no" class="form-control" placeholder=""/>
-                                                    </div>
-                                                </td>
-                                                <td class="text-right pad5">
-                                                    <label class="text-right">Email ID * </label>
-                                                </td>
-                                                <td colspan="4">
-                                                    <div class="form-group">
-                                                        <input type="email" id="email_id" class="form-control" placeholder=""/>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-right width22 pad5">
-                                                    <label class="text-right">Gaurdian's Citizenship Number *</label>
-                                                </td>
-                                                <td colspan="6">
-                                                    <div class="form-group">
-                                                        <input type="text" id="guardian_citizenship_number" class="form-control" placeholder=""/>
-                                                    </div>
-                                                </td>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Identification No. </label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder=""/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Issuance Authority </label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder=""/>
+                                    </div>
+                                </td>
+                                <td class="text-right pad5">
+                                    <label class="text-right">Issue Date </label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" placeholder=""/>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <table>
+                                <tbody class="none" id="minorGuardianDetail">
+                                <div class="row">
+                                    <div class="col-md-1"> </div>
+                                    <div class="col-md-11">
+                                        <!--  Guardian's Detail-->
+                                        <tr>
+                                            <td>
+                                                <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Guardian's Detail (In case of Minor Only)</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right pad5 width22">
+                                                <label> Name / Surname * </label>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name=""/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right pad5 width22">
+                                                <label> Relationship with applicant * </label>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name=""/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp;  Correspondence Address</label>
+                                            </td>
+                                        </tr>
+                                        <!--Here-->
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Country * </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <select class="form-control" id="country">
+                                                        <option>Nepal</option>
+                                                        <option>India</option>
+                                                        <option>US</option>
+                                                        <option>Japan</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Zone </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <select class="form-control" id="district">
+                                                        <option>Bagmati</option>
+                                                        <option>Gandaki</option>
+                                                        <option>Mahakali</option>
+                                                        <option>Mechi</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">District * </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <select class="form-control" id="country">
+                                                        <option>Lamjung</option>
+                                                        <option>Gorkha</option>
+                                                        <option>Kathmandu</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Fax No. </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <input type="text" name="" class="form-control"/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Telephone No. </label>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Mobile No. * </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">PAN No. </label>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Email ID * </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Gaurdian's Citizenship Number *</label>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
 
-                                </tr>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <br>
-                                        <br>
-                                        <label>  Signature </label>
-                                    </td>
-                                    <td colspan="6">
-                                        <div class="form-group"> <br>
-                                            <br>
-                                            __________________________________________________
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <br>
-                                        <br>
-                                        <label>  Thumb Print </label>
-                                    </td>
-                                    <td colspan="6">
-                                        <div class="form-group"> <br>
-                                            <br>
-                                            <div class="col-md-3 rightThumb text-center">
-                                                Right
-                                            </div>
-                                            <div class="col-md-3 leftThumb text-center">
-                                                Left
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <!--Here-->
-                            </div>
-                        </div>
-                        </tbody>
-                        <!--  Guardian's Detail-->
-
-                        <tr>
-                            <td class="text-right pad5">
-
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <br>
-                                    <button class="btn btn-success pull-right next-btn">Save and Continue</button>
-                                    <br>
-                                    <br>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <br>
+                                                <br>
+                                                <label>  Signature </label>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="form-group"> <br>
+                                                    <br>
+                                                    __________________________________________________
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <br>
+                                                <br>
+                                                <label>  Thumb Print </label>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="form-group"> <br>
+                                                    <br>
+                                                    <div class="col-md-3 rightThumb text-center">
+                                                        Right
+                                                    </div>
+                                                    <div class="col-md-3 leftThumb text-center">
+                                                        Left
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--Here-->
+                                    </div>
                                 </div>
-                            </td>
-                        </tr>
-                        </table>
+                                </tbody>
+                                <!--  Guardian's Detail-->
+
+                                <tr>
+                                    <td class="text-right pad5">
+
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <br>
+                                            <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
 
                 <div class="bhoechie-tab-content" role="tabpanel" id="step2">
                     <div class="col-md-12">
@@ -856,7 +849,7 @@
                                     <td colspan="6">
                                         <div class="form-group">
 
-                                                    <button class="btn btn-success pull-right next-btn"> Save and Continue </button>
+                                            <button class="btn btn-success pull-right next-btn"> Save and Continue </button>
 
                                         </div>
                                         <br>
