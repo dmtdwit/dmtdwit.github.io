@@ -23,6 +23,14 @@ body{
 .none{
 	display: none;
 }
+.top20{
+	position: relative;
+	top: 20px !important;
+}
+.top120{
+	position: relative;
+	top: 120px !important;
+}
 
 /*.individualTabs, .nonResidence{
 	display: none;
@@ -384,6 +392,10 @@ label{
 .width22{
 	width: 22% !important;
 }
+.pad3{
+	padding-right: 3px !important;
+	padding-left: 3px !important;
+}
 .width15{
 	width: 17% !important;
 }
@@ -394,6 +406,9 @@ label{
 .text-right{
 	text-align: right !important;
 }
+.marBtn5{
+	margin-bottom: 5px !important;
+}
 .list-group{
 	position: fixed;
 	top:78px;
@@ -401,6 +416,10 @@ label{
 .pad5{
 	padding-left: 5px;
 	padding-right: 5px;
+}
+.top5{
+	position: relative !important;
+	top:5px !important;
 }
 .text-uppercase{
 	text-transform: uppercase !important;

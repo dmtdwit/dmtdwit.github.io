@@ -316,7 +316,7 @@ function hideMinorGuardian(){
 
 }
 function showMinorGuardian(){
-    document.getElementById('minorGuardianDetail').style.display = 'table-row-group';
+    document.getElementById('minorGuardianDetail').style.display = 'block';
     document.getElementById('typesOfIDCard').innerHTML = "Types of Identity Card *";
     document.getElementById('citizenshipNumber').innerHTML = "Citizenship Number";
 }
