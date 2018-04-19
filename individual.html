@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>CDS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href= "css/bootstrap.min.css"/>
     <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' />
     <link href='https://cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.css' rel='stylesheet' />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/nepali.datepicker.v2.2.min.css" />
-    <script type="text/javascript" src="js/nepali.datepicker.v2.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/custom.js"></script>
@@ -45,7 +40,7 @@
     <div id="personalAccountDiv">
         <div class="row">
             <div class="col-md-2 no-pad no-margin bhoechie-tab-menu">
-                <div class="list-group listGroupPosition">
+                <div class="list-group" style="position: fixed;top:78px;">
                     <a href="#step1" class="list-group-item active text-bold text-center btn" aria-controls="step1" role="tab" data-toggle="tab">
                         <br/>Personal Information
                     </a>
@@ -59,33 +54,33 @@
             </div>
             <div class="col-md-10 no-pad no-margin">
                 <!--<form class="" action="" method="POST">-->
-                <div class="bhoechie-tab">
-                    <div class="bhoechie-tab-content active" role="tabpanel" id="step1">
-                        <div class="col-md-12 no-pad no-margin">
-                            <h3 class="text-center text-success text-bold">Form for Individual Beneficial Owner </h3>
-                            <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
-                            <br>
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="col-md-4 no-pad no-margin">
-                                            <label class="pull-right">Title * &nbsp;&nbsp;&nbsp; </label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <input type="radio" name="title" onclick="hideMinorGuardian();"/> Mr &nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="title" onclick="hideMinorGuardian();"/> Mrs &nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="title" onclick="hideMinorGuardian();"/> Miss &nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="title" onclick="showMinorGuardian();" id="minorDetail"/> Minor &nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="title" onclick="hideMinorGuardian();"/> Others &nbsp;&nbsp;&nbsp;
-                                        </div>
-                                        <span class="error text-danger text-bold" id="error_title"></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 no-pad pad-r no-margin">
+                    <div class="bhoechie-tab">
+                        <div class="bhoechie-tab-content active" role="tabpanel" id="step1">
+                            <div class="col-md-12 no-pad no-margin">
+                                <h3 class="text-center text-success text-bold">Form for Individual Beneficial Owner </h3>
+                                <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
+                                <br>
+                                <div class="row">
                                     <div class="form-group">
-                                        <div class="input-group image-preview">
-                                            <input type="text" class="form-control image-preview-filename" disabled="disabled" />
-                                            <span class="input-group-btn">
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="col-md-4 no-pad no-margin">
+                                                <label class="pull-right">Title * &nbsp;&nbsp;&nbsp; </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="radio" name="title" onclick="hideMinorGuardian();"/> Mr &nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="title" onclick="hideMinorGuardian();"/> Mrs &nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="title" onclick="hideMinorGuardian();"/> Miss &nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="title" onclick="showMinorGuardian();" id="minorDetail"/> Minor &nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="title" onclick="hideMinorGuardian();"/> Others &nbsp;&nbsp;&nbsp;
+                                            </div>
+                                            <span class="error text-danger text-bold" id="error_title"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 no-pad pad-r no-margin">
+                                        <div class="form-group">
+                                            <div class="input-group image-preview">
+                                                <input type="text" class="form-control image-preview-filename" disabled="disabled" />
+                                                <span class="input-group-btn">
                                                                 <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
                                                                     <span class="glyphicon glyphicon-remove"></span> Clear
                                                                 </button>
@@ -95,889 +90,1033 @@
                                                             <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
                                                         </div>
                                                 </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row no-pad no-margin marBtn5">
-                                <div class="col-md-12 no-pad no-margin">
-                                    <div class="form-group">
-                                        <div class="col-md-2 no-margin no-pad">
-                                            <label class="pull-right pad3 top5">Name of Beneficial Owner * </label>
-                                        </div>
-                                        <div class="col-md-10 no-pad no-margin">
-                                            <input type="text" name="beneficialOwnerName" id="beneficialOwnerName" class="form-control" placeholder="" />
-                                            <span class="error text-danger text-bold" id="error_beneficialOwnerName"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row no-pad marBtn5 no-margin">
-                                <div class="form-group">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="col-md-4 no-margin no-pad">
-                                            <label class="pull-right pad3 top5">Date of Birth (in B.S.) * </label>
-                                        </div>
-                                        <div class="col-md-8 no-pad no-margin">
-                                            <input type="text" name="dateofBirthBS" id="dobBS" class="form-control nepali-calendar" placeholder="" />
-                                            <span class="error text-danger text-bold" id="error_dobBS"></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 pad5 no-margin">
-                                        <div class="col-md-4">
-                                            <label class="pull-right top5">Date of Birth (in A.D.) * </label>
-                                        </div>
-                                        <div class="col-md-8 no-pad no-margin">
-                                            <input type="text" name="dateofBirthAD" id="dobAD" class="form-control" placeholder="" />
-                                            <span class="error text-danger text-bold" id="error_dobAD"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row no-pad no-margin marBtn5">
-                                <div class="col-md-2 no-pad no-margin">
-                                    <label class="pull-right pad3"> Gender * </label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="radio" name="gender"> Male </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" name="gender"> Female </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" name="gender"> Other </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="error text-danger text-bold" id="error_gender"></span>
-                                </div>
-                            </div>
-                            <div class="row no-pad no-margin marBtn5">
-                                <div class="col-md-12 no-pad no-margin">
-                                    <div class="form-group">
-
-                                        <div class="col-md-2 no-margin no-pad">
-                                            <label class="pull-right pad3 top5">Grand Father's Name * </label>
-                                        </div>
-                                        <div class="col-md-10 no-pad no-margin">
-                                            <input type="text" class="form-control" placeholder="" id="name_grandfather">
-                                            <span class="error text-danger text-bold" id="error_name_grandfather"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row no-pad no-margin marBtn5">
-                                <div class="col-md-12 no-pad no-margin">
-                                    <div class="form-group">
-
-                                        <div class="col-md-2 no-margin no-pad">
-                                            <label class="pull-right pad3 top5">Father's Name * </label>
-                                        </div>
-                                        <div class="col-md-10 no-pad no-margin">
-                                            <input type="text" class="form-control" placeholder="" id="name_father">
-                                            <span class="error text-danger text-bold" id="error_name_father"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row no-pad no-margin marBtn5">
-                                <div class="col-md-12 no-pad no-margin">
-                                    <div class="form-group">
-
-                                        <div class="col-md-2 no-margin no-pad">
-                                            <label class="pull-right pad3 top5">Mother's Name * </label>
-                                        </div>
-                                        <div class="col-md-10 no-pad no-margin">
-                                            <input type="text" class="form-control" placeholder="" id="name_mother">
-                                            <span class="error text-danger text-bold" id="error_name_mother"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row no-pad no-margin marBtn5">
-                                <div class="col-md-12 no-pad no-margin">
-                                    <div class="form-group">
-
-                                        <div class="col-md-2 no-margin no-pad">
-                                            <label class="pull-right pad3 top5">Spouse's Name </label>
-                                        </div>
-                                        <div class="col-md-10 no-pad no-margin">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row no-pad no-margin marBtn5">
-                                <div class="col-md-12 no-pad no-margin">
-                                    <div class="form-group">
-
-                                        <div class="col-md-2 no-margin no-pad">
-                                            <label class="pull-right pad3 top5">Son's Name </label>
-                                        </div>
-                                        <div class="col-md-10 no-pad no-margin">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row no-pad no-margin marBtn5">
-                                <div class="col-md-12 no-pad no-margin">
-                                    <div class="form-group">
-
-                                        <div class="col-md-2 no-margin no-pad">
-                                            <label class="pull-right pad3 top5">Daughter in Law's Name </label>
-                                        </div>
-                                        <div class="col-md-10 no-pad no-margin">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row no-pad no-margin marBtn5">
-                                <div class="col-md-12 no-pad no-margin">
-                                    <div class="form-group">
-
-                                        <div class="col-md-2 no-margin no-pad">
-                                            <label class="pull-right pad3 top5">Father in Law's Name </label>
-                                        </div>
-                                        <div class="col-md-10 no-pad no-margin">
-                                            <input type="text" class="form-control"placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row no-pad no-margin marBtn5">
-                                <div class="col-md-12 no-pad no-margin">
-                                    <div class="form-group">
-                                        <div class="col-md-2 no-margin no-pad">
-                                            <label class="pull-right pad3">Types of Account * </label>
-                                        </div>
-                                        <div class="col-md-10 no-pad no-margin">
-                                            <div class="form-group">
-                                                <input type="radio" id="individual" onclick="changeIndividualLabel();" name="accountType"> <span class="label-text">Individual / Resident</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <input type="radio" id="nonResident" onclick="changeNRNLabel();" name="accountType"> <span class="label-text">Non Resident Nepalese (NRN)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <input type="radio" id="foreigner" onclick="changeForeignLabel();" name="accountType"> <span class="label-text">Foreigner</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <span class="error text-danger text-bold" id="error_accountType"></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="individualTabs">
                                 <div class="row no-pad no-margin marBtn5">
                                     <div class="col-md-12 no-pad no-margin">
                                         <div class="form-group">
                                             <div class="col-md-2 no-margin no-pad">
-                                                <label class="pull-right pad3 ">Nationality * </label>
+                                                <label class="pull-right pad3 top5">Name of Beneficial Owner * </label>
                                             </div>
                                             <div class="col-md-10 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="radio" name="nationality" id="nepaliNationality"> Nepali </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <input type="radio" name="nationality" id="otherNationality"> Other </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <input type="text" class="form-control" id="otherNationalityForm" name="otherNationality" placeholder="Other Nationality"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <span class="error text-danger text-bold" id="error_nationality"></span>
-                                                </div>
+                                                <input type="text" name="beneficialOwnerName" id="beneficialOwnerName" class="form-control" placeholder="" />
+                                                <span class="error text-danger text-bold" id="error_beneficialOwnerName"></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="row no-pad no-margin">
-                                    <div class="col-md-12 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-2 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Occupation * </label>
-                                            </div>
-                                            <div class="col-md-10 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <select class="form-control" id="occupationSelector" name="occupationSelector">
-                                                        <option value="">Select one</option>
-                                                        <option value="1">Service</option>
-                                                        <option value="2">Government</option>
-                                                        <option value="3">Public/Private Sector</option>
-                                                        <option value="4">O/INGO</option>
-                                                        <option value="5">Legal Expert</option>
-                                                        <option value="6">Expert</option>
-                                                        <option value="7">Inessperson</option>
-                                                        <option value="8">Student</option>
-                                                        <option value="9">Retired</option>
-                                                        <option value="10">House Wife</option>
-                                                        <option value="0" id="occupationOthers">Others</option><br>
-                                                        <input type="text" class="form-control" id="otherOccupationForm" name="otherOccupation" placeholder="Other Occupation"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    </select>
-                                                    <span class="error text-danger text-bold" id="error_occupation"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-12 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-2 no-margin no-pad">
-                                                <label class="pull-right pad3 top5" id="citizenshipNumber">Citizenship Number *</label>
-                                            </div>
-                                            <div class="col-md-10 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" id="citizenship" name="citizenshipNumber" class="form-control"/>
-                                                    <span class="error text-danger text-bold" id="error_citizenship"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
+                                <div class="row no-pad marBtn5 no-margin">
+                                    <div class="form-group">
+                                        <div class="col-md-6 no-pad no-margin">
                                             <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Issue District</label>
+                                                <label class="pull-right pad3 top5">Date of Birth (in B.S.) * </label>
                                             </div>
                                             <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <select class="form-control" id="issueDistrict">
-                                                        <option>Kathmandu</option>
-                                                        <option>Lamjung</option>
-                                                        <option>Bhaktapur</option>
-                                                        <option>Lalitpur</option>
-                                                    </select>
-                                                </div>
+                                                <input type="text" name="beneficialOwnerName" id="dobBS" class="form-control" placeholder="" />
+                                                <span class="error text-danger text-bold" id="error_dobBS"></span>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Issue Date</label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="date" class="form-control" placeholder=""/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5" id="passportName">Passport No.</label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="" id="passport_number"/>
-                                                    <span class="error text-danger text-bold" id="error_passport_number"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Place of Issue</label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <select class="form-control" id="placeOfIssue">
-                                                        <option>Kathmandu</option>
-                                                        <option>Lamjung</option>
-                                                        <option>Bhaktapur</option>
-                                                        <option>Lalitpur</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Issue Date</label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="date" class="form-control" placeholder=""/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Expiry Date</label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="date" class="form-control" placeholder=""/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5" id="typesOfIDCard">Types of Identity Card </label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <select class="form-control" id="identityType" name="">
-                                                        <option value="">Select one</option>
-                                                        <option value="1">NRN ID</option>
-                                                        <option value="1">Birth Certificate</option>
-                                                        <option value="1">Voter ID</option>
-                                                        <option value="1">Driving License</option>
-                                                        <option value="1">PAN Card</option>
-                                                    </select>
-                                                    <span class="error text-danger text-bold" id="error_identity_type"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Identification No.</label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder=""/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Issuance Authority </label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder=""/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Issue Date </label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="date" class="form-control" placeholder=""/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="none" id="minorGuardianDetail">
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-12 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4"></div>
+                                        <div class="col-md-6 pad5 no-margin">
                                             <div class="col-md-4">
-                                                <h5 class="pad3 text-bold text-center text-primary"> Guardian's Detail (In case of Minor Only) </h5>
-                                            </div>
-                                            <div class="col-md-4"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-12 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-2 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Name / Surname * </label>
-                                            </div>
-                                            <div class="col-md-10 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" name="" id="name_guardian"/>
-                                                    <span class="error text-danger text-bold" id="error_name_guardian"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-12 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-2 no-margin no-pad">
-                                                <label class="pull-right pad3 top5" style="font-size: 13.8px;">Relationship with applicant * </label>
-                                            </div>
-                                            <div class="col-md-10 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" name="" id="relationship_guardian"/>
-                                                    <span class="error text-danger text-bold" id="error_relationship_guardian"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <h5 class="pad3 text-bold text-left text-primary"> Correspondence Address </h5>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Country * </label>
+                                                <label class="pull-right top5">Date of Birth (in A.D.) * </label>
                                             </div>
                                             <div class="col-md-8 no-pad no-margin">
+                                                <input type="text" name="beneficialOwnerName" id="dobAD" class="form-control" placeholder="" />
+                                                <span class="error text-danger text-bold" id="error_dobAD"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row no-pad no-margin marBtn5">
+                                    <div class="col-md-2 no-pad no-margin">
+                                        <label class="pull-right pad3"> Gender * </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="gender"> Male </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="gender"> Female </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="gender"> Other </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="error text-danger text-bold" id="error_gender"></span>
+                                    </div>
+                                </div>
+                                <div class="row no-pad no-margin marBtn5">
+                                    <div class="col-md-12 no-pad no-margin">
+                                        <div class="form-group">
+
+                                            <div class="col-md-2 no-margin no-pad">
+                                                <label class="pull-right pad3 top5">Grand Father's Name * </label>
+                                            </div>
+                                            <div class="col-md-10 no-pad no-margin">
+                                                <input type="text" class="form-control" placeholder="" id="name_grandfather">
+                                                <span class="error text-danger text-bold" id="error_name_grandfather"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-pad no-margin marBtn5">
+                                    <div class="col-md-12 no-pad no-margin">
+                                        <div class="form-group">
+
+                                            <div class="col-md-2 no-margin no-pad">
+                                                <label class="pull-right pad3 top5">Father's Name * </label>
+                                            </div>
+                                            <div class="col-md-10 no-pad no-margin">
+                                                <input type="text" class="form-control" placeholder="" id="name_father">
+                                                <span class="error text-danger text-bold" id="error_name_father"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-pad no-margin marBtn5">
+                                    <div class="col-md-12 no-pad no-margin">
+                                        <div class="form-group">
+
+                                            <div class="col-md-2 no-margin no-pad">
+                                                <label class="pull-right pad3 top5">Mother's Name * </label>
+                                            </div>
+                                            <div class="col-md-10 no-pad no-margin">
+                                                <input type="text" class="form-control" placeholder="" id="name_mother">
+                                                <span class="error text-danger text-bold" id="error_name_mother"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row no-pad no-margin marBtn5">
+                                    <div class="col-md-12 no-pad no-margin">
+                                        <div class="form-group">
+
+                                            <div class="col-md-2 no-margin no-pad">
+                                                <label class="pull-right pad3 top5">Spouse's Name </label>
+                                            </div>
+                                            <div class="col-md-10 no-pad no-margin">
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-pad no-margin marBtn5">
+                                    <div class="col-md-12 no-pad no-margin">
+                                        <div class="form-group">
+
+                                            <div class="col-md-2 no-margin no-pad">
+                                                <label class="pull-right pad3 top5">Son's Name </label>
+                                            </div>
+                                            <div class="col-md-10 no-pad no-margin">
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-pad no-margin marBtn5">
+                                    <div class="col-md-12 no-pad no-margin">
+                                        <div class="form-group">
+
+                                            <div class="col-md-2 no-margin no-pad">
+                                                <label class="pull-right pad3 top5">Daughter in Law's Name </label>
+                                            </div>
+                                            <div class="col-md-10 no-pad no-margin">
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-pad no-margin marBtn5">
+                                    <div class="col-md-12 no-pad no-margin">
+                                        <div class="form-group">
+
+                                            <div class="col-md-2 no-margin no-pad">
+                                                <label class="pull-right pad3 top5">Father in Law's Name </label>
+                                            </div>
+                                            <div class="col-md-10 no-pad no-margin">
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-pad no-margin marBtn5">
+                                    <div class="col-md-12 no-pad no-margin">
+                                        <div class="form-group">
+                                            <div class="col-md-2 no-margin no-pad">
+                                                <label class="pull-right pad3">Types of Account * </label>
+                                            </div>
+                                            <div class="col-md-10 no-pad no-margin">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="country">
+                                                    <input type="radio" id="individual" onclick="changeIndividualLabel();" name="accountType"> <span class="label-text">Individual / Resident</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="radio" id="nonResident" onclick="changeNRNLabel();" name="accountType"> <span class="label-text">Non Resident Nepalese (NRN)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="radio" id="foreigner" onclick="changeForeignLabel();" name="accountType"> <span class="label-text">Foreigner</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <span class="error text-danger text-bold" id="error_accountType"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="individualTabs">
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-12 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-2 no-margin no-pad">
+                                                    <label class="pull-right pad3 ">Nationality * </label>
+                                                </div>
+                                                <div class="col-md-10 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="radio" name="nationality" id="nepaliNationality"> Nepali </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <input type="radio" name="nationality" id="otherNationality"> Other </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <input type="text" class="form-control" id="otherNationalityForm" name="otherNationality" placeholder="Other Nationality"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <span class="error text-danger text-bold" id="error_nationality"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin">
+                                        <div class="col-md-12 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-2 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Occupation * </label>
+                                                </div>
+                                                <div class="col-md-10 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="occupationSelector" name="occupationSelector">
+                                                            <option value="">Select one</option>
+                                                            <option value="1">Service</option>
+                                                            <option value="2">Government</option>
+                                                            <option value="3">Public/Private Sector</option>
+                                                            <option value="4">O/INGO</option>
+                                                            <option value="5">Legal Expert</option>
+                                                            <option value="6">Expert</option>
+                                                            <option value="7">Inessperson</option>
+                                                            <option value="8">Student</option>
+                                                            <option value="9">Retired</option>
+                                                            <option value="10">House Wife</option>
+                                                            <option value="0" id="occupationOthers">Others</option><br>
+                                                            <input type="text" class="form-control" id="otherOccupationForm" name="otherOccupation" placeholder="Other Occupation"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        </select>
+                                                        <span class="error text-danger text-bold" id="error_occupation"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-12 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-2 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5" id="citizenshipNumber">Citizenship Number *</label>
+                                                </div>
+                                                <div class="col-md-10 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" id="citizenship" name="citizenshipNumber" class="form-control"/>
+                                                        <span class="error text-danger text-bold" id="error_citizenship"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Issue District</label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="issueDistrict">
+                                                            <option>Kathmandu</option>
+                                                            <option>Lamjung</option>
+                                                            <option>Bhaktapur</option>
+                                                            <option>Lalitpur</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Issue Date</label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="date" class="form-control" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5" id="passportName">Passport No.</label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="" id="passport_number"/>
+                                                        <span class="error text-danger text-bold" id="error_passport_number"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Place of Issue</label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="placeOfIssue">
+                                                            <option>Kathmandu</option>
+                                                            <option>Lamjung</option>
+                                                            <option>Bhaktapur</option>
+                                                            <option>Lalitpur</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Issue Date</label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="date" class="form-control" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Expiry Date</label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="date" class="form-control" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5" id="typesOfIDCard">Types of Identity Card </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="identityType" name="">
+                                                            <option value="">Select one</option>
+                                                            <option value="1">NRN ID</option>
+                                                            <option value="1">Birth Certificate</option>
+                                                            <option value="1">Voter ID</option>
+                                                            <option value="1">Driving License</option>
+                                                            <option value="1">PAN Card</option>
+                                                        </select>
+                                                        <span class="error text-danger text-bold" id="error_identity_type"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Identification No.</label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Issuance Authority </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Issue Date </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="date" class="form-control" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="none" id="minorGuardianDetail">
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-12 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4">
+                                                    <h5 class="pad3 text-bold text-center text-primary"> Guardian's Detail (In case of Minor Only) </h5>
+                                                </div>
+                                                <div class="col-md-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-12 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-2 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Name / Surname * </label>
+                                                </div>
+                                                <div class="col-md-10 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="" id="name_guardian"/>
+                                                        <span class="error text-danger text-bold" id="error_name_guardian"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-12 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-2 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5" style="font-size: 13.8px;">Relationship with applicant * </label>
+                                                </div>
+                                                <div class="col-md-10 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="" id="relationship_guardian"/>
+                                                        <span class="error text-danger text-bold" id="error_relationship_guardian"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <h5 class="pad3 text-bold text-left text-primary"> Correspondence Address </h5>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Country * </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="country">
+                                                            <option>Nepal</option>
+                                                            <option>India</option>
+                                                            <option>US</option>
+                                                            <option>Japan</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Zone </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="zone">
+                                                            <option>Bagmati</option>
+                                                            <option>Gandaki</option>
+                                                            <option>Mahakali</option>
+                                                            <option>Mechi</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">District * </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="districts">
+                                                            <option>Lamjung</option>
+                                                            <option>Gorkha</option>
+                                                            <option>Kathmandu</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Fax No. </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" name="" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Telephone No. </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" name="" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Mobile No. * </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" name="" class="form-control" id="mobile_guardian"/>
+                                                        <span class="error text-danger text-bold" id="error_mobile_guardian"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">PAN No. </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" name="" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-4 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Email ID * </label>
+                                                </div>
+                                                <div class="col-md-8 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" name="" class="form-control" id="email_guardian"/>
+                                                        <span class="error text-danger text-bold" id="error_email_guardian"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-12 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-2 no-margin no-pad">
+                                                    <label class="pull-right pad3 top5">Gaurdian's Citizenship Number *</label>
+                                                </div>
+                                                <div class="col-md-10 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="" id="citizenship_guardian"/>
+                                                        <span class="error text-danger text-bold" id="error_citizenship_guardian"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-12 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-2 no-margin no-pad">
+                                                    <label class="pull-right pad3 top20">Signature</label>
+                                                </div>
+                                                <div class="col-md-10 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <br>
+                                                        __________________________________________________
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-pad no-margin marBtn5">
+                                        <div class="col-md-12 no-pad no-margin">
+                                            <div class="form-group">
+                                                <div class="col-md-2 no-margin no-pad">
+                                                    <label class="pull-right pad3 top120">Thumb Print</label>
+                                                </div>
+                                                <div class="col-md-10 no-pad no-margin">
+                                                    <div class="form-group">
+                                                        <br>
+                                                        <br>
+                                                        <div class="col-md-3 rightThumb text-center">
+                                                            Right
+                                                        </div>
+                                                        <div class="col-md-3 leftThumb text-center">
+                                                            Left
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row no-margin no-pad marBtn5">
+                                <div class="form-group">
+                                    <button class="btn btn-success pull-right" id="step1nextbtni">Save and Continue</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bhoechie-tab-content" role="tabpanel" id="step2">
+                            <div class="col-md-12">
+                                <h3 class="text-center text-success text-bold">Form for Individual Beneficial Owner </h3>
+                                <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
+                                <br>
+
+                                <div class="row no-pad">
+                                    <div class="form-group col-md-11">
+                                        <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Correspondence Address</label>
+                                    </div>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Country * </label>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <select class="form-control" id="country_correspondence">
                                                         <option>Nepal</option>
                                                         <option>India</option>
                                                         <option>US</option>
                                                         <option>Japan</option>
                                                     </select>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Zone </label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Zone </label>
+                                            </td>
+                                            <td colspan="4">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="zone">
+                                                    <select class="form-control" id="zone_correspondence">
                                                         <option>Bagmati</option>
                                                         <option>Gandaki</option>
                                                         <option>Mahakali</option>
                                                         <option>Mechi</option>
                                                     </select>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">District * </label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">District * </label>
+                                            </td>
+                                            <td colspan="6">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="districts">
+                                                    <select class="form-control" id="district_correspondence">
                                                         <option>Lamjung</option>
                                                         <option>Gorkha</option>
                                                         <option>Kathmandu</option>
                                                     </select>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right pad5">
+                                                <label style="font-size: 12px;" class="text-right">VDC / Municipality / Metropolitan * </label>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="form-group">
+                                                    <select class="form-control" id="vdc_correspondence">
+                                                        <option>Bhalayakharka</option>
+                                                        <option>Gongabu</option>
+                                                        <option>Chabahil</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Tole </label>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Ward No. * </label>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="" id="ward_correspondence"/>
+                                                    <span class="error text-danger text-bold" id="error_ward_correspondence"></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Block No. </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Telephone No. </label>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Mobile No. * </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="" id="mobile_correspondence"/>
+                                                    <span class="error text-danger text-bold" id="error_mobile_correspondence"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Fax No. </label>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Email Id * </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="" id="email_correspondence"/>
+                                                    <span class="error text-danger text-bold" id="error_email_correspondence"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="form-group col-md-11">
+                                        <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Permanent Address</label>
                                     </div>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Zone </label>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="form-group">
+                                                    <select class="form-control" id="zone_permanent">
+                                                        <option>Bagmati</option>
+                                                        <option>Gandaki</option>
+                                                        <option>Mahakali</option>
+                                                        <option>Mechi</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">District * </label>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="form-group">
+                                                    <select class="form-control" id="district_permanent">
+                                                        <option>Lamjung</option>
+                                                        <option>Gorkha</option>
+                                                        <option>Kathmandu</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">VDC / Municipality / Metropolitan * </label>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="form-group">
+                                                    <select class="form-control" id="vdc_permanent">
+                                                        <option>Bhalayakharka</option>
+                                                        <option>Gongabu</option>
+                                                        <option>Chabahil</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Tole </label>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Ward No. * </label>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="" id="ward_permanent"/>
+                                                    <span class="error text-danger text-bold" id="error_ward_permanent"></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Block No. </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Telephone No. </label>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Mobile No. * </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="" id="mobile_permanent"/>
+                                                    <span class="error text-danger text-bold" id="error_mobile_permanent"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right width22 pad5">
+                                                <label class="text-right">Fax No. </label>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Email Id * </label>
+                                            </td>
+                                            <td colspan="4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="" id="email_permanent"/>
+                                                    <span class="error text-danger text-bold" id="error_email_permanent"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right pad5">
+                                                <label class="text-right">Nearest Landmark </label>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+                                                <div class="form-group">
 
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Fax No. </label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" name="" class="form-control"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                                    <button class="btn btn-success pull-right" id="step2nextbtni"> Save and Continue </button>
 
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Telephone No. </label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" name="" class="form-control"/>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Mobile No. * </label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" name="" class="form-control" id="mobile_guardian"/>
-                                                    <span class="error text-danger text-bold" id="error_mobile_guardian"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">PAN No. </label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" name="" class="form-control"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-4 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Email ID * </label>
-                                            </div>
-                                            <div class="col-md-8 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" name="" class="form-control" id="email_guardian"/>
-                                                    <span class="error text-danger text-bold" id="error_email_guardian"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-12 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-2 no-margin no-pad">
-                                                <label class="pull-right pad3 top5">Gaurdian's Citizenship Number *</label>
-                                            </div>
-                                            <div class="col-md-10 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="" id="citizenship_guardian"/>
-                                                    <span class="error text-danger text-bold" id="error_citizenship_guardian"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-12 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-2 no-margin no-pad">
-                                                <label class="pull-right pad3 top20">Signature</label>
-                                            </div>
-                                            <div class="col-md-10 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <br>
-                                                    __________________________________________________
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-12 no-pad no-margin">
-                                        <div class="form-group">
-                                            <div class="col-md-2 no-margin no-pad">
-                                                <label class="pull-right pad3 top120">Thumb Print</label>
-                                            </div>
-                                            <div class="col-md-10 no-pad no-margin">
-                                                <div class="form-group">
-                                                    <br>
-                                                    <br>
-                                                    <div class="col-md-3 rightThumb text-center">
-                                                        Right
-                                                    </div>
-                                                    <div class="col-md-3 leftThumb text-center">
-                                                        Left
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                <br>
+                                                <br>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                        <div class="row no-margin no-pad marBtn5">
-                            <div class="form-group">
-                                <button class="btn btn-success pull-right next-btn">Save and Continue</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bhoechie-tab-content" role="tabpanel" id="step2">
-                        <div class="col-md-12">
+                        <div class="bhoechie-tab-content" role="tabpanel" id="step3">
                             <h3 class="text-center text-success text-bold">Form for Individual Beneficial Owner </h3>
                             <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
                             <br>
-
-                            <div class="row no-pad">
-                                <div class="form-group col-md-11">
-                                    <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Correspondence Address</label>
-                                </div>
+                            <div class="row">
                                 <table>
                                     <tbody>
                                     <tr>
                                         <td class="text-right width22 pad5">
-                                            <label class="text-right">Country * </label>
+                                            <label> Type of Business </label>
+                                        </td>
+                                        <td colspan="4">
+                                            <div class="form-group">
+                                                <select class="form-control">
+                                                    <option value="">Select one</option>
+                                                    <option value="1">Manufacturing</option>
+                                                    <option value="2">Service Oriented</option>
+                                                    <option value="3">Trading</option>
+                                                    <option value="4">Industry</option>
+                                                    <option value="5">Others</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right width22 pad5">
+                                            <label> Organization Name</label>
+                                        </td>
+                                        <td colspan="4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name=""/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right width22 pad5">
+                                            <label> Address</label>
                                         </td>
                                         <td>
                                             <div class="form-group">
-                                                <select class="form-control" id="country_correspondence">
-                                                    <option>Nepal</option>
-                                                    <option>India</option>
-                                                    <option>US</option>
-                                                    <option>Japan</option>
-                                                </select>
+                                                <input type="text" class="form-control" name=""/>
                                             </div>
                                         </td>
                                         <td class="text-right pad5">
-                                            <label class="text-right">Zone </label>
-                                        </td>
-                                        <td colspan="4">
-                                            <div class="form-group">
-                                                <select class="form-control" id="zone_correspondence">
-                                                    <option>Bagmati</option>
-                                                    <option>Gandaki</option>
-                                                    <option>Mahakali</option>
-                                                    <option>Mechi</option>
-                                                </select>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right width22 pad5">
-                                            <label class="text-right">District * </label>
-                                        </td>
-                                        <td colspan="6">
-                                            <div class="form-group">
-                                                <select class="form-control" id="district_correspondence">
-                                                    <option>Lamjung</option>
-                                                    <option>Gorkha</option>
-                                                    <option>Kathmandu</option>
-                                                </select>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right pad5">
-                                            <label style="font-size: 12px;" class="text-right">VDC / Municipality / Metropolitan * </label>
-                                        </td>
-                                        <td colspan="6">
-                                            <div class="form-group">
-                                                <select class="form-control" id="vdc_correspondence">
-                                                    <option>Bhalayakharka</option>
-                                                    <option>Gongabu</option>
-                                                    <option>Chabahil</option>
-                                                </select>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right width22 pad5">
-                                            <label class="text-right">Tole </label>
+                                            <label> Designation</label>
                                         </td>
                                         <td>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">Ward No. * </label>
-                                        </td>
-                                        <td>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">Block No. </label>
-                                        </td>
-                                        <td colspan="4">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
+                                                <input type="text" class="form-control" name=""/>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="text-right width22 pad5">
-                                            <label class="text-right">Telephone No. </label>
-                                        </td>
-                                        <td colspan="2">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">Mobile No. * </label>
-                                        </td>
-                                        <td colspan="4">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right width22 pad5">
-                                            <label class="text-right">Fax No. </label>
-                                        </td>
-                                        <td colspan="2">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">Email Id * </label>
-                                        </td>
-                                        <td colspan="4">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <div class="form-group col-md-11">
-                                    <label class="text-primary text-bold text-right"> &nbsp;&nbsp;&nbsp; Permanent Address</label>
-                                </div>
-                                <table>
-                                    <tbody>
-                                    <tr>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">Zone </label>
+                                            <label> Financial Details (Income Limit - Annual Details) *</label>
                                         </td>
                                         <td colspan="6">
                                             <div class="form-group">
-                                                <select class="form-control" id="district">
-                                                    <option>Bagmati</option>
-                                                    <option>Gandaki</option>
-                                                    <option>Mahakali</option>
-                                                    <option>Mechi</option>
-                                                </select>
+                                                <input type="radio" name="money"> <span class="label-text">Upto Rs. 1,00,000</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="money"> <span class="label-text">From Rs. 1,00,001 to Rs. 2,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="money"> <span class="label-text">From Rs. 2,00,001 to Rs. 5,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="money"> <span class="label-text">Above Rs. 5,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            </div>
+                                            <span class="error text-danger text-bold" id="error_money"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right width22 pad5">
+                                            <label>  Standing Instructions for the automatic transactions *</label>
+                                        </td>
+                                        <td colspan="6">
+                                            <div class="form-group">
+                                                <input type="radio" name="automaticTransaction"> <span class="label-text">Yes</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="automaticTransaction"> <span class="label-text">No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <span class="error text-danger text-bold" id="error_automaticTransaction"></span>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="text-right width22 pad5">
-                                            <label class="text-right">District * </label>
+                                            <label>  Account Statement *</label>
                                         </td>
                                         <td colspan="6">
                                             <div class="form-group">
-                                                <select class="form-control" id="country">
-                                                    <option>Lamjung</option>
-                                                    <option>Gorkha</option>
-                                                    <option>Kathmandu</option>
-                                                </select>
+                                                <input type="radio" name="accountStatement"> <span class="label-text">As Per Request</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="accountStatement"> <span class="label-text">Daily</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="accountStatement"> <span class="label-text">Weekly</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="accountStatement"> <span class="label-text">15 Days</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="accountStatement"> <span class="label-text">Monthly</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             </div>
+                                            <span class="error text-danger text-bold" id="error_accountStatement"></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">VDC / Municipality / Metropolitan * </label>
+                                        <td class="text-right width22 pad5">
+                                            <br>
+                                            <br>
+                                            <label>  Signature </label>
                                         </td>
                                         <td colspan="6">
-                                            <div class="form-group">
-                                                <select class="form-control" id="district">
-                                                    <option>Bhalayakharka</option>
-                                                    <option>Gongabu</option>
-                                                    <option>Chabahil</option>
-                                                </select>
+                                            <div class="form-group"> <br>
+                                                <br>
+                                                __________________________________________________
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="text-right width22 pad5">
-                                            <label class="text-right">Tole </label>
+                                            <br>
+                                            <br>
+                                            <label>  Thumb Print </label>
                                         </td>
-                                        <td>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
+                                        <td colspan="6">
+                                            <div class="form-group"> <br>
+                                                <br>
+                                                <div class="col-md-3 rightThumb text-center">
+                                                    Right
+                                                </div>
+                                                <div class="col-md-3 leftThumb text-center">
+                                                    Left
+                                                </div>
                                             </div>
                                         </td>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">Ward No. * </label>
-                                        </td>
-                                        <td>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">Block No. </label>
-                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td colspan="4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right width22 pad5">
-                                            <label class="text-right">Telephone No. </label>
-                                        </td>
-                                        <td colspan="2">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">Mobile No. * </label>
-                                        </td>
-                                        <td colspan="4">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right width22 pad5">
-                                            <label class="text-right">Fax No. </label>
-                                        </td>
-                                        <td colspan="2">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">Email Id * </label>
-                                        </td>
-                                        <td colspan="4">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right pad5">
-                                            <label class="text-right">Nearest Landmark </label>
-                                        </td>
-                                        <td colspan="6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder=""/>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6">
-                                            <div class="form-group">
-
-                                                <button class="btn btn-success pull-right next-btn"> Save and Continue </button>
-
+                                                <button class="btn btn-success pull-right" id="step3nextbtni"> Submit KYC Form </button>
                                             </div>
                                             <br>
                                             <br>
@@ -988,145 +1127,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bhoechie-tab-content" role="tabpanel" id="step3">
-                        <h3 class="text-center text-success text-bold">Form for Individual Beneficial Owner </h3>
-                        <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
-                        <br>
-                        <div class="row">
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <label> Type of Business </label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option value="">Select one</option>
-                                                <option value="1">Manufacturing</option>
-                                                <option value="2">Service Oriented</option>
-                                                <option value="3">Trading</option>
-                                                <option value="4">Industry</option>
-                                                <option value="5">Others</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <label> Organization Name</label>
-                                    </td>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name=""/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <label> Address</label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name=""/>
-                                        </div>
-                                    </td>
-                                    <td class="text-right pad5">
-                                        <label> Designation</label>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name=""/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <label> Financial Details (Income Limit - Annual Details) *</label>
-                                    </td>
-                                    <td colspan="6">
-                                        <div class="form-group">
-                                            <input type="radio" name="money"> <span class="label-text">Upto Rs. 1,00,000</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="money"> <span class="label-text">From Rs. 1,00,001 to Rs. 2,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="money"> <span class="label-text">From Rs. 2,00,001 to Rs. 5,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="money"> <span class="label-text">Above Rs. 5,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <label>  Standing Instructions for the automatic transactions *</label>
-                                    </td>
-                                    <td colspan="6">
-                                        <div class="form-group">
-                                            <input type="radio" name="automaticTransaction"> <span class="label-text">Yes</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="automaticTransaction"> <span class="label-text">No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <label>  Account Statement *</label>
-                                    </td>
-                                    <td colspan="6">
-                                        <div class="form-group">
-                                            <input type="radio" name="accountStatement"> <span class="label-text">As Per Request</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="accountStatement"> <span class="label-text">Daily</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="accountStatement"> <span class="label-text">Weekly</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="accountStatement"> <span class="label-text">15 Days</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="accountStatement"> <span class="label-text">Monthly</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <br>
-                                        <br>
-                                        <label>  Signature </label>
-                                    </td>
-                                    <td colspan="6">
-                                        <div class="form-group"> <br>
-                                            <br>
-                                            __________________________________________________
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right width22 pad5">
-                                        <br>
-                                        <br>
-                                        <label>  Thumb Print </label>
-                                    </td>
-                                    <td colspan="6">
-                                        <div class="form-group"> <br>
-                                            <br>
-                                            <div class="col-md-3 rightThumb text-center">
-                                                Right
-                                            </div>
-                                            <div class="col-md-3 leftThumb text-center">
-                                                Left
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4">
-                                        <div class="form-group">
-                                            <form id="from2">
-
-                                                <button class="btn btn-success pull-right"> Submit KYC Form </button>
-                                            </form>
-                                        </div>
-                                        <br>
-                                        <br>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                </form>
+                <!--</form>-->
             </div>
         </div>
     </div>
@@ -1221,7 +1222,7 @@
 
     </script>
     <script>
-        document.querySelector('#from2').addEventListener('submit', function(e) {
+        /*document.querySelector('#from2').addEventListener('submit', function(e) {
             var form = this;
             e.preventDefault();
             swal({
@@ -1251,7 +1252,7 @@
                     }
                 });
         });
-
+*/
     </script>
     <br>
 </body>
