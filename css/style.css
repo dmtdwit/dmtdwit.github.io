@@ -27,6 +27,9 @@ body{
 	position: relative;
 	top: 20px !important;
 }
+.fntSize11{
+	font-size: 11px !important;
+}
 .top120{
 	position: relative;
 	top: 120px !important;
@@ -565,4 +568,7 @@ table{
 }
 .width80{
 	width: 80% !important;
+}
+.btn-success{
+	background-color: #046031 !important;
 }

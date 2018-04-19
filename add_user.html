@@ -13,7 +13,8 @@
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="js/customValidation.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/datatable.min.css" rel="stylesheet">
@@ -57,9 +58,6 @@
         </div>
     </div>
     <div class="container">
-
-
-
         <div class="row">
             <div class="col-md-1">
             </div>
@@ -68,58 +66,57 @@
                     <h3 class="text-center text-success text-bold">Form for User Information </h3>
                     <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
                 </div>
-                <div class="form-group col-md-6">
-                    <label>Type</label>
-                    <select class="form-control">
-                        <option>Admin</option>
-                        <option>User</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-6">
-                    <label>Organization</label>
-                    <select class="form-control organization" onchange="callOrganization()" id="organization">
-                        <option value="Government Agencies">Government Agencies</option>
-                        <option value="DP">DP</option>
-                        <option value="Broker/Broker DP">Broker/Broker DP</option>
-                        <option value="BFI">BFI</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-12"  >
-                    <div id="select_agent" style="display: none">
-                        <label>Select Branch</label>
+                <form action="" method="POST" id="addUserForm">
+                    <div class="form-group col-md-6">
+                        <label>Type</label>
                         <select class="form-control">
-                            <option>NIBL Head Office</option>
-                            <option>GlobalIME Head Office</option>
-                            <option>NIBL Putalisadak Branch</option>
-                            <option> NIBL Pulchowk Branch</option>
+                            <option>Admin</option>
+                            <option>User</option>
                         </select>
                     </div>
-                </div>
-                <div class="col-md-6 form-group">
-                    <label>First Name</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-6 form-group">
-                    <label>Last Name</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-6 form-group">
-                    <label>Official Email</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-6 form-group">
-                    <label>Contact</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-12">
-                    <form id="form1">
-                        <a href="userlist.html" class="btn btn-success pull-right" style="margin-left: 10px"> Cancel </a>
-
-                        <button class="btn btn-success pull-right"> Add </button>
-
-                    </form>
-                </div>
-
+                    <div class="form-group col-md-6">
+                        <label>Organization</label>
+                        <select class="form-control organization" onchange="callOrganization()" id="organization">
+                            <option value="Government Agencies">Government Agencies</option>
+                            <option value="DP">DP</option>
+                            <option value="Broker/Broker DP">Broker/Broker DP</option>
+                            <option value="BFI">BFI</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12"  >
+                        <div id="select_agent" style="display: none">
+                            <label>Select Branch</label>
+                            <select class="form-control">
+                                <option>NIBL Head Office</option>
+                                <option>GlobalIME Head Office</option>
+                                <option>NIBL Putalisadak Branch</option>
+                                <option> NIBL Pulchowk Branch</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>First Name</label>
+                        <input type="text" name="firstName" class="form-control">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Last Name</label>
+                        <input type="text" name="lastName" class="form-control">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Official Email</label>
+                        <input type="text" name="officialEmail" class="form-control">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Contact</label>
+                        <input type="text" name="contactNumber" class="form-control">
+                    </div>
+                    <div class="col-md-12">
+                        <form id="form1">
+                            <a href="userlist.html" class="btn btn-success pull-right" style="margin-left: 10px"> Cancel </a>
+                            <button class="btn btn-success pull-right"> Add </button>
+                        </form>
+                    </div>
+                </form>
             </div>
 
 

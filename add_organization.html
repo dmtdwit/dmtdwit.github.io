@@ -13,7 +13,8 @@
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="js/customValidation.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/datatable.min.css" rel="stylesheet">
@@ -57,9 +58,6 @@
         </div>
     </div>
     <div class="container">
-
-
-
         <div class="row">
             <div class="col-md-1">
             </div>
@@ -68,6 +66,7 @@
                     <h3 class="text-center text-success text-bold">Form for Organizational Information </h3>
                     <p class="text-center text-primary text-bold text-uppercase"> (*)  are mandatory fields</p>
                 </div>
+                <form class="" method="POST" action="" id="addOrganizationForm"/>
                 <div class="col-md-6">
                     <label> Select Type*</label>
 
@@ -83,19 +82,17 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>ID*</label>
-                        <input type="text" class="form-control" name="id">
+                        <input type="text" class="form-control" name="organizationId"/>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Organization Name*</label>
-                        <input type="text" class="form-control" name="organization_name">
+                        <input type="text" class="form-control" name="organizationName"/>
                     </div>
                 </div>
 
                 <div class="form-group col-md-6">
-
-
                     <label>Upload Logo*</label>
                     <div class="input-group image-preview">
                         <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
@@ -117,91 +114,91 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label>Country *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" name="organizationCountry" placeholder=""/>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Zone</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" name="organizationZone" placeholder=""/>
                 </div>
                 <div class="form-group col-md-6">
                     <label>District *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="organizationDistrict"/>
                 </div>
                 <div class="form-group col-md-6">
                     <label>VDC / Municipality / Metropolitan *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="organizationVDC"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Tole</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder=""/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Ward No. *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="wardNo"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Block No.</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder=""/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Primary Phone Number *</label>
-                    <input type="number" class="form-control" placeholder="">
+                    <input type="number" class="form-control" placeholder="" name="phoneNumber"/>
                 </div>
                 <div class="form-group col-md-4">
-                    <label>Secondary Phone Number *</label>
-                    <input type="number" class="form-control" placeholder="">
+                    <label>Secondary Phone Number </label>
+                    <input type="number" class="form-control" placeholder=""/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Email *</label>
-                    <input type="email" class="form-control" placeholder="">
+                    <input type="email" class="form-control" placeholder="" name="organizationEmail"/>
                 </div>
                 <div class="form-group col-md-12">
                     <br>
-                    <label class="text-primary text-bold">Contact Person*</label>
+                    <label class="text-primary text-bold">Contact Person</label>
                 </div>
                 <div class="form-group col-md-6">
                     <label>First Name *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="firstName"/>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Last Name *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="lastName"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Email *</label>
-                    <input type="email" class="form-control" placeholder="">
+                    <input type="email" class="form-control" placeholder="" name="contactEmail"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Phone No *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="contactPhone"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Telephone No *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="contactTelephone"/>
                 </div>
                 <div class="form-group col-md-12">
                     <br>
-                    <label class="text-primary text-bold">Organization Head*</label>
+                    <label class="text-primary text-bold">Organization Head </label>
                 </div>
                 <div class="form-group col-md-6">
                     <label>First Name *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="headFirstName"/>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Last Name *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="headLastName"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Email *</label>
-                    <input type="email" class="form-control" placeholder="">
+                    <input type="email" class="form-control" placeholder="" name="headEmail"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Phone No *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="headPhoneNumber"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Telephone No *</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" name="headTelephone"/>
                 </div>
                 <div class="col-md-12">
                     <form id="form1">

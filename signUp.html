@@ -11,7 +11,8 @@
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="js/customValidation.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/datatable.min.css" rel="stylesheet">
@@ -65,14 +66,14 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" required="" name="password" value="">
+                                <input type="password" class="form-control" required="" id="password" name="password" value="">
                                 <span class="help-block">Choose a password for your new account.</span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="cPassword">Repeat Password</label>
-                                <input type="password" class="form-control" required="" name="cPassword" value="">
+                                <input type="password" class="form-control" required="" id="cPassword" name="cPassword" value="">
                                 <span class="help-block">Type the password again. Passwords must match.</span>
                             </div>
                         </div>
