@@ -449,7 +449,7 @@ table{
 	padding-top:80px;
 }
 .sweet-alert button.cancel {
-    background-color: #a20000d9 !important;
+	background-color: #a20000d9 !important;
 }
 .branches_forms{
 	box-shadow: 6px 6px 5px 5px #e1dede;
@@ -571,4 +571,14 @@ table{
 }
 .btn-success{
 	background-color: #046031 !important;
+}
+.listGroupPosition{
+	position: fixed;
+	top:78px;
+}
+@media (max-width:480px){
+	.listGroupPosition{
+		position: static;
+		top:78px;
+	}
 }

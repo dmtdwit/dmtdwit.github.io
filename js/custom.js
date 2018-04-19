@@ -710,7 +710,45 @@ function validateIndividualStep3() {
     }
     return flag;
 }
+$(function(){
+    $('#dobBS').nepaliDatePicker({
+        ndpEnglishInput: 'dobAD',
+        npdMonth: true,
+        npdYear: true,
+        npdYearCount: 120
+    });
+});
+$(function(){
+    $( "#dobAD" ).datepicker({
+        dateFormat:'yy-mm-dd',
+        changeMonth:true,
+        changeYear:true,
+        yearRange:"1900:2100"
+    });
+});
 
+$(function () {
+    $('#dobAD').change(function () {
+        if ($.trim($("#dobAD").val()).length > 0) {
+            $('#dobBS').val(AD2BS($('#dobAD').val()));
+
+        }
+        else{
+            $('#dobBS').val("Select Date First");
+        }
+    });
+});
+
+$(function () {
+    $('#dobBS').change(function () {
+        if ($.trim($("#dobBS").val()).length > 0) {
+            $('#dobAD').val(AD2BS($('#dobBS').val()));
+        }
+        else{
+            $('#dobAD').val("Select Date First");
+        }
+    });
+});
 function validateCorporateStep1() {
     var flag = true;
     /*var typesOfAccount = document.getElementsByName('typesOfAccount');
