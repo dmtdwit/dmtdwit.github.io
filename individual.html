@@ -7,12 +7,18 @@
     <link rel="stylesheet" href= "css/bootstrap.min.css"/>
     <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' />
     <link href='https://cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.css' rel='stylesheet' />
-    <link rel="stylesheet" href="css/style.css" />
+
     <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
     <script src="js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/nepali.datepicker.v2.2.min.css" />
+    <script type="text/javascript" src="js/nepali.datepicker.v2.2.min.js"></script>
     <script src="js/custom.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
 </head>
 <body>
@@ -115,7 +121,7 @@
                                                 <label class="pull-right pad3 top5">Date of Birth (in B.S.) * </label>
                                             </div>
                                             <div class="col-md-8 no-pad no-margin">
-                                                <input type="text" name="beneficialOwnerName" id="dobBS" class="form-control" placeholder="" />
+                                                <input type="text" name="dobBS" id="dobBS" class="form-control nepali-calendar" placeholder="" />
                                                 <span class="error text-danger text-bold" id="error_dobBS"></span>
                                             </div>
                                         </div>
@@ -125,7 +131,7 @@
                                                 <label class="pull-right top5">Date of Birth (in A.D.) * </label>
                                             </div>
                                             <div class="col-md-8 no-pad no-margin">
-                                                <input type="text" name="beneficialOwnerName" id="dobAD" class="form-control" placeholder="" />
+                                                <input type="text" name="dobAD" id="dobAD" class="form-control" />
                                                 <span class="error text-danger text-bold" id="error_dobAD"></span>
                                             </div>
                                         </div>
