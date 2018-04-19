@@ -278,6 +278,22 @@ $(document).ready(function () {
                    });
        }
     });
+    $('#step1nextbtnc').click(function () {
+       if(validateCorporateStep1()){
+           $('.list-group a[href="#step2"]').removeClass('disabled').click();
+       }
+    });
+    $('#step2nextbtnc').click(function () {
+        if(validateCorporateStep2()){
+            $('.list-group a[href="#step3"]').removeClass('disabled').click();
+        }
+    });
+    $('#step1 .next-btn').click(function() {
+        $('.list-group a[href="#step2"]').removeClass('disabled').click();
+    });
+    $('#step2 .next-btn').click(function() {
+        $('.list-group a[href="#step3"]').removeClass('disabled').click();
+    });
     $('#step3 .next-btn').click(function() {
         $('.list-group a[href="#step4"]').removeClass('disabled').click();
     });
@@ -693,4 +709,237 @@ function validateIndividualStep3() {
         flag = false;
     }
     return flag;
+}
+
+function validateCorporateStep1() {
+    var flag = true;
+    /*var typesOfAccount = document.getElementsByName('typesOfAccount');
+    if(typesOfAccount[0].checked===true||typesOfAccount[1].checked===true){
+        $('#error_c_typesOfAccount').text('');
+    }else if(typesOfAccount[2]===true){
+        var typesOfAccountCorporateForm = document.getElementById('typesOfAccountCorporateForm').value.trim();
+        if(typesOfAccountCorporateForm===''||typesOfAccountCorporateForm===null){
+            $('#error_c_typesOfAccount').text('Other Account Type Cannot Be Empty');
+            flag = false;
+        }else{
+            $('#error_c_typesOfAccount').text('');
+        }
+    }else{
+        $('#error_c_typesOfAccount').text('You Must Choose One Account Type');
+        flag = false;
+    }*/
+    var name_beneficial_company = document.getElementById('name_beneficial_company').value.trim();
+    if(name_beneficial_company===''||name_beneficial_company===null){
+        $('#error_c_name_beneficial_company').text('Name of Beneficial Owner Company Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_name_beneficial_company').text('');
+    }
+    var name_c_first_person = document.getElementById('name_c_first_person').value.trim();
+    if(name_c_first_person===''||name_c_first_person===null){
+        $('#error_c_name_first_person').text('Name of First Authorized Person Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_name_first_person').text('');
+    }
+    var name_c_second_person = document.getElementById('name_c_second_person').value.trim();
+    if(name_c_second_person===''||name_c_second_person===null){
+        $('#error_c_name_second_person').text('Name of Second Authorized Person Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_name_second_person').text('');
+    }
+    var name_c_chief_officer = document.getElementById('name_c_chief_officer').value.trim();
+    if(name_c_chief_officer===''||name_c_chief_officer===null){
+        $('#error_c_name_chief_officer').text('Name of Chief Operating Officer Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_name_chief_officer').text('');
+    }
+    var name_c_secretary_name = document.getElementById('name_c_secretary_name').value.trim();
+    if(name_c_secretary_name===''||name_c_secretary_name===null){
+        $('#error_c_name_secretary_name').text('Name of Company Secretary Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_name_secretary_name').text('');
+    }
+    var doi_c_bs = document.getElementById('doi_c_bs').value.trim();
+    if(doi_c_bs===''||doi_c_bs===null){
+        $('#error_c_doi_bs').text('Date of Incorporation (B.S.) Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_doi_bs').text('');
+    }
+    var doi_c_ad = document.getElementById('doi_c_ad').value.trim();
+    if(doi_c_ad===''||doi_c_ad===null){
+        $('#error_doi_c_ad').text('Date of Incorporation (A.D.) Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_doi_c_ad').text('');
+    }
+    var companySelector = document.getElementById('occupationSelector').value.trim();
+    // console.log("value is"+occupation);
+    if(companySelector===null||companySelector===''){
+        $('#error_company').text('You Must Select One Company Type');
+        flag = false;
+    }else if(companySelector==='Others'){
+        var otherCompanyForm = document.getElementById('otherCompanyForm').value.trim();
+        if(otherCompanyForm===''||otherCompanyForm===null){
+            $('#error_company').text('You Must Specify Other Company');
+            flag = false;
+        }else{
+            $('#error_company').text('');
+        }
+    }else{
+        $('#error_company').text('');
+    }
+    var c_registration_office = document.getElementById('c_registration_office').value.trim();
+    if(c_registration_office===''||c_registration_office===null){
+        $('#error_c_registration_office').text('Registration Office Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_registration_office').text('');
+    }
+    var c_registration_no = document.getElementById('c_registration_no').value.trim();
+    if(c_registration_no===''||c_registration_no===null){
+        $('#error_c_registration_no').text('Registration No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_registration_no').text('');
+    }
+    var c_reg_date_ad = document.getElementById('c_reg_date_ad').value.trim();
+    if(c_reg_date_ad===''||c_reg_date_ad===null){
+        $('#error_c_reg_date_ad').text('Registration Date (in A.D.) Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_reg_date_ad').text('');
+    }
+    var c_pan_no = document.getElementById('c_pan_no').value.trim();
+    if(c_pan_no===''||c_pan_no===null){
+        $('#error_c_pan_no').text('PAN No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_pan_no').text('');
+    }
+    var c_business_type = document.getElementById('c_business_type').value.trim();
+    if(c_business_type===''||c_business_type===null){
+        $('#error_c_business_type').text('Type of Business of the Company Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_business_type').text('');
+    }
+    var c_area_work = document.getElementById('c_area_work').value.trim();
+    if(c_area_work===''||c_area_work===null){
+        $('#error_c_area_work').text('Area of Work Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_area_work').text('');
+    }
+    return flag;
+}
+
+
+function validateCorporateStep2() {
+    var flag = true;
+    var c_current_company = document.getElementById('c_current_company').value.trim();
+    if(c_current_company===''||c_current_company===null){
+        $('#error_c_current_company').text('Country Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_current_company').text('');
+    }
+    var c_current_district = document.getElementById('c_current_district').value.trim();
+    if(c_current_district===''||c_current_district===null){
+        $('#error_c_current_district').text('District Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_current_district').text('');
+    }
+    var c_current_vdc = document.getElementById('c_current_vdc').value.trim();
+    if(c_current_vdc===''||c_current_vdc===null){
+        $('#error_c_current_vdc').text('VDC / Municipality / Metropolitan Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_current_vdc').text('');
+    }
+    var c_current_ward_no = document.getElementById('c_current_ward_no').value.trim();
+    if(c_current_ward_no===''||c_current_ward_no===null){
+        $('#error_c_current_ward_no').text('Ward No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_current_ward_no').text('');
+    }
+    var c_current_telephone = document.getElementById('c_current_telephone').value.trim();
+    if(c_current_telephone===''||c_current_telephone===null){
+        $('#error_c_current_telephone').text('Telephone No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_current_telephone').text('');
+    }
+    var c_current_email = document.getElementById('c_current_email').value.trim();
+    if(c_current_email===''||c_current_email===null){
+        $('#error_c_current_email').text('Email ID. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_current_email').text('');
+    }
+    var c_registered_district = document.getElementById('c_registered_district').value.trim();
+    if(c_registered_district===''||c_registered_district===null){
+        $('#error_c_registered_district').text('District Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_registered_district').text('');
+    }
+    var c_registered_vdc = document.getElementById('c_registered_vdc').value.trim();
+    if(c_registered_vdc===''||c_registered_vdc===null){
+        $('#error_c_registered_vdc').text('VDC / Municipality / Metropolitan Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_registered_vdc').text('');
+    }
+    var c_registered_ward = document.getElementById('c_registered_ward').value.trim();
+    if(c_registered_ward===''||c_registered_ward===null){
+        $('#error_c_registered_ward').text('Ward No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_registered_ward').text('');
+    }
+    var c_registered_telephone = document.getElementById('c_registered_telephone').value.trim();
+    if(c_registered_telephone===''||c_registered_telephone===null){
+        $('#error_c_registered_telephone').text('Telephone No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_registered_telephone').text('');
+    }
+    var c_registered_mobile = document.getElementById('c_registered_mobile').value.trim();
+    if(c_registered_mobile===''||c_registered_mobile===null){
+        $('#error_c_registered_mobile').text('Mobile No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_registered_mobile').text('');
+    }
+    var c_registered_email = document.getElementById('c_registered_email').value.trim();
+    if(c_registered_email===''||c_registered_email===null){
+        $('#error_c_registered_email').text('Email ID. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_registered_email').text('');
+    }
+    var c_registered_landmark = document.getElementById('c_registered_landmark').value.trim();
+    if(c_registered_landmark===''||c_registered_landmark===null){
+        $('#error_c_registered_landmark').text('Nearest Landmark Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_registered_landmark').text('');
+    }
+    return flag;
+}
+
+function validateCorporateStep3() {
+    var flag = true;
+    return flag;
+}
+
+function validateCorporateStep4() {
+
 }
