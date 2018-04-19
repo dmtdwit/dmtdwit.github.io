@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Nepali Calendar</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/nepali.datepicker.v2.2.min.css" />
+    <script type="text/javascript" src="js/nepali.datepicker.v2.2.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h3>Datepicker AD2BS and BS2AD</h3>
+    <input type="text" id="nepaliDate" class="nepali-calendar" value=""/>
+    <input type="text" id="englishDate" value=""/>
+</div>
+
+</body>
+</html>
+<script>
+    $(function(){
+        $('#nepaliDate').nepaliDatePicker({
+            ndpEnglishInput: 'englishDate',
+            npdMonth: true,
+            npdYear: true,
+            npdYearCount: 120
+        });
+    });
+    $(function(){
+        $( "#englishDate" ).datepicker({
+            dateFormat:'yy-mm-dd',
+            changeMonth:true,
+            changeYear:true,
+            yearRange:"1900:2100"
+        });
+    });
+
+    $(function () {
+        $('#englishDate').change(function () {
+            if ($.trim($("#englishDate").val()).length > 0) {
+                $('#nepaliDate').val(AD2BS($('#englishDate').val()));
+
+            }
+            else{
+                $('#nepaliDate').val("Select Date First");
+            }
+        });
+    });
+
+    $(function () {
+        $('#nepaliDate').change(function () {
+            if ($.trim($("#nepaliDate").val()).length > 0) {
+                $('#englishDate').val(AD2BS($('#nepaliDate').val()));
+            }
+            else{
+                $('#englishDate').val("Select Date First");
+            }
+        });
+    });
+</script>

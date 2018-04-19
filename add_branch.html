@@ -13,7 +13,9 @@
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/0.4.2/sweet-alert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/customValidation.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/datatable.min.css" rel="stylesheet">
@@ -57,9 +59,6 @@
         </div>
     </div>
     <div class="container">
-
-
-
         <div class="row">
             <div class="col-md-1">
             </div>
@@ -71,222 +70,223 @@
                 <div id="branches_content">
                     <div id="branches_forms" class="branches_forms1" style="display: none">
                         <div class="row">
-                            <div class="col-md-12">
+                            <form action="" id="organizationBranch" method="POST">
+                                <div class="col-md-12">
 
-                                <div class="form-group">
-                                    <label>Branch Name*</label>
-                                    <input type="text" class="form-control" name="organization_name">
+                                    <div class="form-group">
+                                        <label>Branch Name *</label>
+                                        <input type="text" class="form-control" name="organization_name">
+                                    </div>
                                 </div>
-                            </div>
 
-
-                            <div class="form-group col-md-12">
-                                <br>
-                                <label class="text-primary text-bold">Current Branch Address</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Country *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Zone</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>District *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>VDC / Municipality / Metropolitan *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Tole</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Ward No. *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Block No.</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Primary Phone Number *</label>
-                                <input type="number" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Secondary Phone Number *</label>
-                                <input type="number" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Email *</label>
-                                <input type="email" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-12">
-                                <br>
-                                <label class="text-primary text-bold">Branch Contact Person*</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>First Name *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Last Name *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Email *</label>
-                                <input type="email" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Phone No *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Telephone No *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-12">
-                                <br>
-                                <label class="text-primary text-bold">Branch Head*</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>First Name *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Last Name *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Email *</label>
-                                <input type="email" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Phone No *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Telephone No *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <button id="removeOrgBranches" class="btn btn-danger pull-right removeOrgBranches" onclick="removeOrgBranches(this.value)" ><span class="glyphicon glyphicon-minus"></span></button>
-
+                                <div class="form-group col-md-12">
+                                    <br>
+                                    <label class="text-primary text-bold">Current Branch Address</label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Country *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Zone</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>District *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>VDC / Municipality / Metropolitan *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Tole</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Ward No. *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Block No.</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Primary Phone Number *</label>
+                                    <input type="number" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Secondary Phone Number *</label>
+                                    <input type="number" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Email *</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <br>
+                                    <label class="text-primary text-bold">Branch Contact Person*</label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>First Name *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Last Name *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Email *</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Phone No *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Telephone No *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <br>
+                                    <label class="text-primary text-bold">Branch Head*</label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>First Name *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Last Name *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Email *</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Phone No *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Telephone No *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <button id="removeOrgBranches" class="btn btn-danger pull-right removeOrgBranches" onclick="removeOrgBranches(this.value)" ><span class="glyphicon glyphicon-minus"></span></button>
+                            </form>
                             <hr>
                         </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div id="branches_forms-0" class="branches_forms">
+                        <form action="" id="organizationBranch-0" method="POST">
+                            <div class="row">
+                                <div class="col-md-12">
 
-                        <div class="row">
-                            <div class="col-md-12">
-
-                                <div class="form-group">
-                                    <label>Branch Name*</label>
-                                    <input type="text" class="form-control" name="organization_name">
+                                    <div class="form-group">
+                                        <label>Branch Name*</label>
+                                        <input type="text" class="form-control" name="organization_name">
+                                    </div>
                                 </div>
-                            </div>
 
 
-                            <div class="form-group col-md-12">
-                                <br>
-                                <label class="text-primary text-bold">Current Branch Address</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Country *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Zone</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>District *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>VDC / Municipality / Metropolitan *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Tole</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Ward No. *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Block No.</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Primary Phone Number *</label>
-                                <input type="number" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Secondary Phone Number *</label>
-                                <input type="number" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Email *</label>
-                                <input type="email" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-12">
-                                <br>
-                                <label class="text-primary text-bold">Branch Contact Person*</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>First Name *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Last Name *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Email *</label>
-                                <input type="email" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Phone No *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Telephone No *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-12">
-                                <br>
-                                <label class="text-primary text-bold">Branch Head*</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>First Name *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Last Name *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Email *</label>
-                                <input type="email" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Phone No *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Telephone No *</label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                            <button id="removeOrgBranches" class="btn btn-danger pull-right removeOrgBranches" onclick="removeOrgBranches(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span></button>
+                                <div class="form-group col-md-12">
+                                    <br>
+                                    <label class="text-primary text-bold">Current Branch Address</label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Country *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Zone</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>District *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>VDC / Municipality / Metropolitan *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Tole</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Ward No. *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Block No.</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Primary Phone Number *</label>
+                                    <input type="number" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Secondary Phone Number *</label>
+                                    <input type="number" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Email *</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <br>
+                                    <label class="text-primary text-bold">Branch Contact Person*</label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>First Name *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Last Name *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Email *</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Phone No *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Telephone No *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <br>
+                                    <label class="text-primary text-bold">Branch Head*</label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>First Name *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Last Name *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Email *</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Phone No *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Telephone No *</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <button id="removeOrgBranches" class="btn btn-danger pull-right removeOrgBranches" onclick="removeOrgBranches(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span></button>
 
-                            <hr>
-                        </div>
+                                <hr>
+                            </div>
+                        </form>
                         <div class="clearfix"></div>
                     </div>
 
@@ -295,12 +295,10 @@
 
                 <button id="addBranches" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span></button>
                 <div class="col-md-12 no-pad" style="margin-top: 10px">
-                    <form id="form1">
-                        <a href="organization_info.html" class="btn btn-success pull-right" style="margin-left: 10px"> Cancel </a>
-                        <button class="btn btn-success pull-right"> Add </button>
-
-
-                    </form>
+                    <a href="organization_info.html" class="btn btn-success pull-right" style="margin-left: 10px"> Cancel </a>
+                    <button class="btn btn-success pull-right" id="addOrganizationBranch"> Add </button>
+                    <br>
+                    <br>
                 </div>
 
             </div>
