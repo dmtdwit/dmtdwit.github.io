@@ -237,17 +237,17 @@ $(document).ready(function () {
             });
         }
     });
-    $('#step1 .next-btn').click(function() {
+    $('#step1nextbtni').click(function() {
         if(validateIndividualFormStep1()){
             $('.list-group a[href="#step2"]').removeClass('disabled').click();
         }
     });
-    $('#step2 .next-btn').click(function() {
+    $('#step2nextbtni').click(function() {
         if(validateIndividualFormStep2()){
             $('.list-group a[href="#step3"]').removeClass('disabled').click();
         }
     });
-    $('#step3 .final-btn').click(function (e) {
+    $('#step3nextbtni').click(function (e) {
        if(validateIndividualStep3()){
                e.preventDefault();
                swal({
