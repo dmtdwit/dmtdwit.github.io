@@ -53,6 +53,7 @@
                 </div>
             </div>
             <div class="col-md-10 no-pad no-margin">
+                <!--<form class="" action="" method="POST">-->
                     <div class="bhoechie-tab">
                         <div class="bhoechie-tab-content active" role="tabpanel" id="step1">
                             <div class="col-md-12 no-pad no-margin">
@@ -72,6 +73,7 @@
                                                 <input type="radio" name="title" onclick="showMinorGuardian();" id="minorDetail"/> Minor &nbsp;&nbsp;&nbsp;
                                                 <input type="radio" name="title" onclick="hideMinorGuardian();"/> Others &nbsp;&nbsp;&nbsp;
                                             </div>
+                                            <span class="error text-danger text-bold" id="error_title"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6 no-pad pad-r no-margin">
@@ -95,12 +97,12 @@
                                 <div class="row no-pad no-margin marBtn5">
                                     <div class="col-md-12 no-pad no-margin">
                                         <div class="form-group">
-
                                             <div class="col-md-2 no-margin no-pad">
                                                 <label class="pull-right pad3 top5">Name of Beneficial Owner * </label>
                                             </div>
                                             <div class="col-md-10 no-pad no-margin">
-                                                <input type="text" name="beneficialOwnerName" class="form-control" placeholder="" />
+                                                <input type="text" name="beneficialOwnerName" id="beneficialOwnerName" class="form-control" placeholder="" />
+                                                <span class="error text-danger text-bold" id="error_beneficialOwnerName"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -112,7 +114,8 @@
                                                 <label class="pull-right pad3 top5">Date of Birth (in B.S.) * </label>
                                             </div>
                                             <div class="col-md-8 no-pad no-margin">
-                                                <input type="text" name="beneficialOwnerName" class="form-control" placeholder="" />
+                                                <input type="text" name="beneficialOwnerName" id="dobBS" class="form-control" placeholder="" />
+                                                <span class="error text-danger text-bold" id="error_dobBS"></span>
                                             </div>
                                         </div>
 
@@ -121,7 +124,8 @@
                                                 <label class="pull-right top5">Date of Birth (in A.D.) * </label>
                                             </div>
                                             <div class="col-md-8 no-pad no-margin">
-                                                <input type="text" name="beneficialOwnerName" class="form-control" placeholder="" />
+                                                <input type="text" name="beneficialOwnerName" id="dobAD" class="form-control" placeholder="" />
+                                                <span class="error text-danger text-bold" id="error_dobAD"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -135,6 +139,7 @@
                                         <input type="radio" name="gender"> Male </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <input type="radio" name="gender"> Female </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <input type="radio" name="gender"> Other </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="error text-danger text-bold" id="error_gender"></span>
                                     </div>
                                 </div>
                                 <div class="row no-pad no-margin marBtn5">
@@ -145,7 +150,8 @@
                                                 <label class="pull-right pad3 top5">Grand Father's Name * </label>
                                             </div>
                                             <div class="col-md-10 no-pad no-margin">
-                                                <input type="text" class="form-control" placeholder="" >
+                                                <input type="text" class="form-control" placeholder="" id="name_grandfather">
+                                                <span class="error text-danger text-bold" id="error_name_grandfather"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -158,7 +164,8 @@
                                                 <label class="pull-right pad3 top5">Father's Name * </label>
                                             </div>
                                             <div class="col-md-10 no-pad no-margin">
-                                                <input type="text" class="form-control" placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="name_father">
+                                                <span class="error text-danger text-bold" id="error_name_father"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -171,7 +178,8 @@
                                                 <label class="pull-right pad3 top5">Mother's Name * </label>
                                             </div>
                                             <div class="col-md-10 no-pad no-margin">
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="name_mother">
+                                                <span class="error text-danger text-bold" id="error_name_mother"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -240,6 +248,7 @@
                                                     <input type="radio" id="individual" onclick="changeIndividualLabel();" name="accountType"> <span class="label-text">Individual / Resident</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                     <input type="radio" id="nonResident" onclick="changeNRNLabel();" name="accountType"> <span class="label-text">Non Resident Nepalese (NRN)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                     <input type="radio" id="foreigner" onclick="changeForeignLabel();" name="accountType"> <span class="label-text">Foreigner</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <span class="error text-danger text-bold" id="error_accountType"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -258,6 +267,7 @@
                                                         <input type="radio" name="nationality" id="nepaliNationality"> Nepali </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         <input type="radio" name="nationality" id="otherNationality"> Other </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         <input type="text" class="form-control" id="otherNationalityForm" name="otherNationality" placeholder="Other Nationality"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <span class="error text-danger text-bold" id="error_nationality"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -287,6 +297,7 @@
                                                             <option value="0" id="occupationOthers">Others</option><br>
                                                             <input type="text" class="form-control" id="otherOccupationForm" name="otherOccupation" placeholder="Other Occupation"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         </select>
+                                                        <span class="error text-danger text-bold" id="error_occupation"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -301,7 +312,8 @@
                                                 </div>
                                                 <div class="col-md-10 no-pad no-margin">
                                                     <div class="form-group">
-                                                        <input type="text" id="" name="citizenshipNumber" class="form-control"/>
+                                                        <input type="text" id="citizenship" name="citizenshipNumber" class="form-control"/>
+                                                        <span class="error text-danger text-bold" id="error_citizenship"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -316,7 +328,7 @@
                                                 </div>
                                                 <div class="col-md-8 no-pad no-margin">
                                                     <div class="form-group">
-                                                        <select class="form-control" id="district">
+                                                        <select class="form-control" id="issueDistrict">
                                                             <option>Kathmandu</option>
                                                             <option>Lamjung</option>
                                                             <option>Bhaktapur</option>
@@ -349,7 +361,8 @@
                                                 </div>
                                                 <div class="col-md-8 no-pad no-margin">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder=""/>
+                                                        <input type="text" class="form-control" placeholder="" id="passport_number"/>
+                                                        <span class="error text-danger text-bold" id="error_passport_number"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -410,15 +423,15 @@
                                                 </div>
                                                 <div class="col-md-8 no-pad no-margin">
                                                     <div class="form-group">
-                                                        <select class="form-control" id="" name="">
+                                                        <select class="form-control" id="identityType" name="">
                                                             <option value="">Select one</option>
                                                             <option value="1">NRN ID</option>
                                                             <option value="1">Birth Certificate</option>
                                                             <option value="1">Voter ID</option>
                                                             <option value="1">Driving License</option>
                                                             <option value="1">PAN Card</option>
-
                                                         </select>
+                                                        <span class="error text-danger text-bold" id="error_identity_type"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -486,7 +499,8 @@
                                                 </div>
                                                 <div class="col-md-10 no-pad no-margin">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" name=""/>
+                                                        <input type="text" class="form-control" name="" id="name_guardian"/>
+                                                        <span class="error text-danger text-bold" id="error_name_guardian"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -501,7 +515,8 @@
                                                 </div>
                                                 <div class="col-md-10 no-pad no-margin">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" name=""/>
+                                                        <input type="text" class="form-control" name="" id="relationship_guardian"/>
+                                                        <span class="error text-danger text-bold" id="error_relationship_guardian"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -603,7 +618,8 @@
                                                 </div>
                                                 <div class="col-md-8 no-pad no-margin">
                                                     <div class="form-group">
-                                                        <input type="text" name="" class="form-control"/>
+                                                        <input type="text" name="" class="form-control" id="mobile_guardian"/>
+                                                        <span class="error text-danger text-bold" id="error_mobile_guardian"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -631,7 +647,8 @@
                                                 </div>
                                                 <div class="col-md-8 no-pad no-margin">
                                                     <div class="form-group">
-                                                        <input type="text" name="" class="form-control"/>
+                                                        <input type="text" name="" class="form-control" id="email_guardian"/>
+                                                        <span class="error text-danger text-bold" id="error_email_guardian"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -645,7 +662,8 @@
                                                 </div>
                                                 <div class="col-md-10 no-pad no-margin">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder=""/>
+                                                        <input type="text" class="form-control" placeholder="" id="citizenship_guardian"/>
+                                                        <span class="error text-danger text-bold" id="error_citizenship_guardian"></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -715,7 +733,7 @@
                                             </td>
                                             <td>
                                                 <div class="form-group">
-                                                    <select class="form-control" id="country">
+                                                    <select class="form-control" id="country_correspondence">
                                                         <option>Nepal</option>
                                                         <option>India</option>
                                                         <option>US</option>
@@ -728,7 +746,7 @@
                                             </td>
                                             <td colspan="4">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="district">
+                                                    <select class="form-control" id="zone_correspondence">
                                                         <option>Bagmati</option>
                                                         <option>Gandaki</option>
                                                         <option>Mahakali</option>
@@ -743,7 +761,7 @@
                                             </td>
                                             <td colspan="6">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="country">
+                                                    <select class="form-control" id="district_correspondence">
                                                         <option>Lamjung</option>
                                                         <option>Gorkha</option>
                                                         <option>Kathmandu</option>
@@ -757,7 +775,7 @@
                                             </td>
                                             <td colspan="6">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="district">
+                                                    <select class="form-control" id="vdc_correspondence">
                                                         <option>Bhalayakharka</option>
                                                         <option>Gongabu</option>
                                                         <option>Chabahil</option>
@@ -779,7 +797,8 @@
                                             </td>
                                             <td>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder=""/>
+                                                    <input type="text" class="form-control" placeholder="" id="ward_correspondence"/>
+                                                    <span class="error text-danger text-bold" id="error_ward_correspondence"></span>
                                                 </div>
                                             </td>
                                             <td class="text-right pad5">
@@ -805,7 +824,8 @@
                                             </td>
                                             <td colspan="4">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder=""/>
+                                                    <input type="text" class="form-control" placeholder="" id="mobile_correspondence"/>
+                                                    <span class="error text-danger text-bold" id="error_mobile_correspondence"></span>
                                                 </div>
                                             </td>
                                         </tr>
@@ -823,7 +843,8 @@
                                             </td>
                                             <td colspan="4">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder=""/>
+                                                    <input type="text" class="form-control" placeholder="" id="email_correspondence"/>
+                                                    <span class="error text-danger text-bold" id="error_email_correspondence"></span>
                                                 </div>
                                             </td>
                                         </tr>
@@ -840,7 +861,7 @@
                                             </td>
                                             <td colspan="6">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="district">
+                                                    <select class="form-control" id="zone_permanent">
                                                         <option>Bagmati</option>
                                                         <option>Gandaki</option>
                                                         <option>Mahakali</option>
@@ -855,7 +876,7 @@
                                             </td>
                                             <td colspan="6">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="country">
+                                                    <select class="form-control" id="district_permanent">
                                                         <option>Lamjung</option>
                                                         <option>Gorkha</option>
                                                         <option>Kathmandu</option>
@@ -869,7 +890,7 @@
                                             </td>
                                             <td colspan="6">
                                                 <div class="form-group">
-                                                    <select class="form-control" id="district">
+                                                    <select class="form-control" id="vdc_permanent">
                                                         <option>Bhalayakharka</option>
                                                         <option>Gongabu</option>
                                                         <option>Chabahil</option>
@@ -891,7 +912,8 @@
                                             </td>
                                             <td>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder=""/>
+                                                    <input type="text" class="form-control" placeholder="" id="ward_permanent"/>
+                                                    <span class="error text-danger text-bold" id="error_ward_permanent"></span>
                                                 </div>
                                             </td>
                                             <td class="text-right pad5">
@@ -917,7 +939,8 @@
                                             </td>
                                             <td colspan="4">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder=""/>
+                                                    <input type="text" class="form-control" placeholder="" id="mobile_permanent"/>
+                                                    <span class="error text-danger text-bold" id="error_mobile_permanent"></span>
                                                 </div>
                                             </td>
                                         </tr>
@@ -935,7 +958,8 @@
                                             </td>
                                             <td colspan="4">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder=""/>
+                                                    <input type="text" class="form-control" placeholder="" id="email_permanent"/>
+                                                    <span class="error text-danger text-bold" id="error_email_permanent"></span>
                                                 </div>
                                             </td>
                                         </tr>
@@ -1028,6 +1052,7 @@
                                                 <input type="radio" name="money"> <span class="label-text">From Rs. 2,00,001 to Rs. 5,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <input type="radio" name="money"> <span class="label-text">Above Rs. 5,00,000</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             </div>
+                                            <span class="error text-danger text-bold" id="error_money"></span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1038,6 +1063,7 @@
                                             <div class="form-group">
                                                 <input type="radio" name="automaticTransaction"> <span class="label-text">Yes</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <input type="radio" name="automaticTransaction"> <span class="label-text">No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <span class="error text-danger text-bold" id="error_automaticTransaction"></span>
                                             </div>
                                         </td>
                                     </tr>
@@ -1053,6 +1079,7 @@
                                                 <input type="radio" name="accountStatement"> <span class="label-text">15 Days</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <input type="radio" name="accountStatement"> <span class="label-text">Monthly</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             </div>
+                                            <span class="error text-danger text-bold" id="error_accountStatement"></span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1089,10 +1116,7 @@
                                     <tr>
                                         <td colspan="4">
                                             <div class="form-group">
-                                                <form id="from2">
-
-                                                    <button class="btn btn-success pull-right"> Submit KYC Form </button>
-                                                </form>
+                                                <button class="btn btn-success pull-right final-btn"> Submit KYC Form </button>
                                             </div>
                                             <br>
                                             <br>
@@ -1103,6 +1127,7 @@
                             </div>
                         </div>
                     </div>
+                <!--</form>-->
             </div>
         </div>
     </div>
@@ -1197,7 +1222,7 @@
 
     </script>
     <script>
-        document.querySelector('#from2').addEventListener('submit', function(e) {
+        /*document.querySelector('#from2').addEventListener('submit', function(e) {
             var form = this;
             e.preventDefault();
             swal({
@@ -1227,7 +1252,7 @@
                     }
                 });
         });
-
+*/
     </script>
     <br>
 </body>
