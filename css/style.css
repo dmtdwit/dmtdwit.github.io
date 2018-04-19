@@ -576,7 +576,13 @@ table{
 	position: fixed;
 	top:78px;
 }
-@media (max-width:480px){
+@media screen and (max-width:480px){
+	.listGroupPosition{
+		position: static;
+		top:78px;
+	}
+}
+@media screen and (max-width:994px){
 	.listGroupPosition{
 		position: static;
 		top:78px;
