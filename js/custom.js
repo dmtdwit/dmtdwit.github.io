@@ -1,6 +1,10 @@
 /**
  * Created by Sumit Shrestha on 2/14/2018.
  */
+var addedOwnerBranchCount = 0;
+var mainOwnerBranchCount = 1;
+var addedExecutiveCount = 0;
+var mainExecutiveCount = 1;
 $(document).ready(function () {
     /* $('#individual').change(function () {
      $('.individualTabs').toggle();
@@ -111,37 +115,48 @@ $(document).ready(function () {
         var clone = $("#branchesForm").clone().show();
         clone.attr("id", "branchesForm-"+cloneCount);
 
-        clone.find(".remove").val(cloneCount++)
+        clone.find(".remove").val(cloneCount++);
 
         $("#branches").append(clone);
+        addedOwnerBranchCount++;
+        console.log('AddedOwner Branch Count is'+addedOwnerBranchCount);
 
     });
 
 
-    var cloneCounts=1
+    var cloneCounts=1;
     $("#addExecutive").click(function(){
         var clone = $("#executivesForm").clone().show();
         clone.attr("id", "executivesForm-"+cloneCounts);
 
-        clone.find(".removeExecutive").val(cloneCounts)
+        clone.find(".removeExecutive").val(cloneCounts);
         cloneCounts++;
         $("#executives").append(clone);
-
+        addedExecutiveCount++;
+        console.log("Added Executive Count is "+addedExecutiveCount);
 
     });
-    branchesCount=1
+    branchesCount=1;
     $("#addBranches").click(function () {
         var clone=$("#branches_forms").clone().show();
-        clone.attr("id","branches_forms-"+branchesCount)
-        clone.find(".removeOrgBranches").val(branchesCount)
-        branchesCount++
+        clone.attr("id","branches_forms-"+branchesCount);
+        clone.find(".removeOrgBranches").val(branchesCount);
+        branchesCount++;
         $("#branches_content").append(clone)
-    })
+    });
+    $('#removeMainBranch').click(function () {
+        mainOwnerBranchCount=mainOwnerBranchCount-1;
+        console.log("Main Owner Branch Count is "+mainOwnerBranchCount);
+    });
+    $('#removeBranch').click(function () {
+        addedOwnerBranchCount=addedOwnerBranchCount-1;
+        console.log('AddedOwner Branch Count is'+addedOwnerBranchCount);
+    });
 
 });
 function callOrganization() {
-    value=$("#organization").val()
-    if(value == "DP"){
+    value=$("#organization").val();
+    if(value === "DP"){
 
         $("#select_agent").show()
     }else{
@@ -154,9 +169,23 @@ function removeOrgBranches(id) {
     $("#branches_forms-"+id).remove()
 }
 function removeExecutive(id) {
+    addedExecutiveCount = addedExecutiveCount - 1;
+    console.log("Added Executive Count is "+addedExecutiveCount);
+    $("#executivesForm-"+id).remove()
+}
+function removeMainExecutive(id) {
+    mainExecutiveCount = mainExecutiveCount - 1;
+    console.log("Main Executive Count is "+mainExecutiveCount);
     $("#executivesForm-"+id).remove()
 }
 function removeBranches(id) {
+    addedOwnerBranchCount=addedOwnerBranchCount-1;
+    console.log("Added Owner Branch Count is "+addedOwnerBranchCount);
+    $("#branchesForm-"+id).remove()
+}
+function removeMainBranches(id) {
+    mainOwnerBranchCount=mainOwnerBranchCount-1;
+    console.log("Main Owner Branch Count is "+mainOwnerBranchCount);
     $("#branchesForm-"+id).remove()
 }
 $(document).ready(function () {
@@ -286,6 +315,47 @@ $(document).ready(function () {
     $('#step2nextbtnc').click(function () {
         if(validateCorporateStep2()){
             $('.list-group a[href="#step3"]').removeClass('disabled').click();
+        }
+    });
+    $('#step3nextbtnc').click(function () {
+        if(validateCorporateStep3()){
+            $('.list-group a[href="#step4"]').removeClass('disabled').click();
+        }
+    });
+    $('#step4nextbtnc').click(function () {
+        if(validateCorporateStep4()){
+            $('.list-group a[href="#step5"]').removeClass('disabled').click();
+        }
+    });
+    $('#step5finalbtn').click(function (e) {
+        if(validateCorporateStep5()){
+            e.preventDefault();
+            swal({
+                    title: "Are you sure?",
+                    text: "Do you want to submit the Form?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: '#046031',
+                    cancelButtonTextColor: '#FF0000',
+                    confirmButtonText: 'Yes, I am sure!',
+                    cancelButtonText: "No, cancel it!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
+                        swal({
+                            title: 'Submitted!',
+                            text: 'Form has been submitted.',
+                            type: 'success'
+                        }, function() {
+                            window.location.href = 'dashboard.html';
+                        });
+
+                    } else {
+                        swal("Cancelled", "", "error");
+                    }
+                });
         }
     });
     $('#step1 .next-btn').click(function() {
@@ -979,7 +1049,317 @@ function validateCorporateStep3() {
 }
 
 function validateCorporateStep4() {
+    var flag = true;
+    if(mainOwnerBranchCount===1){
+        flag = validateOwner();
+    }
+    if(addedOwnerBranchCount!==0){
+        flag = validateOwnerAdded();
+    }
+    if(mainExecutiveCount===1){
+        flag = validateExecutiveOwner();
+    }
+    if(addedExecutiveCount!==0){
+        flag = validateExecutiveAdded();
+    }
+    return flag;
+}
+
+function validateOwnerAdded() {
+    var flag = true;
+    var c_area = document.getElementById('c_area').value.trim();
+    if(c_area===''||c_area===null){
+        $('#error_c_area').text('Area Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_area').text('');
+    }
+    var c_main_branch = document.getElementById('c_main_branch').value.trim();
+    if(c_main_branch===''||c_main_branch===null){
+        $('#error_c_main_branch').text('Branch Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_main_branch').text('');
+    }
+    var c_address = document.getElementById('c_address').value.trim();
+    if(c_address===''||c_address===null){
+        $('#error_c_address').text('Address Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_address').text('');
+    }
+    var c_telephone = document.getElementById('c_telephone').value.trim();
+    if(c_telephone===''||c_telephone===null){
+        $('#error_c_telephone').text('Telephone No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_telephone').text('');
+    }
+    var c_mobile = document.getElementById('c_mobile').value.trim();
+    if(c_mobile===''||c_mobile===null){
+        $('#error_c_mobile').text('Mobile No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_mobile').text('');
+    }
+    var c_contact = document.getElementById('c_contact').value.trim();
+    if(c_contact===''||c_contact===null){
+        $('#error_c_contact').text('Contact Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_contact').text('');
+    }
+    return flag;
+}
+
+function validateOwner() {
+    var flag = true;
+    var c_area = document.getElementById('c_area0').value.trim();
+    if(c_area===''||c_area===null){
+        $('#error_c_area0').text('Area Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_area0').text('');
+    }
+    var c_main_branch = document.getElementById('c_main_branch0').value.trim();
+    if(c_main_branch===''||c_main_branch===null){
+        $('#error_c_main_branch0').text('Branch Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_main_branch0').text('');
+    }
+    var c_address = document.getElementById('c_address0').value.trim();
+    if(c_address===''||c_address===null){
+        $('#error_c_address0').text('Address Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_address0').text('');
+    }
+    var c_telephone = document.getElementById('c_telephone0').value.trim();
+    if(c_telephone===''||c_telephone===null){
+        $('#error_c_telephone0').text('Telephone No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_telephone0').text('');
+    }
+    var c_mobile = document.getElementById('c_mobile0').value.trim();
+    if(c_mobile===''||c_mobile===null){
+        $('#error_c_mobile0').text('Mobile No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_mobile0').text('');
+    }
+    var c_contact = document.getElementById('c_contact0').value.trim();
+    if(c_contact===''||c_contact===null){
+        $('#error_c_contact0').text('Contact Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_contact0').text('');
+    }
+    return flag;
+}
 
 
+function validateExecutiveAdded() {
+    var flag = true;
+    var c_e_name = document.getElementById('c_e_name').value.trim();
+    if(c_e_name===''||c_e_name===null){
+        $('#error_c_e_name').text('Name / Surname Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_name').text('');
+    }
+    var c_e_designation = document.getElementById('c_e_designation').value.trim();
+    if(c_e_designation===''||c_e_designation===null){
+        $('#error_c_e_designation').text('Designation Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_designation').text('');
+    }
+    var c_e_fathername = document.getElementById('c_e_fathername').value.trim();
+    if(c_e_fathername===''||c_e_fathername===null){
+        $('#error_c_e_fathername').text("Father's Cannot Be Empty").focus();
+        flag = false;
+    }else{
+        $('#error_c_e_fathername').text('');
+    }
+    var c_e_grandfather = document.getElementById('c_e_grandfather').value.trim();
+    if(c_e_grandfather===''||c_e_grandfather===null){
+        $('#error_c_e_grandfather').text("Grand Father's Name Cannot Be Empty").focus();
+        flag = false;
+    }else{
+        $('#error_c_e_grandfather').text('');
+    }
+    var c_e_permanent_address = document.getElementById('c_e_permanent_address').value.trim();
+    if(c_e_permanent_address===''||c_e_permanent_address===null){
+        $('#error_c_e_permanent_address').text('Permanent Address Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_permanent_address').text('');
+    }
+    var c_e_current_address = document.getElementById('c_e_current_address').value.trim();
+    if(c_e_current_address===''||c_e_current_address===null){
+        $('#error_c_e_current_address').text('Current Address Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_current_address').text('');
+    }
+    var c_e_telephone = document.getElementById('c_e_telephone').value.trim();
+    if(c_e_telephone===''||c_e_telephone===null){
+        $('#error_c_e_telephone').text('Telephone No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_telephone').text('');
+    }
+    var c_e_mobile = document.getElementById('c_e_mobile').value.trim();
+    if(c_e_mobile===''||c_e_mobile===null){
+        $('#error_c_e_mobile').text('Mobile No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_mobile').text('');
+    }
+    var c_e_email = document.getElementById('c_e_email').value.trim();
+    if(c_e_email===''||c_e_email===null){
+        $('#error_c_e_email').text('Email Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_email').text('');
+    }
+    return flag;
+}
 
+function validateExecutiveOwner() {
+    var flag = true;
+    var c_e_name = document.getElementById('c_e_name0').value.trim();
+    if(c_e_name===''||c_e_name===null){
+        $('#error_c_e_name0').text('Name / Surname Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_name0').text('');
+    }
+    var c_e_designation = document.getElementById('c_e_designation0').value.trim();
+    if(c_e_designation===''||c_e_designation===null){
+        $('#error_c_e_designation0').text('Designation Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_designation0').text('');
+    }
+    var c_e_fathername = document.getElementById('c_e_fathername0').value.trim();
+    if(c_e_fathername===''||c_e_fathername===null){
+        $('#error_c_e_fathername0').text("Father's Cannot Be Empty").focus();
+        flag = false;
+    }else{
+        $('#error_c_e_fathername0').text('');
+    }
+    var c_e_grandfather = document.getElementById('c_e_grandfather0').value.trim();
+    if(c_e_grandfather===''||c_e_grandfather===null){
+        $('#error_c_e_grandfather0').text("Grand Father's Name Cannot Be Empty").focus();
+        flag = false;
+    }else{
+        $('#error_c_e_grandfather0').text('');
+    }
+    var c_e_permanent_address = document.getElementById('c_e_permanent_address0').value.trim();
+    if(c_e_permanent_address===''||c_e_permanent_address===null){
+        $('#error_c_e_permanent_address0').text('Permanent Address Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_permanent_address0').text('');
+    }
+    var c_e_current_address = document.getElementById('c_e_current_address0').value.trim();
+    if(c_e_current_address===''||c_e_current_address===null){
+        $('#error_c_e_current_address0').text('Current Address Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_current_address0').text('');
+    }
+    var c_e_telephone = document.getElementById('c_e_telephone0').value.trim();
+    if(c_e_telephone===''||c_e_telephone===null){
+        $('#error_c_e_telephone0').text('Telephone No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_telephone0').text('');
+    }
+    var c_e_mobile = document.getElementById('c_e_mobile0').value.trim();
+    if(c_e_mobile===''||c_e_mobile===null){
+        $('#error_c_e_mobile0').text('Mobile No. Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_mobile0').text('');
+    }
+    var c_e_email = document.getElementById('c_e_email0').value.trim();
+    if(c_e_email===''||c_e_email===null){
+        $('#error_c_e_email0').text('Email Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_c_e_email0').text('');
+    }
+    return flag;
+}
+
+function validateCorporateStep5() {
+    var flag = true;
+    var cor_first_auth_name = document.getElementById('cor_first_auth_name').value.trim();
+    if(cor_first_auth_name===''||cor_first_auth_name===null){
+        $('#error_cor_first_auth_name').text('Name Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_cor_first_auth_name').text('');
+    }
+    var cor_first_auth_designation = document.getElementById('cor_first_auth_designation').value.trim();
+    if(cor_first_auth_designation===''||cor_first_auth_designation===null){
+        $('#error_cor_first_auth_designation').text('Designation Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_cor_first_auth_designation').text('');
+    }
+    var cor_second_auth_name = document.getElementById('cor_second_auth_name').value.trim();
+    if(cor_second_auth_name===''||cor_second_auth_name===null){
+        $('#error_cor_second_auth_name').text('Name Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_cor_second_auth_name').text('');
+    }
+    var cor_second_auth_designation = document.getElementById('cor_second_auth_designation').value.trim();
+    if(cor_second_auth_designation===''||cor_second_auth_designation===null){
+        $('#error_cor_second_auth_designation').text('Designation Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_cor_second_auth_designation').text('');
+    }
+    var cor_third_auth_name = document.getElementById('cor_third_auth_name').value.trim();
+    if(cor_third_auth_name===''||cor_third_auth_name===null){
+        $('#error_cor_third_auth_name').text('Name Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_cor_third_auth_name').text('');
+    }
+    var cor_third_auth_designation = document.getElementById('cor_third_auth_designation').value.trim();
+    if(cor_third_auth_designation===''||cor_third_auth_designation===null){
+        $('#error_cor_third_auth_designation').text('Designation Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_cor_third_auth_designation').text('');
+    }
+    var cor_type_bank_account = document.getElementsByName('cor_type_bank_account');
+    if(cor_type_bank_account[0].checked===true||cor_type_bank_account[1]===true){
+        $('#error_cor_type_bank_account').text('');
+    }else{
+        $('#error_cor_type_bank_account').text('You must choose Bank Account Type');
+        flag = false;
+    }
+    var cor_bank_no = document.getElementById('cor_bank_no').value.trim();
+    if(cor_bank_no===''||cor_bank_no===null){
+        $('#error_cor_bank_no').text('Bank Account Number Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_cor_bank_no').text('');
+    }
+    var cor_bank_address = document.getElementById('cor_bank_address').value.trim();
+    if(cor_bank_address===''||cor_bank_address===null){
+        $('#error_cor_bank_address').text('Name and Address of Bank Cannot Be Empty').focus();
+        flag = false;
+    }else{
+        $('#error_cor_bank_address').text('');
+    }
+    return flag;
 }

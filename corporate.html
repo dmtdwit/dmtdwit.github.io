@@ -392,7 +392,7 @@
                             </div>
                         </div>
                         <button class="btn btn-success pull-right" style="margin-left: 10px"> Cancel </button>
-                        <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                        <button class="btn btn-success pull-right" id="step3nextbtnc">Save and Continue</button>
                     </div>
                 </div>
                 <div class="bhoechie-tab-content" role="tabpanel" id="step4">
@@ -410,28 +410,34 @@
                                         <div class="form-group col-md-4">
                                             <label>Area *</label>
                                             <input type="text" class="form-control" placeholder="" id="c_area">
+                                            <span class="error text-danger text-bold" id="error_c_area"></span>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Main Branch / Office *</label>
-                                            <input type="text" class="form-control" placeholder="c_main_branch">
+                                            <input type="text" class="form-control" placeholder="" id="c_main_branch">
+                                            <span class="error text-danger text-bold" id="error_c_main_branch"></span>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Address *</label>
                                             <input type="text" class="form-control" placeholder="" id="c_address">
+                                            <span class="error text-danger text-bold" id="error_c_address"></span>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Telephone No. *</label>
                                             <input type="text" class="form-control" placeholder="" id="c_telephone">
+                                            <span class="error text-danger text-bold" id="error_c_telephone"></span>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Mobile No. *</label>
                                             <input type="text" class="form-control" placeholder="" id="c_mobile">
+                                            <span class="error text-danger text-bold" id="error_c_mobile"></span>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Contact Person *</label>
                                             <input type="text" class="form-control" placeholder="" id="c_contact">
+                                            <span class="error text-danger text-bold" id="error_c_contact"></span>
                                         </div>
-                                        <button class="btn btn-danger pull-right remove" onclick="removeBranches(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span> </button>
+                                        <button class="btn btn-danger pull-right remove" id="removeBranch" onclick="removeBranches(this.value); " value="0"><span class="glyphicon glyphicon-minus"></span> </button>
                                     </div>
 
                                 </div>
@@ -440,29 +446,35 @@
                                         <br>
                                         <div class="form-group col-md-4">
                                             <label>Area *</label>
-                                            <input type="text" class="form-control"placeholder="">
+                                            <input type="text" class="form-control" placeholder="" id="c_area0">
+                                            <span class="error text-danger text-bold" id="error_c_area0"></span>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Main Branch / Office *</label>
-                                            <input type="text" class="form-control"placeholder="">
+                                            <input type="text" class="form-control" placeholder="" id="c_main_branch0">
+                                            <span class="error text-danger text-bold" id="error_c_main_branch0"></span>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Address *</label>
-                                            <input type="text" class="form-control"placeholder="">
+                                            <input type="text" class="form-control" placeholder="" id="c_address0">
+                                            <span class="error text-danger text-bold" id="error_c_address0"></span>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Telephone No. *</label>
-                                            <input type="text" class="form-control"placeholder="">
+                                            <input type="text" class="form-control" placeholder="" id="c_telephone0">
+                                            <span class="error text-danger text-bold" id="error_c_telephone0"></span>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Mobile No. *</label>
-                                            <input type="text" class="form-control"placeholder="">
+                                            <input type="text" class="form-control" placeholder="" id="c_mobile0">
+                                            <span class="error text-danger text-bold" id="error_c_mobile0"></span>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Contact Person *</label>
-                                            <input type="text" class="form-control"placeholder="">
+                                            <input type="text" class="form-control" placeholder="" id="c_contact0">
+                                            <span class="error text-danger text-bold" id="error_c_contact0"></span>
                                         </div>
-                                        <button class="btn btn-danger pull-right remove" onclick="removeBranches(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span> </button>
+                                        <button class="btn btn-danger pull-right remove" id="removeMainBranch" onclick="removeMainBranches(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span> </button>
                                     </div>
 
                                 </div>
@@ -486,47 +498,56 @@
                                             <br>
                                             <div class="form-group col-md-4">
                                                 <label>Name / Surname *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_name">
+                                                <span class="error text-danger text-bold" id="error_c_e_name"></span>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Designation *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_designation">
+                                                <span class="error text-danger text-bold" id="error_c_e_designation"></span>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Spouse's Name </label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" >
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Father's Name *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_fathername">
+                                                <span class="error text-danger text-bold" id="error_c_e_fathername"></span>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Grand Father's Name *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_grandfather">
+                                                <span class="error text-danger text-bold" id="error_c_e_grandfather"></span>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Permanent Address *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_permanent_address">
+                                                <span class="error text-danger text-bold" id="error_c_e_permanent_address"></span>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Current Address *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_current_address">
+                                                <span class="error text-danger text-bold" id="error_c_e_current_address"></span>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Telephone No. *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_telephone">
+                                                <span class="error text-danger text-bold" id="error_c_e_telephone"></span>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Mobile No. *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_mobile">
+                                                <span class="error text-danger text-bold" id="error_c_e_mobile"></span>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Email ID. *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_email">
+                                                <span class="error text-danger text-bold" id="error_c_e_email"></span>
                                             </div>
 
                                         </form>
-                                        <button id="removeExecutive" class="btn btn-danger pull-right removeExecutive" onclick="removeExecutive(this.value)"><span class="glyphicon glyphicon-minus"></span></button>
+                                        <button class="btn btn-danger pull-right removeExecutive" onclick="removeExecutive(this.value)"><span class="glyphicon glyphicon-minus"></span></button>
 
                                         <hr>
                                     </div>
@@ -539,47 +560,56 @@
                                             <br>
                                             <div class="form-group col-md-4">
                                                 <label>Name / Surname *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_name0">
+                                                <span class="error text-danger text-bold" id="error_c_e_name0"></span>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Designation *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_designation0">
+                                                <span class="error text-danger text-bold" id="error_c_e_designation0"></span>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Spouse's Name </label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" >
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Father's Name *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_fathername0">
+                                                <span class="error text-danger text-bold" id="error_c_e_fathername0"></span>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Grand Father's Name *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_grandfather0">
+                                                <span class="error text-danger text-bold" id="error_c_e_grandfather0"></span>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Permanent Address *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_permanent_address0">
+                                                <span class="error text-danger text-bold" id="error_c_e_permanent_address0"></span>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Current Address *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_current_address0">
+                                                <span class="error text-danger text-bold" id="error_c_e_current_address0"></span>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Telephone No. *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_telephone0">
+                                                <span class="error text-danger text-bold" id="error_c_e_telephone0"></span>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Mobile No. *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_mobile0">
+                                                <span class="error text-danger text-bold" id="error_c_e_mobile0"></span>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Email ID. *</label>
-                                                <input type="text" class="form-control"placeholder="">
+                                                <input type="text" class="form-control" placeholder="" id="c_e_email0">
+                                                <span class="error text-danger text-bold" id="error_c_e_email0"></span>
                                             </div>
 
                                         </form>
-                                        <button id="removeExecutive" class="btn btn-danger pull-right removeExecutive" onclick="removeExecutive(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span></button>
+                                        <button id="removeExecutive" class="btn btn-danger pull-right removeExecutive" onclick="removeMainExecutive(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span></button>
 
                                         <hr>
                                     </div>
@@ -595,7 +625,7 @@
                             <br>
                             <br>
                             <button class="btn btn-success pull-right" style="margin-left: 10px"> Cancel </button>
-                            <button class="btn btn-success pull-right next-btn">Save and Continue</button>
+                            <button class="btn btn-success pull-right" id="step4nextbtnc">Save and Continue</button>
                         </div>
                     </div>
                 </div>
@@ -609,11 +639,13 @@
                         <form>
                             <div class="form-group col-md-12">
                                 <label>Name *</label> <br>
-                                <input type="text" class="form-control" name=""/>
+                                <input type="text" class="form-control" name="" id="cor_first_auth_name"/>
+                                <span class="error text-danger text-bold" id="error_cor_first_auth_name"></span>
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Designation *</label> <br>
-                                <input type="text" class="form-control" name=""/>
+                                <input type="text" class="form-control" name="" id="cor_first_auth_designation"/>
+                                <span class="error text-danger text-bold" id="error_cor_first_auth_designation"></span>
                             </div>
                             <div class="form-group col-md-4">
                                 <br>
@@ -652,11 +684,13 @@
 
                             <div class="form-group col-md-12">
                                 <label>Name *</label> <br>
-                                <input type="text" class="form-control" name=""/>
+                                <input type="text" class="form-control" name="" id="cor_second_auth_name"/>
+                                <span class="error text-danger text-bold" id="error_cor_second_auth_name"></span>
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Designation *</label> <br>
-                                <input type="text" class="form-control" name=""/>
+                                <input type="text" class="form-control" name="" id="cor_second_auth_designation"/>
+                                <span class="error text-danger text-bold" id="error_cor_second_auth_designation"></span>
                             </div>
                             <div class="form-group col-md-4">
                                 <br>
@@ -694,11 +728,13 @@
 
                             <div class="form-group col-md-12">
                                 <label>Name *</label> <br>
-                                <input type="text" class="form-control" name=""/>
+                                <input type="text" class="form-control" name="" id="cor_third_auth_name"/>
+                                <span class="error text-danger text-bold" id="error_cor_third_auth_name"></span>
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Designation *</label> <br>
-                                <input type="text" class="form-control" name=""/>
+                                <input type="text" class="form-control" name="" id="cor_third_auth_designation"/>
+                                <span class="error text-danger text-bold" id="error_cor_third_auth_designation"></span>
                             </div>
                             <div class="form-group col-md-4">
                                 <br>
@@ -764,27 +800,27 @@
                             <label>Types of Bank Account *</label> <br>
                         </div>
                         <div class="form-group col-md-4">
-
-                            <input type="checkbox" name=""/> <span class="label-text">Saving Account</span>
+                            <input type="checkbox" name="cor_type_bank_account"/> <span class="label-text">Saving Account</span>
                         </div>
                         <div class="col-md-4">
-                            <input type="checkbox" name=""/> <span class="label-text">Current Account</span>
+                            <input type="checkbox" name="cor_type_bank_account"/> <span class="label-text">Current Account</span>
+                            <span class="error text-danger text-bold" id="error_cor_type_bank_account"></span>
                         </div>
                         <br>
                         <br>
                         <div class="form-group col-md-12">
                             <label>Back Account Number *</label> <br>
-                            <input type="text" class="form-control" name=""/>
+                            <input type="text" class="form-control" name="" id="cor_bank_no"/>
+                            <span class="error text-danger text-bold" id="error_cor_bank_no"></span>
                         </div>
                         <div class="form-group col-md-12">
                             <label>Name and Address of Bank *</label> <br>
-                            <input type="text" class="form-control" name=""/>
+                            <input type="text" class="form-control" name="" id="cor_bank_address"/>
+                            <span class="error text-danger text-bold" id="error_cor_bank_address"></span>
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <form id="from1">
-                            <button class="btn btn-success pull-right"> Submit Form </button>
-                        </form>
+                        <button class="btn btn-success pull-right" id="step5finalbtn"> Submit Form </button>
                     </div>
                 </div>
             </div>
@@ -793,7 +829,7 @@
 
 
         <script>
-            document.querySelector('#from1').addEventListener('submit', function(e) {
+            /*document.querySelector('#from1').addEventListener('submit', function(e) {
                 var form = this;
                 e.preventDefault();
                 swal({
@@ -822,7 +858,7 @@
                             swal("Cancelled", "", "error");
                         }
                     });
-            });
+            });*/
 
         </script>
         <br>
