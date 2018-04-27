@@ -207,16 +207,36 @@
                                     </div>
                                 </div>
                                 <div class="row no-pad no-margin marBtn5">
-                                    <div class="col-md-12 no-pad no-margin">
-                                        <div class="form-group">
+                                    <div class="col-md-11 no-pad no-margin" id="son_content">
+                                        <div class="form-group col-md-12" id="son_form" style="display: none">
 
                                             <div class="col-md-2 no-margin no-pad">
                                                 <label class="pull-right pad3 top5">Son's Name </label>
                                             </div>
-                                            <div class="col-md-10 no-pad no-margin">
+                                            <div class="col-md-9 no-pad no-margin">
                                                 <input type="text" class="form-control"placeholder="">
                                             </div>
+                                            <div class="col-md-1">
+                                                <button id="removeSon" class="btn btn-danger pull-right removeSon" onclick="removeSon(this.value)" ><span class="glyphicon glyphicon-minus"></span></button>
+                                            </div>
                                         </div>
+
+                                        <div class="form-group col-md-12" id="son_form-0">
+
+                                            <div class="col-md-2 no-margin no-pad">
+                                                <label class="pull-right pad3 top5">Son's Name </label>
+                                            </div>
+                                            <div class="col-md-9 no-pad no-margin">
+                                                <input type="text" class="form-control"placeholder="">
+                                            </div>
+                                            <div class="col-md-1">
+                                                <button id="removeSon" class="btn btn-danger pull-right removeSon" onclick="removeSon(this.value)" value="0"><span class="glyphicon glyphicon-minus"></span></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button id="addSon" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span></button>
                                     </div>
                                 </div>
                                 <div class="row no-pad no-margin marBtn5">
@@ -229,7 +249,9 @@
                                             <div class="col-md-10 no-pad no-margin">
                                                 <input type="text" class="form-control"placeholder="">
                                             </div>
+
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="row no-pad no-margin marBtn5">

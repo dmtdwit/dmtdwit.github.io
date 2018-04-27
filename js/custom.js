@@ -144,6 +144,16 @@ $(document).ready(function () {
         branchesCount++;
         $("#branches_content").append(clone)
     });
+
+    son_count=1;
+    $("#addSon").click(function () {
+        var clone=$("#son_form").clone().show();
+        clone.attr("id","son_form-"+son_count);
+        clone.find(".removeSon").val(son_count);
+        son_count++;
+        $("#son_content").append(clone)
+    });
+
     $('#removeMainBranch').click(function () {
         mainOwnerBranchCount=mainOwnerBranchCount-1;
         console.log("Main Owner Branch Count is "+mainOwnerBranchCount);
@@ -164,6 +174,9 @@ function callOrganization() {
     }
 
 
+}
+function removeSon(id) {
+    $("#son_form-"+id).remove()
 }
 function removeOrgBranches(id) {
     $("#branches_forms-"+id).remove()
